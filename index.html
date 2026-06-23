@@ -15,25 +15,25 @@
             justify-content: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             width: 100%;
         }
         h1 {
             color: #04d361;
             border-bottom: 2px solid #202024;
             padding-bottom: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
-        p {
+        .subtitle {
             color: #a8a8b3;
             font-size: 1.1rem;
             line-height: 1.6;
+            margin-bottom: 40px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 40px;
         }
         .card {
             background-color: #202024;
@@ -52,10 +52,13 @@
         .card h3 {
             margin: 0 0 10px 0;
             color: #ffffff;
+            font-size: 1.2rem;
         }
         .card p {
             font-size: 0.9rem;
+            color: #a8a8b3;
             margin: 0 0 20px 0;
+            flex-grow: 1;
         }
         .btn {
             display: inline-block;
@@ -77,29 +80,74 @@
 
     <div class="container">
         <h1>Meu Portfólio de Algoritmos</h1>
-        <p>Olá! Este é o espaço onde organizo e apresento todas as soluções, códigos e relatórios desenvolvidos durante o semestre na disciplina de Algoritmos e Programação.</p>
+        <p class="subtitle">Olá! Este é o espaço onde organizo e apresento todas as soluções, códigos e relatórios desenvolvidos durante o semestre na disciplina de Algoritmos e Programação.</p>
 
         <div class="grid">
             
-            <!-- CARD DA ATIVIDADE 1 -->
             <div class="card">
                 <h3>10 Exercícios</h3>
                 <p>Lista inicial contendo os primeiros passos e lógica de programação.</p>
                 <a href="10-exercicios/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
             </div>
 
-            <!-- CARD DA ATIVIDADE 2 -->
             <div class="card">
                 <h3>15 Exercícios</h3>
                 <p>Resolução de problemas focados em estruturas de repetição.</p>
                 <a href="15-exercicios/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
             </div>
 
-            <!-- CARD DA ATIVIDADE 3 -->
             <div class="card">
                 <h3>Evolução Técnica</h3>
                 <p>Análise de desempenho e melhorias de códigos criados em Python.</p>
                 <a href="evolucao-tecnica/app.py" target="_blank" class="btn">Ver Código Python</a>
+            </div>
+
+            <div class="card">
+                <h3>Exercícios em Papel</h3>
+                <p>Práticas de lógica e testes de mesa realizados manualmente.</p>
+                <a href="exercicios-em-papel/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Modularização</h3>
+                <p>Estudo e criação de funções e organização de código limpo.</p>
+                <a href="modularizacao/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Portal Alegrete</h3>
+                <p>Desenvolvimento e estruturação do projeto Portal Alegrete.</p>
+                <a href="portal-alegrete/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Portal Alegrete (Novo)</h3>
+                <p>Atualizações, refatoração e melhorias aplicadas ao Portal Alegrete.</p>
+                <a href="portal-alegrete-novo/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Problema 1</h3>
+                <p>Resolução do primeiro grande desafio prático da disciplina.</p>
+                <a href="problema-1/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Problema 2</h3>
+                <p>Desenvolvimento da solução para o segundo problema proposto.</p>
+                <a href="problema-2/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Problema de Engenharia</h3>
+                <p>Aplicação de algoritmos e modelagem para resolução de problemas de engenharia.</p>
+                <a href="problema-de-engenharia/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Relato de Entrevistas</h3>
+                <p>Documentação e relatórios com os dados coletados nas entrevistas.</p>
+                <a href="relato-entrevistas/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
             </div>
 
         </div>
