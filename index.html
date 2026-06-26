@@ -4,154 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Algoritmos</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
     <style>
+        /* Estilos gerais */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121214;
-            color: #e1e1e6;
             margin: 0;
-            padding: 40px 20px;
             display: flex;
-            justify-content: center;
+            height: 100vh;
+            background-color: #fafafa;
+            color: #333;
         }
-        .container {
-            max-width: 1000px;
-            width: 100%;
+
+        /* Menu Lateral (Sidebar) */
+        .sidebar {
+            width: 260px;
+            background-color: #ffffff;
+            border-right: 1px solid #eaeaea;
+            padding: 20px 0;
+            overflow-y: auto;
+            flex-shrink: 0;
         }
-        h1 {
-            color: #04d361;
-            border-bottom: 2px solid #202024;
-            padding-bottom: 20px;
-            margin-bottom: 10px;
+        .sidebar h2 {
+            font-size: 1.2rem;
+            color: #d9534f;
+            padding: 0 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .subtitle {
-            color: #a8a8b3;
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li a {
+            display: block;
+            padding: 12px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s, color 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .sidebar li a:hover {
+            background-color: #fff3ed;
+            color: #d9534f;
+            border-left: 3px solid #d9534f;
+        }
+
+        /* Área Principal de Conteúdo */
+        .main-content {
+            flex-grow: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+        }
+        .header {
             margin-bottom: 40px;
         }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Grid de Lições/Trabalhos */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         .card {
-            background-color: #202024;
-            border: 1px solid #29292e;
+            background-color: #ffffff;
+            border: 1px solid #eaeaea;
             border-radius: 8px;
-            padding: 20px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
         }
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #04d361;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            border-color: #d9534f;
+        }
+        .card-number {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
         .card h3 {
             margin: 0 0 10px 0;
-            color: #ffffff;
             font-size: 1.2rem;
+            color: #333;
         }
         .card p {
-            font-size: 0.9rem;
-            color: #a8a8b3;
-            margin: 0 0 20px 0;
-            flex-grow: 1;
+            font-size: 0.95rem;
+            color: #777;
+            margin: 0;
+            line-height: 1.5;
         }
-        .btn {
-            display: inline-block;
-            background-color: #04d361;
-            color: #0a0a0c;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.9rem;
+        
+        /* Ajuste específico para o terminal interativo */
+        .terminal-card {
+            grid-column: 1 / -1; 
+            border: 2px solid #d9534f; 
+            background-color: #fffbfa;
         }
-        .btn:hover {
-            background-color: #03bb54;
+        .terminal-card:hover {
+            transform: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Meu Portfólio de Algoritmos</h1>
-        <p class="subtitle">Olá! Este é o espaço onde organizo e apresento todas as soluções, códigos e relatórios desenvolvidos durante o semestre na disciplina de Algoritmos e Programação.</p>
+    <aside class="sidebar">
+        <h2>📚 Algoritmos</h2>
+        <ul>
+            <li><a href="10-exercicios/index.pdf" target="_blank">10 Exercícios</a></li>
+            <li><a href="15-exercicios/index.pdf" target="_blank">15 Exercícios</a></li>
+            <li><a href="evolucao-tecnica/app.py" target="_blank">Evolução Técnica</a></li>
+            <li><a href="exercicios-em-papel/index.pdf" target="_blank">Exercícios em Papel</a></li>
+            <li><a href="modularizacao/index.pdf" target="_blank">Modularização</a></li>
+            <li><a href="portal-alegrete/index.pdf" target="_blank">Portal Alegrete</a></li>
+            <li><a href="portal-alegrete-novo/index.pdf" target="_blank">Portal Alegrete (Novo)</a></li>
+            <li><a href="problema-1/index.pdf" target="_blank">Problema 1</a></li>
+            <li><a href="problema-2/index.pdf" target="_blank">Problema 2</a></li>
+            <li><a href="problema-de-engenharia/index.pdf" target="_blank">Problema de Eng.</a></li>
+            <li><a href="relato-entrevistas/index.pdf" target="_blank">Relato Entrevistas</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        
+        <div class="header">
+            <h1>Ambiente de Algoritmos</h1>
+            <p>Bem-vindo ao meu portfólio interativo. Explore os projetos através do menu lateral ou dos cards abaixo, e teste códigos em Python diretamente no navegador.</p>
+        </div>
 
         <div class="grid">
             
-            <div class="card">
+            <div class="card terminal-card">
+                <span class="card-number">Ambiente de Testes</span>
+                <h3>🐍 Terminal Python Interativo</h3>
+                <p style="margin-bottom: 20px;">Escreva ou cole qualquer algoritmo em Python abaixo e clique no botão de Play (no canto inferior direito do terminal) para executar em tempo real sem precisar instalar nada.</p>
+                
+                <script type="mpy" editor>
+# Teste seu código Python aqui!
+nome = "Professor"
+print(f"Olá, {nome}! Bem-vindo ao meu portfólio interativo.")
+
+print("\nGerando uma sequência:")
+for i in range(1, 6):
+    print(f"Número: {i}")
+                </script>
+            </div>
+
+            <a href="10-exercicios/index.pdf" target="_blank" class="card">
+                <span class="card-number">Atividade 01</span>
                 <h3>10 Exercícios</h3>
                 <p>Lista inicial contendo os primeiros passos e lógica de programação.</p>
-                <a href="10-exercicios/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+            </a>
 
-            <div class="card">
+            <a href="15-exercicios/index.pdf" target="_blank" class="card">
+                <span class="card-number">Atividade 02</span>
                 <h3>15 Exercícios</h3>
-                <p>Resolução de problemas focados em estruturas de repetição.</p>
-                <a href="15-exercicios/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Resolução de problemas focados em estruturas de repetição e decisão.</p>
+            </a>
 
-            <div class="card">
+            <a href="evolucao-tecnica/app.py" target="_blank" class="card">
+                <span class="card-number">Atividade 03</span>
                 <h3>Evolução Técnica</h3>
                 <p>Análise de desempenho e melhorias de códigos criados em Python.</p>
-                <a href="evolucao-tecnica/app.py" target="_blank" class="btn">Ver Código Python</a>
-            </div>
+            </a>
 
-            <div class="card">
+            <a href="exercicios-em-papel/index.pdf" target="_blank" class="card">
+                <span class="card-number">Atividade 04</span>
                 <h3>Exercícios em Papel</h3>
-                <p>Práticas de lógica e testes de mesa realizados manualmente.</p>
-                <a href="exercicios-em-papel/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Práticas de lógica e elaboração de testes de mesa realizados manualmente.</p>
+            </a>
 
-            <div class="card">
+            <a href="modularizacao/index.pdf" target="_blank" class="card">
+                <span class="card-number">Atividade 05</span>
                 <h3>Modularização</h3>
-                <p>Estudo e criação de funções e organização de código limpo.</p>
-                <a href="modularizacao/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Estudo avançado sobre criação de funções e organização de código limpo.</p>
+            </a>
 
-            <div class="card">
+            <a href="portal-alegrete/index.pdf" target="_blank" class="card">
+                <span class="card-number">Projeto</span>
                 <h3>Portal Alegrete</h3>
-                <p>Desenvolvimento e estruturação do projeto Portal Alegrete.</p>
-                <a href="portal-alegrete/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
-
-            <div class="card">
+                <p>Desenvolvimento e estruturação inicial do projeto Portal Alegrete.</p>
+            </a>
+            
+            <a href="portal-alegrete-novo/index.pdf" target="_blank" class="card">
+                <span class="card-number">Projeto</span>
                 <h3>Portal Alegrete (Novo)</h3>
-                <p>Atualizações, refatoração e melhorias aplicadas ao Portal Alegrete.</p>
-                <a href="portal-alegrete-novo/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Atualizações, refatoração de código e melhorias aplicadas ao projeto.</p>
+            </a>
 
-            <div class="card">
+            <a href="problema-1/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
                 <h3>Problema 1</h3>
-                <p>Resolução do primeiro grande desafio prático da disciplina.</p>
-                <a href="problema-1/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Resolução e documentação do primeiro grande desafio prático.</p>
+            </a>
 
-            <div class="card">
+            <a href="problema-2/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
                 <h3>Problema 2</h3>
-                <p>Desenvolvimento da solução para o segundo problema proposto.</p>
-                <a href="problema-2/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Desenvolvimento da solução estruturada para o segundo problema proposto.</p>
+            </a>
 
-            <div class="card">
+            <a href="problema-de-engenharia/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
                 <h3>Problema de Engenharia</h3>
-                <p>Aplicação de algoritmos e modelagem para resolução de problemas de engenharia.</p>
-                <a href="problema-de-engenharia/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Aplicação de algoritmos e modelagem matemática para engenharia.</p>
+            </a>
 
-            <div class="card">
+            <a href="relato-entrevistas/index.pdf" target="_blank" class="card">
+                <span class="card-number">Documentação</span>
                 <h3>Relato de Entrevistas</h3>
-                <p>Documentação e relatórios com os dados coletados nas entrevistas.</p>
-                <a href="relato-entrevistas/index.pdf" target="_blank" class="btn">Visualizar PDF</a>
-            </div>
+                <p>Relatórios detalhados com os dados coletados nas entrevistas.</p>
+            </a>
 
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
