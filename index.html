@@ -85,7 +85,7 @@
         .card-section { margin-bottom: 15px; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); }
         .card-section strong { color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.9rem;}
         
-        /* LINKS DOS ARQUIVOS (GERADOS AUTOMATICAMENTE) */
+        /* LINKS DOS ARQUIVOS */
         .file-links-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .file-link {
             display: inline-flex; align-items: center; gap: 8px;
@@ -97,8 +97,6 @@
         .file-link:hover { background-color: rgba(88, 166, 255, 0.2); }
         .link-python { color: var(--accent-green); background-color: rgba(63, 185, 80, 0.1); border-color: rgba(63, 185, 80, 0.2); }
         .link-python:hover { background-color: rgba(63, 185, 80, 0.2); }
-        .link-video { color: var(--accent-purple); background-color: rgba(163, 113, 247, 0.1); border-color: rgba(163, 113, 247, 0.2); }
-        .link-video:hover { background-color: rgba(163, 113, 247, 0.2); }
     </style>
 </head>
 <body>
@@ -128,7 +126,7 @@
     <main class="main-content">
         <div class="grid">
             
-            <div class="card" data-folder="10-exercicios">
+            <div class="card">
                 <div class="card-header">10 Exercícios Básicos</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Resolver uma lista introdutória de 10 algoritmos para fixação de conceitos básicos de programação.
@@ -138,11 +136,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="10-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="15-exercicios">
+            <div class="card">
                 <div class="card-header">15 Exercícios (Condicionais)</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Solucionar 15 problemas que exigem tomada de decisão e validação de regras de negócio.
@@ -152,11 +152,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="15-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="evolucao-tecnica">
+            <div class="card">
                 <div class="card-header">Evolução Técnica</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Identificar gargalos em um código previamente desenvolvido e propor otimizações.
@@ -166,11 +168,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="evolucao-tecnica/app.py" class="file-link link-python" target="_blank">🐍 app.py</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="exercicios-em-papel">
+            <div class="card">
                 <div class="card-header">Exercícios em Papel</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Desenvolver algoritmos e testes lógicos sem o auxílio de interpretadores ou IDEs.
@@ -180,11 +184,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="exercicios-em-papel/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="modularizacao">
+            <div class="card">
                 <div class="card-header">Modularização de Código</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Lidar com um código longo e repetitivo, dificultando a manutenção e leitura.
@@ -194,11 +200,14 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="modularizacao/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                        <a href="modularizacao/main.py" class="file-link link-python" target="_blank">🐍 main.py</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="portal-alegrete">
+            <div class="card">
                 <div class="card-header">Projeto: Portal Alegrete</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Criar a arquitetura lógica e os requisitos iniciais para um sistema web local.
@@ -208,11 +217,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="portal-alegrete/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="portal-alegrete-novo">
+            <div class="card">
                 <div class="card-header">Portal Alegrete (Refatorado)</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Atualizar o sistema antigo aplicando conceitos modernos de programação aprendidos no semestre.
@@ -222,11 +233,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="portal-alegrete-novo/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="problema-1">
+            <div class="card">
                 <div class="card-header">Desafio Prático 01</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Modelar um sistema estruturado para cálculo e processamento de variáveis físicas.
@@ -236,11 +249,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="problema-1/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="problema-2">
+            <div class="card">
                 <div class="card-header">Desafio Prático 02</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Desenvolver uma rotina de análise de dados estruturados com múltiplas variáveis.
@@ -250,11 +265,13 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="problema-2/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="problema-de-engenharia" style="border-color: rgba(227, 179, 65, 0.4);">
+            <div class="card" style="border-color: rgba(227, 179, 65, 0.4);">
                 <div class="card-header">Problema de Engenharia Aplicada</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Traduzir um problema complexo real da Engenharia Mecânica para linguagem de máquina.
@@ -264,11 +281,14 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="problema-de-engenharia/projeto_final.pdf" class="file-link" target="_blank">📄 projeto_final.pdf</a>
+                        <a href="problema-de-engenharia/simulacao.py" class="file-link link-python" target="_blank">🐍 simulacao.py</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-folder="relato-entrevistas">
+            <div class="card">
                 <div class="card-header">Relato de Entrevistas</div>
                 <div class="card-section">
                     <strong>🎯 O Problema:</strong> Coletar e compilar dados qualitativos de campo em um formato padronizado e limpo.
@@ -278,89 +298,14 @@
                 </div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Entregas Exatas:</strong>
-                    <div class="file-links-container">Buscando arquivos...</div>
+                    <div class="file-links-container">
+                        <a href="relato-entrevistas/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <script>
-        const usuario = "lorenzoximendesaluno-dotcom";
-        const repositorio = "portfolio-de-algoritmos"; 
-        const urlAPI = `https://api.github.com/repos/${usuario}/${repositorio}/git/trees/main?recursive=1`;
-
-        async function carregarArquivosDasPastas() {
-            const cards = document.querySelectorAll('.card');
-            let arvoreDeArquivos = null;
-
-            // 1. TENTA LER DO CACHE DO NAVEGADOR PARA NÃO BLOQUEAR O GITHUB NO F5
-            const cache = sessionStorage.getItem('portfolio_cache_arquivos');
-            if (cache) {
-                arvoreDeArquivos = JSON.parse(cache);
-            } else {
-                try {
-                    // Se não tem cache, faz a busca na internet
-                    const resposta = await fetch(urlAPI);
-                    if (!resposta.ok) throw new Error('Limite da API excedido.');
-                    const dados = await resposta.json();
-                    arvoreDeArquivos = dados.tree;
-                    // Salva na memória para as próximas atualizações da página
-                    sessionStorage.setItem('portfolio_cache_arquivos', JSON.stringify(arvoreDeArquivos));
-                } catch (erro) {
-                    cards.forEach(card => {
-                        const container = card.querySelector('.file-links-container');
-                        if (container) container.innerHTML = '<span style="color: var(--accent-yellow); font-size: 0.85rem;">Limite de buscas atingido. Aguarde alguns minutos.</span>';
-                    });
-                    return;
-                }
-            }
-
-            // 2. INJETA OS ARQUIVOS DENTRO DE CADA CARD DE ACORDO COM A PASTA
-            cards.forEach(card => {
-                const nomeDaPasta = card.getAttribute('data-folder');
-                const containerLinks = card.querySelector('.file-links-container');
-                if (!nomeDaPasta || !containerLinks) return;
-
-                containerLinks.innerHTML = ''; // Limpa o texto "Buscando..."
-
-                const arquivosDaPasta = arvoreDeArquivos.filter(item => 
-                    item.type === 'blob' && 
-                    item.path.startsWith(nomeDaPasta + '/') &&
-                    !item.path.endsWith('index.html') &&
-                    !item.path.endsWith('.gitattributes')
-                );
-
-                if (arquivosDaPasta.length === 0) {
-                    containerLinks.innerHTML = '<span style="color: var(--text-muted); font-size: 0.85rem;">Nenhum arquivo encontrado nesta pasta.</span>';
-                    return;
-                }
-
-                arquivosDaPasta.forEach(arquivo => {
-                    const caminhoCompleto = arquivo.path; 
-                    const nomeDoArquivo = caminhoCompleto.split('/').pop(); 
-                    
-                    let icone = "📄";
-                    let classeAdicional = "";
-
-                    if (nomeDoArquivo.endsWith('.py') || nomeDoArquivo.endsWith('.c')) {
-                        icone = "🐍"; classeAdicional = "link-python";
-                    } else if (nomeDoArquivo.endsWith('.mp4') || nomeDoArquivo.endsWith('.mkv')) {
-                        icone = "🎬"; classeAdicional = "link-video";
-                    }
-
-                    const link = document.createElement('a');
-                    link.href = caminhoCompleto; 
-                    link.target = "_blank";
-                    link.className = `file-link ${classeAdicional}`;
-                    link.innerHTML = `${icone} ${nomeDoArquivo}`;
-
-                    containerLinks.appendChild(link);
-                });
-            });
-        }
-
-        window.addEventListener('DOMContentLoaded', carregarArquivosDasPastas);
-    </script>
 </body>
 </html>
