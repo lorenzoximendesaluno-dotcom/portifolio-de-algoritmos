@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Atividades - Lorenzo Ximendes</title>
     
+    <!-- Biblioteca Prism.js para deixar o código colorido (Syntax Highlighting) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     
     <style>
@@ -57,13 +58,13 @@
 
         /* MODAL (POP-UP DO CÓDIGO) */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
-        .modal-content { background: var(--bg-color); width: 80%; max-width: 900px; max-height: 85vh; border-radius: 10px; border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .modal-content { background: var(--bg-color); width: 80%; max-width: 900px; height: 85vh; border-radius: 10px; border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .modal-header { padding: 15px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--sidebar-bg); }
         .modal-title { color: #fff; font-weight: bold; font-family: monospace; font-size: 1rem; }
         .close-btn { background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; transition: color 0.2s; }
         .close-btn:hover { color: #ff5555; }
         .modal-body { padding: 0; overflow-y: auto; flex: 1; background: #1d1f21; }
-        pre[class*="language-"] { margin: 0 !important; border-radius: 0 !important; border: none !important; }
+        pre[class*="language-"] { margin: 0 !important; border-radius: 0 !important; border: none !important; min-height: 100%; }
     </style>
 </head>
 <body>
@@ -85,38 +86,38 @@
             
             <div class="card">
                 <div class="card-header">10 Exercícios Básicos</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Lista introdutória de 10 algoritmos para fixação de conceitos.</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Lista introdutória de 10 algoritmos para fixação de conceitos básicos.</div>
                 <div class="card-section"><strong>💡 A Solução:</strong> Aplicação de estruturas sequenciais e operadores matemáticos.</div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Arquivos:</strong>
                     <div class="file-links-container">
-                        <a href="10-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 Relatório (PDF)</a>
-                        <button class="file-link link-python" onclick="openCode('10-exercicios/codigo.py')">💻 Ver Código Python</button>
+                        <a href="10-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <button class="file-link link-python" onclick="openCode('10-exercicios/codigo.py')">💻 Ver Código (codigo.py)</button>
                     </div>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">15 Exercícios (Condicionais)</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Problemas que exigem tomada de decisão e validação.</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Problemas que exigem tomada de decisão e validação de regras de negócio.</div>
                 <div class="card-section"><strong>💡 A Solução:</strong> Utilização aprofundada de estruturas condicionais (If/Else).</div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Arquivos:</strong>
                     <div class="file-links-container">
-                        <a href="15-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 Relatório (PDF)</a>
-                        <button class="file-link link-python" onclick="openCode('15-exercicios/codigo.py')">💻 Ver Código Python</button>
+                        <a href="15-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <button class="file-link link-python" onclick="openCode('15-exercicios/codigo.py')">💻 Ver Código (codigo.py)</button>
                     </div>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">Evolução Técnica</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Identificar gargalos e otimizar script.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Refatoração do script original em Python, reduzindo complexidade.</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Identificar gargalos em um código previamente desenvolvido e propor otimizações.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Refatoração do script original, reduzindo a complexidade ciclomática.</div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Arquivos:</strong>
                     <div class="file-links-container">
-                        <a href="evolucao-tecnica/index.pdf" class="file-link link-pdf" target="_blank">📄 Relatório (PDF)</a>
+                        <a href="evolucao-tecnica/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
                         <button class="file-link link-python" onclick="openCode('evolucao-tecnica/app.py')">💻 app.py</button>
                         <a href="evolucao-tecnica/en.mp4" class="file-link link-video" target="_blank">🎬 en.mp4</a>
                     </div>
@@ -126,27 +127,126 @@
             <div class="card">
                 <div class="card-header">Exercícios em Papel</div>
                 <div class="card-section"><strong>🎯 O Problema:</strong> Desenvolver algoritmos sem o auxílio de IDEs.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Testes de Mesa manuais para validar mudança de estado das variáveis.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Testes de Mesa manuais para validar lógicas e variáveis.</div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Arquivos:</strong>
                     <div class="file-links-container">
-                        <a href="exercicios-em-papel/index.pdf" class="file-link link-pdf" target="_blank">📄 Relatório (PDF)</a>
-                        <a href="exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" class="file-link link-pdf" target="_blank">📄 Relatório Comparativo</a>
-                        <button class="file-link link-python" onclick="openCode('exercicios-em-papel/codigo_transcrito.py')">💻 Ver Código Transcrito</button>
-                        <a href="exercicios-em-papel/1000236481.jpg" class="file-link link-img" target="_blank">🖼️ Foto do Papel</a>
+                        <a href="exercicios-em-papel/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="exercicios-em-papel/codigo_python_melhorado.pdf" class="file-link link-pdf" target="_blank">📄 codigo_python_melhorado.pdf</a>
+                        <a href="exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" class="file-link link-pdf" target="_blank">📄 Relatorio_Comparativo_Codigos.pdf</a>
+                        <button class="file-link link-python" onclick="openCode('exercicios-em-papel/codigo_transcrito.py')">💻 Ver Código Transcrito (.py)</button>
+                        <a href="exercicios-em-papel/1000236481.jpg" class="file-link link-img" target="_blank">🖼️ 1000236481.jpg</a>
+                        <a href="exercicios-em-papel/1000236482.jpg" class="file-link link-img" target="_blank">🖼️ 1000236482.jpg</a>
+                        <a href="exercicios-em-papel/1000236483.jpg" class="file-link link-img" target="_blank">🖼️ 1000236483.jpg</a>
+                        <a href="exercicios-em-papel/1000236484.jpg" class="file-link link-img" target="_blank">🖼️ 1000236484.jpg</a>
+                        <a href="exercicios-em-papel/1000236485.jpg" class="file-link link-img" target="_blank">🖼️ 1000236485.jpg</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Modularização de Código</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Lidar com um código longo e repetitivo, dificultando a manutenção e leitura.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Segmentação da lógica em diversas funções e módulos isolados.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="modularizacao/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="modularizacao/Pergunta realizada as LLMs.pdf" class="file-link link-pdf" target="_blank">📄 Pergunta realizada as LLMs.pdf</a>
+                        <a href="modularizacao/Tabela comparativa.pdf" class="file-link link-pdf" target="_blank">📄 Tabela comparativa.pdf</a>
+                        <button class="file-link link-python" onclick="openCode('modularizacao/monitoramento_freio_srad1000.py')">💻 monitoramento_freio_srad1000.py</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Projeto: Portal Alegrete</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Criar a arquitetura lógica e os requisitos iniciais para um sistema web.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Levantamento de requisitos e estruturação funcional.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="portal-alegrete/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Portal Alegrete (Refatorado)</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Atualizar o sistema antigo aplicando conceitos modernos.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Implementação de novas funcionalidades e documentação avançada.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="portal-alegrete-novo/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="portal-alegrete-novo/relatorio da atividade.pdf" class="file-link link-pdf" target="_blank">📄 relatorio da atividade.pdf</a>
+                        <a href="portal-alegrete-novo/relatorio_novos_eventos.pdf" class="file-link link-pdf" target="_blank">📄 relatorio_novos_eventos.pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Desafio Prático 01: Treliça Plana</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Analisar forças em uma treliça isostática via sistemas matriciais.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Testes comparativos de algoritmos criados por diferentes IAs.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="problema-1/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="problema-1/analise e codigo refeito-gpt.pdf" class="file-link link-pdf" target="_blank">📄 analise e codigo refeito-gpt.pdf</a>
+                        <a href="problema-1/analise-deepseek.pdf" class="file-link link-pdf" target="_blank">📄 analise-deepseek.pdf</a>
+                        <a href="problema-1/analise-gemini.pdf" class="file-link link-pdf" target="_blank">📄 analise-gemini.pdf</a>
+                        <a href="problema-1/codigo deep seek.pdf" class="file-link link-pdf" target="_blank">📄 codigo deep seek.pdf</a>
+                        <a href="problema-1/codigo gemini.pdf" class="file-link link-pdf" target="_blank">📄 codigo gemini.pdf</a>
+                        <a href="problema-1/codigo gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo gpt.pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Desafio Prático 02: Abastecimento de Água</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Calcular demanda, custo e autonomia de distribuição hídrica.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Algoritmo de controle com tabelas comparativas geradas por LLMs.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="problema-2/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="problema-2/codigo chat gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo chat gpt.pdf</a>
+                        <a href="problema-2/codigo corrigido deepseek.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido deepseek.pdf</a>
+                        <a href="problema-2/codigo corrigido gemini.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido gemini.pdf</a>
+                        <a href="problema-2/codigo corrigido gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido gpt.pdf</a>
+                        <a href="problema-2/comparação entre os 3 - comparação entre os 3.pdf" class="file-link link-pdf" target="_blank">📄 comparação entre os 3.pdf</a>
+                        <a href="problema-2/deepseek codigo.pdf" class="file-link link-pdf" target="_blank">📄 deepseek codigo.pdf</a>
+                        <a href="problema-2/desafio gpt.pdf" class="file-link link-pdf" target="_blank">📄 desafio gpt.pdf</a>
+                        <a href="problema-2/gemini.pdf" class="file-link link-pdf" target="_blank">📄 gemini.pdf</a>
                     </div>
                 </div>
             </div>
 
             <div class="card" style="border-color: rgba(227, 179, 65, 0.4);">
                 <div class="card-header">Problema de Engenharia Aplicada</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Traduzir um problema complexo real da Engenharia.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Modelagem matemática robusta em um algoritmo eficiente.</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Traduzir um problema complexo da Engenharia Mecânica para código.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Modelagem matemática no Simulador de Usina de Biomassa.</div>
                 <div class="card-section" style="margin-bottom: 0;">
                     <strong>📦 Arquivos:</strong>
                     <div class="file-links-container">
-                        <a href="problema-de-engenharia/index.pdf" class="file-link link-pdf" target="_blank">📄 Relatório Final</a>
-                        <button class="file-link link-python" onclick="openCode('problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx')">💻 Ver Simulador (Código)</button>
+                        <a href="problema-de-engenharia/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
+                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113710.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113710.pdf</a>
+                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113719.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113719.pdf</a>
+                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113726.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113726.pdf</a>
+                        <button class="file-link link-python" onclick="openCode('problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx')">💻 Ver Simulador (.jsx)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Relato de Entrevistas</div>
+                <div class="card-section"><strong>🎯 O Problema:</strong> Coletar e compilar dados qualitativos de campo em formato padronizado.</div>
+                <div class="card-section"><strong>💡 A Solução:</strong> Transcrição e análise dos pontos em comum gerando relatório conclusivo.</div>
+                <div class="card-section" style="margin-bottom: 0;">
+                    <strong>📦 Arquivos:</strong>
+                    <div class="file-links-container">
+                        <a href="relato-entrevistas/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
                     </div>
                 </div>
             </div>
@@ -157,7 +257,7 @@
     <div class="modal-overlay" id="codeModal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="modal-title" id="modalTitle">codigo.py</span>
+                <span class="modal-title" id="modalTitle">Arquivo</span>
                 <button class="close-btn" onclick="closeCode()">&times;</button>
             </div>
             <div class="modal-body">
@@ -168,23 +268,32 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    
     <script>
         function openCode(filePath) {
             document.getElementById('codeModal').style.display = 'flex';
             document.getElementById('modalTitle').innerText = filePath;
             document.getElementById('codeBlock').innerText = 'Carregando código...';
             
+            const codeEl = document.getElementById('codeBlock');
+            if(filePath.endsWith('.jsx')) {
+                codeEl.className = 'language-jsx';
+            } else {
+                codeEl.className = 'language-python';
+            }
+            
             fetch(filePath)
                 .then(response => {
-                    if (!response.ok) throw new Error('Arquivo de código não encontrado! Você já criou o arquivo ' + filePath + ' na pasta?');
+                    if (!response.ok) throw new Error('Arquivo não encontrado.');
                     return response.text();
                 })
                 .then(text => {
-                    document.getElementById('codeBlock').innerText = text;
-                    Prism.highlightElement(document.getElementById('codeBlock'));
+                    codeEl.innerText = text;
+                    Prism.highlightElement(codeEl);
                 })
                 .catch(err => {
-                    document.getElementById('codeBlock').innerText = '⚠️ ERRO: ' + err.message + '\n\nCertifique-se de que você copiou o código do PDF e salvou como um arquivo de texto (.py) exatamente com este nome e nesta pasta.';
+                    codeEl.innerText = '⚠️ ERRO: ' + err.message + '\n\nArquivo ausente no repositório.';
                 });
         }
 
