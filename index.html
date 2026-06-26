@@ -95,9 +95,12 @@
             display: flex;
             flex-direction: column;
         }
-        .card:hover {
+        .card:not(.terminal-card):not(.folder-card):hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            border-color: #d9534f;
+        }
+        .folder-card {
             border-color: #d9534f;
         }
         .card-number {
@@ -125,123 +128,6 @@
             border: 2px solid #d9534f; 
             background-color: #fffbfa;
         }
-        .terminal-card:hover {
-            transform: none;
-        }
     </style>
 </head>
 <body>
-
-    <aside class="sidebar">
-        <h2>📚 Algoritmos</h2>
-        <ul>
-            <li><a href="10-exercicios/index.pdf" target="_blank">10 Exercícios</a></li>
-            <li><a href="15-exercicios/index.pdf" target="_blank">15 Exercícios</a></li>
-            <li><a href="evolucao-tecnica/app.py" target="_blank">Evolução Técnica</a></li>
-            <li><a href="exercicios-em-papel/index.pdf" target="_blank">Exercícios em Papel</a></li>
-            <li><a href="modularizacao/index.pdf" target="_blank">Modularização</a></li>
-            <li><a href="portal-alegrete/index.pdf" target="_blank">Portal Alegrete</a></li>
-            <li><a href="portal-alegrete-novo/index.pdf" target="_blank">Portal Alegrete (Novo)</a></li>
-            <li><a href="problema-1/index.pdf" target="_blank">Problema 1</a></li>
-            <li><a href="problema-2/index.pdf" target="_blank">Problema 2</a></li>
-            <li><a href="problema-de-engenharia/index.pdf" target="_blank">Problema de Eng.</a></li>
-            <li><a href="relato-entrevistas/index.pdf" target="_blank">Relato Entrevistas</a></li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
-        
-        <div class="header">
-            <h1>Ambiente de Algoritmos</h1>
-            <p>Bem-vindo ao meu portfólio interativo. Explore os projetos através do menu lateral ou dos cards abaixo, e teste códigos em Python diretamente no navegador.</p>
-        </div>
-
-        <div class="grid">
-            
-            <div class="card terminal-card">
-                <span class="card-number">Ambiente de Testes</span>
-                <h3>🐍 Terminal Python Interativo</h3>
-                <p style="margin-bottom: 20px;">Escreva ou cole qualquer algoritmo em Python abaixo e clique no botão de Play (no canto inferior direito do terminal) para executar em tempo real sem precisar instalar nada.</p>
-                
-                <script type="mpy" editor>
-# Teste seu código Python aqui!
-nome = "Professor"
-print(f"Olá, {nome}! Bem-vindo ao meu portfólio interativo.")
-
-print("\nGerando uma sequência:")
-for i in range(1, 6):
-    print(f"Número: {i}")
-                </script>
-            </div>
-
-            <a href="10-exercicios/index.pdf" target="_blank" class="card">
-                <span class="card-number">Atividade 01</span>
-                <h3>10 Exercícios</h3>
-                <p>Lista inicial contendo os primeiros passos e lógica de programação.</p>
-            </a>
-
-            <a href="15-exercicios/index.pdf" target="_blank" class="card">
-                <span class="card-number">Atividade 02</span>
-                <h3>15 Exercícios</h3>
-                <p>Resolução de problemas focados em estruturas de repetição e decisão.</p>
-            </a>
-
-            <a href="evolucao-tecnica/app.py" target="_blank" class="card">
-                <span class="card-number">Atividade 03</span>
-                <h3>Evolução Técnica</h3>
-                <p>Análise de desempenho e melhorias de códigos criados em Python.</p>
-            </a>
-
-            <a href="exercicios-em-papel/index.pdf" target="_blank" class="card">
-                <span class="card-number">Atividade 04</span>
-                <h3>Exercícios em Papel</h3>
-                <p>Práticas de lógica e elaboração de testes de mesa realizados manualmente.</p>
-            </a>
-
-            <a href="modularizacao/index.pdf" target="_blank" class="card">
-                <span class="card-number">Atividade 05</span>
-                <h3>Modularização</h3>
-                <p>Estudo avançado sobre criação de funções e organização de código limpo.</p>
-            </a>
-
-            <a href="portal-alegrete/index.pdf" target="_blank" class="card">
-                <span class="card-number">Projeto</span>
-                <h3>Portal Alegrete</h3>
-                <p>Desenvolvimento e estruturação inicial do projeto Portal Alegrete.</p>
-            </a>
-            
-            <a href="portal-alegrete-novo/index.pdf" target="_blank" class="card">
-                <span class="card-number">Projeto</span>
-                <h3>Portal Alegrete (Novo)</h3>
-                <p>Atualizações, refatoração de código e melhorias aplicadas ao projeto.</p>
-            </a>
-
-            <a href="problema-1/index.pdf" target="_blank" class="card">
-                <span class="card-number">Desafio</span>
-                <h3>Problema 1</h3>
-                <p>Resolução e documentação do primeiro grande desafio prático.</p>
-            </a>
-
-            <a href="problema-2/index.pdf" target="_blank" class="card">
-                <span class="card-number">Desafio</span>
-                <h3>Problema 2</h3>
-                <p>Desenvolvimento da solução estruturada para o segundo problema proposto.</p>
-            </a>
-
-            <a href="problema-de-engenharia/index.pdf" target="_blank" class="card">
-                <span class="card-number">Desafio</span>
-                <h3>Problema de Engenharia</h3>
-                <p>Aplicação de algoritmos e modelagem matemática para engenharia.</p>
-            </a>
-
-            <a href="relato-entrevistas/index.pdf" target="_blank" class="card">
-                <span class="card-number">Documentação</span>
-                <h3>Relato de Entrevistas</h3>
-                <p>Relatórios detalhados com os dados coletados nas entrevistas.</p>
-            </a>
-
-        </div>
-    </main>
-
-</body>
-</html>
