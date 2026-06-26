@@ -15,7 +15,7 @@
             --accent-blue: #58a6ff;
             --accent-green: #3fb950;
             --accent-yellow: #e3b341;
-            --accent-orange: #f0883e;
+            --accent-purple: #a371f7;
         }
 
         body {
@@ -82,7 +82,6 @@
             font-size: 0.95rem;
         }
 
-        /* GRÁFICO DE PROGRESSO */
         .progress-container {
             display: flex;
             flex-direction: column;
@@ -119,34 +118,13 @@
             text-align: center;
         }
 
-        .stat-box .number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .stat-box .label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
+        .stat-box .number { font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-bottom: 5px; }
+        .stat-box .label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
 
         /* CONTEÚDO PRINCIPAL (Grid de Cards) */
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            overflow-y: auto;
-        }
+        .main-content { flex: 1; padding: 40px; overflow-y: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding-bottom: 40px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            padding-bottom: 40px;
-        }
-
-        /* ESTILO DOS CARDS */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -156,102 +134,49 @@
             flex-direction: column;
             transition: border-color 0.2s;
         }
+        .card:hover { border-color: var(--text-muted); }
 
-        .card:hover {
-            border-color: var(--text-muted);
-        }
+        .card-header { font-size: 1.1rem; font-weight: 600; color: #ffffff; margin-bottom: 10px; line-height: 1.4; }
+        .card-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; flex-grow: 1; }
 
-        .card-header {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
-            flex-grow: 1;
-        }
-
-        /* LINKS DOS ARQUIVOS */
-        .file-links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .file-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: rgba(88, 166, 255, 0.1);
-            color: var(--accent-blue);
-            padding: 8px 14px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-            width: fit-content;
-            transition: background-color 0.2s;
-        }
+        /* LINKS DOS ARQUIVOS (Coloração Dinâmica) */
+        .file-links-container { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
         
+        .file-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            background-color: rgba(88, 166, 255, 0.1); color: var(--accent-blue);
+            padding: 8px 14px; border-radius: 20px; text-decoration: none;
+            font-size: 0.85rem; border: 1px solid rgba(88, 166, 255, 0.2);
+            width: fit-content; transition: background-color 0.2s;
+            word-break: break-all;
+        }
         .file-link:hover { background-color: rgba(88, 166, 255, 0.2); }
         
-        .link-python {
-            color: var(--accent-green);
-            background-color: rgba(63, 185, 80, 0.1);
-            border-color: rgba(63, 185, 80, 0.2);
-        }
+        .link-python { color: var(--accent-green); background-color: rgba(63, 185, 80, 0.1); border-color: rgba(63, 185, 80, 0.2); }
         .link-python:hover { background-color: rgba(63, 185, 80, 0.2); }
 
-        .link-video {
-            color: #a371f7;
-            background-color: rgba(163, 113, 247, 0.1);
-            border-color: rgba(163, 113, 247, 0.2);
-        }
+        .link-video { color: var(--accent-purple); background-color: rgba(163, 113, 247, 0.1); border-color: rgba(163, 113, 247, 0.2); }
         .link-video:hover { background-color: rgba(163, 113, 247, 0.2); }
+
+        .link-txt { color: var(--text-main); background-color: rgba(201, 209, 217, 0.1); border-color: rgba(201, 209, 217, 0.2); }
+        .link-txt:hover { background-color: rgba(201, 209, 217, 0.2); }
 
         /* RODAPÉ DO CARD */
         .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border-color);
         }
 
-        .status {
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .status { font-size: 0.75rem; font-weight: bold; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; }
         .status-pendente { color: var(--accent-yellow); }
-
-        .classroom-link {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-        .classroom-link:hover {
-            text-decoration: underline;
-            color: var(--text-main);
-        }
+        .classroom-link { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; }
+        .classroom-link:hover { text-decoration: underline; color: var(--text-main); }
     </style>
 </head>
 <body>
 
     <aside class="sidebar">
-        <div class="logo-area">
-            ⚙️ // ENG. MECÂNICA
-        </div>
+        <div class="logo-area">⚙️ // ENG. MECÂNICA</div>
         <h1>Painel de Atividades</h1>
         <p>Histórico das atividades enviadas e projetos desenvolvidos ao longo do semestre.</p>
 
@@ -267,152 +192,89 @@
         </div>
 
         <div class="stats">
-            <div class="stat-box">
-                <div class="number">11</div>
-                <div class="label">Enviadas</div>
-            </div>
-            <div class="stat-box">
-                <div class="number">0</div>
-                <div class="label">Pendentes</div>
-            </div>
+            <div class="stat-box"><div class="number">11</div><div class="label">Enviadas</div></div>
+            <div class="stat-box"><div class="number">0</div><div class="label">Pendentes</div></div>
         </div>
     </aside>
 
     <main class="main-content">
-        <div class="grid">
+        <div class="grid" id="cards-container">
             
-            <div class="card" style="border-color: rgba(88, 166, 255, 0.4);">
+            <div class="card" data-folder="10-exercicios">
                 <div class="card-header">10 Exercícios</div>
-                <div class="card-desc">Todos os PDFs e códigos salvos nesta pasta são listados automaticamente abaixo pelo nosso script.</div>
-                
-                <div class="file-links-container" id="lista-arquivos-10">
-                    <span style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">Buscando entregas na pasta...</span>
-                </div>
-                
-                <div class="card-footer">
-                    <span class="status">Automação Ativa</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="card-desc">Resolução e listagem completa dos 10 exercícios propostos em sala.</div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="15-exercicios">
                 <div class="card-header">15 Exercícios</div>
                 <div class="card-desc">Resolução de problemas focados em estruturas de repetição e decisão.</div>
-                <div class="file-links-container">
-                    <a href="15-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="evolucao-tecnica">
                 <div class="card-header">Evolução Técnica</div>
                 <div class="card-desc">Análise de desempenho e melhorias de códigos criados em Python.</div>
-                <div class="file-links-container">
-                    <a href="evolucao-tecnica/app.py" class="file-link link-python" target="_blank">🐍 app.py</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="exercicios-em-papel">
                 <div class="card-header">Exercícios em Papel</div>
                 <div class="card-desc">Práticas de lógica e elaboração de testes de mesa realizados manualmente.</div>
-                <div class="file-links-container">
-                    <a href="exercicios-em-papel/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="modularizacao">
                 <div class="card-header">Modularização</div>
                 <div class="card-desc">Estudo avançado sobre criação de funções e organização de código limpo.</div>
-                <div class="file-links-container">
-                    <a href="modularizacao/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="portal-alegrete">
                 <div class="card-header">Portal Alegrete</div>
                 <div class="card-desc">Desenvolvimento e estruturação inicial do projeto Portal Alegrete.</div>
-                <div class="file-links-container">
-                    <a href="portal-alegrete/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="portal-alegrete-novo">
                 <div class="card-header">Portal Alegrete (Novo)</div>
                 <div class="card-desc">Atualizações, refatoração de código e melhorias aplicadas ao projeto.</div>
-                <div class="file-links-container">
-                    <a href="portal-alegrete-novo/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="problema-1">
                 <div class="card-header">Problema 1</div>
                 <div class="card-desc">Resolução e documentação do primeiro grande desafio prático da disciplina.</div>
-                <div class="file-links-container">
-                    <a href="problema-1/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="problema-2">
                 <div class="card-header">Problema 2</div>
                 <div class="card-desc">Desenvolvimento da solução estruturada para o segundo problema proposto.</div>
-                <div class="file-links-container">
-                    <a href="problema-2/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card" style="border-color: rgba(227, 179, 65, 0.4);">
+            <div class="card" data-folder="problema-de-engenharia" style="border-color: rgba(227, 179, 65, 0.4);">
                 <div class="card-header">Problema de Engenharia</div>
                 <div class="card-desc">Aplicação de algoritmos e modelagem matemática para engenharia mecânica.</div>
-                <div class="file-links-container">
-                    <a href="problema-de-engenharia/index.pdf" class="file-link" target="_blank">📄 projeto_final.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status status-pendente">Em Análise</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status status-pendente">Em Análise</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
-            <div class="card">
+            <div class="card" data-folder="relato-entrevistas">
                 <div class="card-header">Relato de Entrevistas</div>
                 <div class="card-desc">Relatórios detalhados com os dados coletados nas entrevistas documentadas.</div>
-                <div class="file-links-container">
-                    <a href="relato-entrevistas/index.pdf" class="file-link" target="_blank">📄 index.pdf</a>
-                </div>
-                <div class="card-footer">
-                    <span class="status">Enviada</span>
-                    <span class="classroom-link">ver no Classroom →</span>
-                </div>
+                <div class="file-links-container">Buscando arquivos...</div>
+                <div class="card-footer"><span class="status">Enviada</span><span class="classroom-link">ver no Classroom →</span></div>
             </div>
 
         </div>
@@ -421,55 +283,82 @@
     <script>
         const usuario = "lorenzoximendesaluno-dotcom";
         const repositorio = "portfolio-de-algoritmos"; 
-        const pasta = "10-exercicios";
-        const urlAPI = `https://api.github.com/repos/${usuario}/${repositorio}/contents/${pasta}`;
+        // Faz uma requisição na "árvore" inteira do repositório de uma só vez
+        const urlAPI = `https://api.github.com/repos/${usuario}/${repositorio}/git/trees/main?recursive=1`;
 
-        async function carregarArquivosAutomaticos() {
-            const container = document.getElementById('lista-arquivos-10');
+        async function carregarTodosOsArquivos() {
+            const cards = document.querySelectorAll('.card');
+
             try {
                 const resposta = await fetch(urlAPI);
-                if (!resposta.ok) throw new Error('Falha na API GitHub');
+                if (!resposta.ok) throw new Error('Limite da API excedido ou repositório não encontrado.');
                 
-                const arquivos = await resposta.json();
-                container.innerHTML = ''; 
+                const dados = await resposta.json();
+                
+                // Passa por cada card na tela
+                cards.forEach(card => {
+                    const nomeDaPasta = card.getAttribute('data-folder');
+                    const containerLinks = card.querySelector('.file-links-container');
+                    
+                    if (!nomeDaPasta) return;
+                    
+                    // Limpa o texto de carregamento
+                    containerLinks.innerHTML = '';
 
-                const arquivosValidos = arquivos.filter(arq => arq.name !== "index.html" && arq.type === "file");
+                    // Filtra apenas os arquivos (blob) que pertencem àquela pasta específica, ignorando index.html
+                    const arquivosDaPasta = dados.tree.filter(item => 
+                        item.type === 'blob' && 
+                        item.path.startsWith(nomeDaPasta + '/') &&
+                        !item.path.endsWith('index.html')
+                    );
 
-                if (arquivosValidos.length === 0) {
-                    container.innerHTML = '<span style="color: var(--text-muted); font-size: 0.85rem;">Nenhum arquivo extra encontrado.</span>';
-                    return;
-                }
-
-                arquivosValidos.forEach(arquivo => {
-                    const nome = arquivo.name;
-                    let icone = "📄";
-                    let classeBotao = "file-link"; 
-
-                    if (nome.endsWith('.mp4') || nome.endsWith('.mkv') || nome.endsWith('.avi')) {
-                        icone = "🎬";
-                        classeBotao = "file-link link-video";
-                    } else if (nome.endsWith('.py')) {
-                        icone = "🐍";
-                        classeBotao = "file-link link-python";
-                    } else if (nome.endsWith('.pdf')) {
-                        icone = "📄";
+                    if (arquivosDaPasta.length === 0) {
+                        containerLinks.innerHTML = '<span style="color: var(--text-muted); font-size: 0.85rem;">Nenhum arquivo encontrado.</span>';
+                        return;
                     }
 
-                    const link = document.createElement('a');
-                    link.href = `${pasta}/${nome}`;
-                    link.target = "_blank";
-                    link.className = classeBotao;
-                    link.innerHTML = `${icone} ${nome}`;
+                    // Cria os botões visuais
+                    arquivosDaPasta.forEach(arquivo => {
+                        const caminhoCompleto = arquivo.path; // ex: "10-exercicios/codigo.c"
+                        const nomeDoArquivo = caminhoCompleto.split('/').pop(); // ex: "codigo.c"
+                        
+                        let icone = "📄";
+                        let classeAdicional = "";
 
-                    container.appendChild(link);
+                        // Define a cor e o ícone baseado na extensão
+                        if (nomeDoArquivo.endsWith('.py')) {
+                            icone = "🐍"; classeAdicional = "link-python";
+                        } else if (nomeDoArquivo.endsWith('.c') || nomeDoArquivo.endsWith('.cpp')) {
+                            icone = "💻"; classeAdicional = "link-python";
+                        } else if (nomeDoArquivo.endsWith('.mp4') || nomeDoArquivo.endsWith('.mkv')) {
+                            icone = "🎬"; classeAdicional = "link-video";
+                        } else if (nomeDoArquivo.endsWith('.txt') || nomeDoArquivo.endsWith('.md')) {
+                            icone = "📝"; classeAdicional = "link-txt";
+                        } else if (nomeDoArquivo.endsWith('.png') || nomeDoArquivo.endsWith('.jpg') || nomeDoArquivo.endsWith('.jpeg')) {
+                            icone = "🖼️"; classeAdicional = "link-txt";
+                        }
+
+                        const link = document.createElement('a');
+                        link.href = caminhoCompleto; 
+                        link.target = "_blank";
+                        link.className = `file-link ${classeAdicional}`;
+                        link.innerHTML = `${icone} ${nomeDoArquivo}`;
+
+                        containerLinks.appendChild(link);
+                    });
                 });
+
             } catch (erro) {
                 console.error(erro);
-                container.innerHTML = '<span style="color: var(--accent-yellow); font-size: 0.85rem;">Sincronizando com o GitHub... Aguarde e atualize a página.</span>';
+                // Se der erro de API, avisa nos cards
+                cards.forEach(card => {
+                    const container = card.querySelector('.file-links-container');
+                    container.innerHTML = '<span style="color: var(--accent-yellow); font-size: 0.85rem;">Atualize a página (F5) em alguns minutos.</span>';
+                });
             }
         }
 
-        window.addEventListener('DOMContentLoaded', carregarArquivosAutomaticos);
+        window.addEventListener('DOMContentLoaded', carregarTodosOsArquivos);
     </script>
 </body>
 </html>
