@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Algoritmos</title>
-    
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
     <style>
+        /* Estilos gerais */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -18,7 +16,7 @@
             color: #333;
         }
 
-        /* Menu Lateral */
+        /* Menu Lateral (Sidebar) */
         .sidebar {
             width: 260px;
             background-color: #ffffff;
@@ -56,7 +54,7 @@
             border-left: 3px solid #d9534f;
         }
 
-        /* Conteúdo Principal */
+        /* Área Principal de Conteúdo */
         .main-content {
             flex-grow: 1;
             padding: 40px 60px;
@@ -77,7 +75,7 @@
             line-height: 1.6;
         }
 
-        /* Grid de Cards */
+        /* Grid de Lições/Trabalhos */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -94,14 +92,13 @@
             display: flex;
             flex-direction: column;
         }
-        .card:not(.terminal-card):not(.folder-card):hover {
+        .card:not(.folder-card):hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.05);
             border-color: #d9534f;
         }
         .folder-card {
             border-color: #d9534f;
-            grid-column: span 1;
         }
         .card-number {
             font-size: 0.85rem;
@@ -120,12 +117,6 @@
             color: #777;
             margin: 0;
             line-height: 1.5;
-        }
-        
-        .terminal-card {
-            grid-column: 1 / -1; 
-            border: 2px solid #d9534f; 
-            background-color: #fffbfa;
         }
     </style>
 </head>
@@ -149,27 +140,18 @@
     </aside>
 
     <main class="main-content">
+        
         <div class="header">
             <h1>Ambiente de Algoritmos</h1>
-            <p>Bem-vindo ao meu portfólio interativo. Explore os projetos através do menu lateral ou dos cards abaixo.</p>
+            <p>Bem-vindo ao meu portfólio. Explore os projetos através do menu lateral ou dos cards abaixo.</p>
         </div>
 
         <div class="grid">
             
-            <div class="card terminal-card">
-                <span class="card-number">Ambiente de Testes</span>
-                <h3>🐍 Terminal Python Interativo</h3>
-                <p style="margin-bottom: 20px;">Escreva ou cole qualquer algoritmo abaixo e clique no botão de Play para rodar em tempo real.</p>
-                <script type="mpy" editor>
-nome = "Professor"
-print(f"Olá, {nome}! Bem-vindo ao meu portfólio interativo.")
-                </script>
-            </div>
-
             <div class="card folder-card">
                 <span class="card-number">Atividade 01</span>
                 <h3>10 Exercícios</h3>
-                <p style="margin-bottom: 15px;">Todos os arquivos salvos nesta pasta (PDFs, vídeos e códigos) são detectados automaticamente:</p>
+                <p style="margin-bottom: 15px;">Todos os arquivos salvos nesta pasta (PDFs, vídeos e códigos) são detectados e listados abaixo automaticamente:</p>
                 
                 <div id="lista-arquivos-10" style="display: flex; flex-direction: column; gap: 8px; margin-top: auto;">
                     <span style="color: #999; font-size: 0.85rem; font-style: italic;">Buscando entregas na pasta...</span>
@@ -205,6 +187,36 @@ print(f"Olá, {nome}! Bem-vindo ao meu portfólio interativo.")
                 <h3>Portal Alegrete</h3>
                 <p>Desenvolvimento e estruturação inicial do projeto Portal Alegrete.</p>
             </a>
+            
+            <a href="portal-alegrete-novo/index.pdf" target="_blank" class="card">
+                <span class="card-number">Projeto</span>
+                <h3>Portal Alegrete (Novo)</h3>
+                <p>Atualizações, refatoração de código e melhorias aplicadas ao projeto.</p>
+            </a>
+
+            <a href="problema-1/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
+                <h3>Problema 1</h3>
+                <p>Resolução e documentação do primeiro grande desafio prático.</p>
+            </a>
+
+            <a href="problema-2/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
+                <h3>Problema 2</h3>
+                <p>Desenvolvimento da solução estruturada para o segundo problema proposto.</p>
+            </a>
+
+            <a href="problema-de-engenharia/index.pdf" target="_blank" class="card">
+                <span class="card-number">Desafio</span>
+                <h3>Problema de Engenharia</h3>
+                <p>Aplicação de algoritmos e modelagem matemática para engenharia.</p>
+            </a>
+
+            <a href="relato-entrevistas/index.pdf" target="_blank" class="card">
+                <span class="card-number">Documentação</span>
+                <h3>Relato de Entrevistas</h3>
+                <p>Relatórios detalhados com os dados coletados nas entrevistas.</p>
+            </a>
 
         </div>
     </main>
@@ -215,48 +227,57 @@ print(f"Olá, {nome}! Bem-vindo ao meu portfólio interativo.")
         const pasta = "10-exercicios";
         const urlAPI = `https://api.github.com/repos/${usuario}/${repositorio}/contents/${pasta}`;
 
-        async function carregarArquivos() {
+        async function carregarArquivosAutomaticos() {
             const container = document.getElementById('lista-arquivos-10');
             try {
                 const resposta = await fetch(urlAPI);
-                if (!resposta.ok) throw new Error('Erro na API');
+                if (!resposta.ok) throw new Error('Não foi possível ler os arquivos da pasta do GitHub');
+                
                 const arquivos = await resposta.json();
                 container.innerHTML = ''; 
 
+                // Filtra para remover páginas HTML que possam conflitar
                 const arquivosValidos = arquivos.filter(arq => arq.name !== "index.html" && arq.type === "file");
 
                 if (arquivosValidos.length === 0) {
-                    container.innerHTML = '<span style="color: #999; font-size: 0.85rem;">Nenhum arquivo na pasta.</span>';
+                    container.innerHTML = '<span style="color: #999; font-size: 0.85rem;">Nenhum arquivo extra encontrado.</span>';
                     return;
                 }
 
                 arquivosValidos.forEach(arquivo => {
                     const nome = arquivo.name;
                     let icone = "📄";
-                    let cor = "#d9534f";
+                    let cor = "#d9534f"; // Cor padrão vermelha
 
+                    // Mapeia ícones e cores conforme extensões
                     if (nome.endsWith('.mp4') || nome.endsWith('.mkv') || nome.endsWith('.avi') || nome.endsWith('.mov')) {
                         icone = "🎬 Vídeo:";
-                        cor = "#0275d8";
+                        cor = "#0275d8"; // Azul para multimídia
                     } else if (nome.endsWith('.pdf')) {
                         icone = "📕 PDF:";
                     } else if (nome.endsWith('.py')) {
-                        icone = "🐍 Python:";
-                        cor = "#28a745";
+                        icone = "🐍 Código Python:";
+                        cor = "#28a745"; // Verde para scripts
+                    } else if (nome.endsWith('.txt')) {
+                        icone = "📝 Texto:";
+                        cor = "#f0ad4e"; // Laranja para texto comum
                     }
 
                     const link = document.createElement('a');
                     link.href = `${pasta}/${nome}`;
                     link.target = "_blank";
-                    link.style = `color: ${cor}; text-decoration: none; font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 6px;`;
+                    link.style = `color: ${cor}; text-decoration: none; font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;`;
                     link.innerHTML = `${icone} <span style="word-break: break-all;">${nome}</span>`;
+
                     container.appendChild(link);
                 });
             } catch (erro) {
-                container.innerHTML = '<span style="color: #d9534f; font-size: 0.85rem;">Erro ao carregar arquivos da nuvem.</span>';
+                console.error(erro);
+                container.innerHTML = '<span style="color: #d9534f; font-size: 0.85rem;">Os arquivos aparecerão assim que o repositório estabilizar.</span>';
             }
         }
-        window.addEventListener('DOMContentLoaded', carregarArquivos);
+
+        window.addEventListener('DOMContentLoaded', carregarArquivosAutomaticos);
     </script>
 </body>
 </html>
