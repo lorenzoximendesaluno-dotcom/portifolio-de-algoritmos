@@ -409,7 +409,7 @@
         </main>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal com wrapper para garantir quebra de linha em TODOS os códigos -->
     <div class="modal-overlay" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
@@ -417,7 +417,7 @@
                 <button class="close-btn" onclick="closeCode()" aria-label="Fechar">✕</button>
             </div>
             <div class="modal-body">
-                <pre><code class="language-python" id="codeBlock">// Carregando...</code></pre>
+                <pre id="codeWrapper" style="white-space: pre-wrap !important; word-wrap: break-word !important; word-break: break-word !important; overflow-wrap: break-word !important;"><code class="language-python" id="codeBlock">// Carregando...</code></pre>
             </div>
         </div>
     </div>
