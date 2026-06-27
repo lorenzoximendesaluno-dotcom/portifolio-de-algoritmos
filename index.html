@@ -1,457 +1,644 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <!-- Meta Tags de Codificação e Viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Metadados SEO -->
-    <title>Painel de Atividades - Lorenzo Ximendes | Portfólio de Algoritmos</title>
-    <meta name="description" content="Portfólio acadêmico com documentação completa de algoritmos, exercícios, projetos práticos e desafios de engenharia mecânica. Histórico de resoluções de problemas e evolução técnica.">
-    <meta name="keywords" content="algoritmos, engenharia mecânica, Python, portfólio acadêmico, exercícios, programação, UNIPAMPA">
-    <meta name="author" content="Lorenzo Ximendes">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
-    
-    <!-- Open Graph (Redes Sociais) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Painel de Atividades - Lorenzo Ximendes">
-    <meta property="og:description" content="Portfólio acadêmico com algoritmos, projetos práticos e desafios de engenharia mecânica">
-    <meta property="og:url" content="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
-    <meta property="og:site_name" content="Portfólio Lorenzo Ximendes">
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Painel de Atividades - Lorenzo Ximendes">
-    <meta name="twitter:description" content="Portfólio acadêmico com algoritmos e projetos práticos">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-    
-    <!-- Preconnect para Performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
-    <!-- CSS Modular (Inline crítico para FCP) -->
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/cards.min.css">
-    <link rel="stylesheet" href="css/modal.min.css">
-    <link rel="stylesheet" href="css/responsive.min.css">
-    
-    <!-- Prism.js para Syntax Highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <style>
-        /* Sobrescreve Prism: preserva quebras de linha, indentação e tabulações */
-        .modal-body pre,
-        .modal-body pre > code,
-        .modal-body code[class*="language-"],
-        .modal-body code[class*="language-"] .token {
-            white-space: pre !important;
-            word-wrap: normal !important;
-            word-break: normal !important;
-            overflow-x: auto;
-            tab-size: 4;
-            -moz-tab-size: 4;
-        }
-        .modal-body pre > code {
-            display: block;
-            font-family: Consolas, Monaco, 'Courier New', monospace;
-        }
-    </style>
-    
-    <style>
-        /* CSS Crítico inline para melhor FCP */
-        :root {
-            --bg-color: #0d1117;
-            --sidebar-bg: #161b22;
-            --card-bg: #1c2128;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent-blue: #58a6ff;
-            --accent-green: #3fb950;
-            --accent-purple: #a371f7;
-        }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); }
-        .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--accent-blue); color: white; padding: 8px; z-index: 100; }
-        .skip-to-main:focus { top: 0; }
-    </style>
+  <!-- ── Codificação e viewport ── -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ── SEO ── -->
+  <title>Painel de Atividades — Lorenzo Ximendes | Portfólio de Algoritmos</title>
+  <meta name="description" content="Portfólio acadêmico de Lorenzo Ximendes (UNIPAMPA, Turma 80A) com documentação completa de algoritmos, exercícios, projetos práticos e desafios de engenharia mecânica.">
+  <meta name="keywords"    content="algoritmos, engenharia mecânica, Python, portfólio acadêmico, exercícios, programação, UNIPAMPA, Lorenzo Ximendes">
+  <meta name="author"      content="Lorenzo Ximendes">
+  <meta name="robots"      content="index, follow">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color"  content="#0d1117" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color"  content="#ffffff" media="(prefers-color-scheme: light)">
+
+  <!-- ── Canonical ── -->
+  <link rel="canonical" href="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Painel de Atividades — Lorenzo Ximendes">
+  <meta property="og:description" content="Portfólio acadêmico com algoritmos, projetos práticos e desafios de engenharia mecânica — UNIPAMPA Alegrete.">
+  <meta property="og:url"         content="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
+  <meta property="og:site_name"   content="Portfólio Lorenzo Ximendes">
+  <meta property="og:locale"      content="pt_BR">
+
+  <!-- ── Twitter Cards ── -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Painel de Atividades — Lorenzo Ximendes">
+  <meta name="twitter:description" content="Portfólio acadêmico com algoritmos e projetos práticos — UNIPAMPA.">
+
+  <!-- ── Favicon (inline SVG) ── -->
+  <link rel="icon"             type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="apple-touch-icon"                      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+  <!-- ── Manifest PWA ── -->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- ── Preconnect de performance ── -->
+  <link rel="preconnect"    href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch"  href="https://cdnjs.cloudflare.com">
+
+  <!-- ── JSON-LD (Schema.org) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "Portfólio de Algoritmos — Lorenzo Ximendes",
+    "description": "Portfólio acadêmico com documentação de algoritmos, exercícios e projetos práticos de engenharia mecânica.",
+    "url": "https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/",
+    "author": {
+      "@type": "Person",
+      "name": "Lorenzo Ximendes",
+      "email": "Lorenzoximendes.aluno@unipampa.edu.br",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidade Federal do Pampa",
+        "alternateName": "UNIPAMPA"
+      }
+    }
+  }
+  </script>
+
+  <!-- ── CSS Design System ── -->
+  <link rel="stylesheet" href="src/css/variables.css">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/layout.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/animations.css">
+  <link rel="stylesheet" href="src/css/utilities.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+
+  <!-- ── Tema inline: evita flash de tema errado ── -->
+  <script>
+    (function () {
+      const stored = localStorage.getItem('portfolio-theme');
+      const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = (stored === 'dark' || stored === 'light') ? stored : preferred;
+    })();
+  </script>
 </head>
+
 <body>
-    <!-- Skip to Main Link (Acessibilidade) -->
-    <a href="#main-content" class="skip-to-main">Pular para conteúdo principal</a>
-    
-    <!-- Header Principal -->
-    <header class="page-header" role="banner">
-        <div class="header-container">
-            <div class="logo-area">
-                <span class="logo-icon" aria-hidden="true">⚙️</span>
-                <span class="logo-text">ENG. MECÂNICA</span>
-            </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
-                <span class="theme-icon" aria-hidden="true">🌙</span>
-            </button>
-        </div>
-    </header>
-    
-    <!-- Barra de Progresso -->
-    <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Progresso da página" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  <!-- ── Loader de página ── -->
+  <div id="pageLoader" class="page-loader" role="status" aria-label="Carregando portfólio">
+    <div class="loader-spinner" aria-hidden="true"></div>
+    <span class="loader-text">Carregando…</span>
+  </div>
 
-    <!-- Layout Principal -->
-    <div class="layout-wrapper">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="complementary" aria-label="Informações do aluno">
-            <nav class="sidebar-nav" role="navigation" aria-label="Navegação lateral">
-                <div class="sidebar-header">
-                    <h1 class="sidebar-title">Painel de Atividades</h1>
-                    <p class="sidebar-description">Histórico documentado das resoluções de algoritmos e projetos práticos.</p>
-                </div>
+  <!-- ── Skip link (acessibilidade) ── -->
+  <a href="#main-content" class="skip-to-main">Pular para o conteúdo principal</a>
 
-                <div class="student-info" role="region" aria-label="Informações do aluno">
-                    <div class="info-item">
-                        <strong class="info-label">Aluno:</strong>
-                        <span class="info-value">Lorenzo Ximendes</span>
-                    </div>
-                    <div class="info-item">
-                        <strong class="info-label">Turma:</strong>
-                        <span class="info-value">80A</span>
-                    </div>
-                    <div class="info-item">
-                        <strong class="info-label">Contato:</strong>
-                        <span class="info-value">
-                            <a href="mailto:Lorenzoximendes.aluno@unipampa.edu.br">Lorenzoximendes.aluno@unipampa.edu.br</a>
-                        </span>
-                    </div>
-                </div>
+  <!-- ── Barra de progresso de leitura ── -->
+  <div id="progressBar" class="progress-bar" role="progressbar" aria-label="Progresso de leitura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
-                <div class="stats" role="region" aria-label="Estatísticas">
-                    <div class="stat-item">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Exercícios</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Projetos</span>
-                    </div>
-                </div>
-            </nav>
-        </aside>
+  <!-- ── Header ── -->
+  <header class="page-header" role="banner">
+    <div class="header-inner">
+      <!-- Logo / identidade -->
+      <a href="#" class="logo" aria-label="Portfólio de Algoritmos — Lorenzo Ximendes">
+        <span class="logo__icon" aria-hidden="true">⚙️</span>
+        <span class="logo__label">Eng. Mecânica</span>
+      </a>
 
-        <!-- Conteúdo Principal -->
-        <main class="main-content" id="main-content" role="main" aria-label="Conteúdo - Cards de atividades">
-            <!-- Busca e Filtro -->
-            <section class="search-section" aria-label="Buscar e filtrar atividades">
-                <div class="search-container">
-                    <input type="search" id="searchInput" class="search-input" placeholder="Buscar exercícios, projetos..." aria-label="Campo de busca">
-                    <button class="search-button" id="searchBtn" aria-label="Executar busca">🔍</button>
-                </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
-                    <button class="filter-btn" data-filter="exercise" aria-pressed="false">Exercícios</button>
-                    <button class="filter-btn" data-filter="project" aria-pressed="false">Projetos</button>
-                </div>
-            </section>
+      <!-- Ações do header -->
+      <div class="header-actions">
+        <!-- Botão menu mobile -->
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          aria-label="Abrir menu lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
 
-            <!-- Grade de Cards -->
-            <section class="cards-grid" id="cardsGrid" aria-label="Lista de atividades">
-                <article class="card" data-category="exercise" data-search="10 exercicios basicos algoritmos">
-                    <div class="card-header">
-                        <h2 class="card-title">10 Exercícios Básicos</h2>
-                        <span class="card-badge">Exercício</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Lista introdutória de 10 algoritmos para fixação de conceitos básicos.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Aplicação de estruturas sequenciais e operadores matemáticos.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="10-exercicios/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('10-exercicios/codigo.py')">💻 Código</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="exercise" data-search="15 exercicios condicionais">
-                    <div class="card-header">
-                        <h2 class="card-title">15 Exercícios (Condicionais)</h2>
-                        <span class="card-badge">Exercício</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Problemas que exigem tomada de decisão e validação de regras.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Estruturas condicionais (If/Else) aprofundadas.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="15-exercicios/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('15-exercicios/codigo.py')">💻 Código</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="exercise" data-search="evolucao tecnica refatoracao">
-                    <div class="card-header">
-                        <h2 class="card-title">Evolução Técnica</h2>
-                        <span class="card-badge">Exercício</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Identificar gargalos e propor otimizações de código.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Refatoração reduzindo complexidade ciclomática.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="evolucao-tecnica/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('evolucao-tecnica/app.py')">💻 app.py</button>
-                            <a href="evolucao-tecnica/en.mp4" class="file-link link-video" target="_blank" rel="noopener">🎬 Vídeo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="exercise" data-search="exercicios papel testes">
-                    <div class="card-header">
-                        <h2 class="card-title">Exercícios em Papel</h2>
-                        <span class="card-badge">Exercício</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Desenvolver algoritmos sem IDEs.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Testes de Mesa manuais para validação.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="exercicios-em-papel/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <a href="exercicios-em-papel/codigo_python_melhorado.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 Python Melhorado</a>
-                            <button class="file-link link-python" onclick="openCode('exercicios-em-papel/codigo_transcrito.py')">💻 Código</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="exercise" data-search="modularizacao funcoes">
-                    <div class="card-header">
-                        <h2 class="card-title">Modularização de Código</h2>
-                        <span class="card-badge">Exercício</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Código longo e repetitivo difícil de manter.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Segmentação em funções e módulos isolados.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="modularizacao/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('modularizacao/monitoramento_freio_srad1000.py')">💻 Código</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="portal alegrete requisitos">
-                    <div class="card-header">
-                        <h2 class="card-title">Projeto: Portal Alegrete</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Criar arquitetura lógica para um sistema web.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Levantamento de requisitos e estruturação funcional.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="portal-alegrete/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="portal alegrete refatorado">
-                    <div class="card-header">
-                        <h2 class="card-title">Portal Alegrete (Refatorado)</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Atualizar sistema antigo com conceitos modernos.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Novas funcionalidades e documentação avançada.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="portal-alegrete-novo/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <a href="portal-alegrete-novo/relatorio da atividade.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 Relatório</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="trelica plana engenharia">
-                    <div class="card-header">
-                        <h2 class="card-title">Desafio 01: Treliça Plana</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Analisar forças em treliça isostática.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Testes comparativos de algoritmos de IAs.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="problema-1/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('problema-1/codigo_gpt_refeito.py')">💻 GPT</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="abastecimento agua engenharia">
-                    <div class="card-header">
-                        <h2 class="card-title">Desafio 02: Água</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Calcular demanda e autonomia hídrica.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Algoritmo de controle com comparativas.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="problema-2/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('problema-2/abastecimento_gemini.py')">💻 Código</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="engenharia usina biomassa">
-                    <div class="card-header">
-                        <h2 class="card-title">Engenharia Aplicada</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Traduzir problema de engenharia para código.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Simulador de Usina de Biomassa.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="problema-de-engenharia/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                            <button class="file-link link-python" onclick="openCode('problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx')">💻 Simulador</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card" data-category="project" data-search="relato entrevistas qualitativo">
-                    <div class="card-header">
-                        <h2 class="card-title">Relato de Entrevistas</h2>
-                        <span class="card-badge">Projeto</span>
-                    </div>
-                    <div class="card-body">
-                        <section class="card-section">
-                            <h3 class="card-section-title">🎯 O Problema:</h3>
-                            <p>Compilar dados qualitativos de campo.</p>
-                        </section>
-                        <section class="card-section">
-                            <h3 class="card-section-title">💡 A Solução:</h3>
-                            <p>Transcrição e relatório conclusivo.</p>
-                        </section>
-                    </div>
-                    <div class="card-footer">
-                        <h3 class="card-section-title">📦 Arquivos:</h3>
-                        <div class="file-links-container" role="list">
-                            <a href="relato-entrevistas/index.pdf" class="file-link link-pdf" target="_blank" rel="noopener">📄 PDF</a>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <!-- Botão Topo -->
-            <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑ Topo</button>
-        </main>
+        <!-- Alternador de tema -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Alternar para tema claro"
+          aria-pressed="false"
+        >
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle">Arquivo de Código</h2>
-                <button class="close-btn" onclick="closeCode()" aria-label="Fechar">✕</button>
-            </div>
-            <div class="modal-body">
-                <pre><code class="language-python" id="codeBlock">// Carregando...</code></pre>
-            </div>
+  <!-- ── Layout principal ── -->
+  <div class="layout-wrapper">
+
+    <!-- Overlay da sidebar (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ── Sidebar ── -->
+    <aside id="sidebar" class="sidebar" role="complementary" aria-label="Informações do aluno e navegação">
+
+      <!-- Título e descrição -->
+      <header class="sidebar-header">
+        <h1 class="sidebar-title">Painel de Atividades</h1>
+        <p class="sidebar-description">
+          Histórico documentado das resoluções de algoritmos e projetos práticos.
+        </p>
+      </header>
+
+      <!-- Informações do aluno -->
+      <section class="student-info" aria-label="Informações do aluno">
+        <div class="info-item">
+          <span class="info-label">Aluno</span>
+          <span class="info-value">Lorenzo Ximendes</span>
         </div>
+        <div class="info-item">
+          <span class="info-label">Turma</span>
+          <span class="info-value">80A</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Contato</span>
+          <span class="info-value">
+            <address>
+              <a href="mailto:Lorenzoximendes.aluno@unipampa.edu.br" rel="noopener noreferrer">
+                Lorenzoximendes.aluno@unipampa.edu.br
+              </a>
+            </address>
+          </span>
+        </div>
+      </section>
+
+      <!-- Estatísticas -->
+      <section class="stats" aria-label="Estatísticas do portfólio">
+        <div class="stat-item">
+          <span class="stat-number" aria-label="12 exercícios">12</span>
+          <span class="stat-label">Exercícios</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" aria-label="5 projetos">5</span>
+          <span class="stat-label">Projetos</span>
+        </div>
+      </section>
+    </aside>
+
+    <!-- ── Conteúdo principal ── -->
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+
+      <!-- Busca e filtros -->
+      <section class="search-section" aria-label="Buscar e filtrar atividades">
+        <div class="search-container" role="search">
+          <label for="searchInput" class="sr-only">Buscar atividades</label>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Buscar exercícios, projetos…"
+            aria-label="Campo de busca"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button class="search-button" id="searchBtn" aria-label="Executar busca">
+            🔍
+          </button>
+        </div>
+
+        <div class="filter-buttons" role="group" aria-label="Filtrar por categoria">
+          <button class="filter-btn active" data-filter="all"      aria-pressed="true">Todos</button>
+          <button class="filter-btn"        data-filter="exercise" aria-pressed="false">Exercícios</button>
+          <button class="filter-btn"        data-filter="project"  aria-pressed="false">Projetos</button>
+        </div>
+      </section>
+
+      <!-- Grade de atividades -->
+      <section id="cardsGrid" class="cards-grid" aria-label="Lista de atividades" aria-live="polite">
+
+        <!-- ── Exercícios ── -->
+
+        <article class="card" data-category="exercise" data-search="10 exercicios basicos algoritmos sequenciais">
+          <header class="card-header">
+            <h2 class="card-title">10 Exercícios Básicos</h2>
+            <span class="card-badge card-badge--exercise" role="note">Exercício</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Lista introdutória de 10 algoritmos para fixação de conceitos básicos.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Aplicação de estruturas sequenciais e operadores matemáticos.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="10-exercicios/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de 10 Exercícios Básicos (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('10-exercicios/codigo.py')"
+                aria-label="Ver código Python de 10 Exercícios Básicos"
+              >💻 Código</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="exercise" data-search="15 exercicios condicionais if else decisao">
+          <header class="card-header">
+            <h2 class="card-title">15 Exercícios (Condicionais)</h2>
+            <span class="card-badge card-badge--exercise" role="note">Exercício</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Problemas que exigem tomada de decisão e validação de regras.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Estruturas condicionais (If/Else) aprofundadas.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="15-exercicios/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de 15 Exercícios Condicionais (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('15-exercicios/codigo.py')"
+                aria-label="Ver código Python de 15 Exercícios Condicionais"
+              >💻 Código</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="exercise" data-search="evolucao tecnica refatoracao complexidade ciclomatica otimizacao">
+          <header class="card-header">
+            <h2 class="card-title">Evolução Técnica</h2>
+            <span class="card-badge card-badge--exercise" role="note">Exercício</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Identificar gargalos e propor otimizações de código.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Refatoração reduzindo complexidade ciclomática.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="evolucao-tecnica/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de Evolução Técnica (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('evolucao-tecnica/app.py')"
+                aria-label="Ver código app.py de Evolução Técnica"
+              >💻 app.py</button>
+              <a
+                href="evolucao-tecnica/en.mp4"
+                class="file-link file-link--video"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Assistir vídeo de Evolução Técnica (nova aba)"
+              >🎬 Vídeo</a>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="exercise" data-search="exercicios papel testes mesa manual sem IDE">
+          <header class="card-header">
+            <h2 class="card-title">Exercícios em Papel</h2>
+            <span class="card-badge card-badge--exercise" role="note">Exercício</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Desenvolver algoritmos sem IDEs.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Testes de Mesa manuais para validação.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="exercicios-em-papel/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de Exercícios em Papel (nova aba)"
+              >📄 PDF</a>
+              <a
+                href="exercicios-em-papel/codigo_python_melhorado.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF Python Melhorado (nova aba)"
+              >📄 Python Melhorado</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('exercicios-em-papel/codigo_transcrito.py')"
+                aria-label="Ver código transcrito de Exercícios em Papel"
+              >💻 Código</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="exercise" data-search="modularizacao funcoes modulos isolados manutencao">
+          <header class="card-header">
+            <h2 class="card-title">Modularização de Código</h2>
+            <span class="card-badge card-badge--exercise" role="note">Exercício</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Código longo e repetitivo difícil de manter.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Segmentação em funções e módulos isolados.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="modularizacao/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de Modularização (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('modularizacao/monitoramento_freio_srad1000.py')"
+                aria-label="Ver código de Modularização de Código"
+              >💻 Código</button>
+            </div>
+          </footer>
+        </article>
+
+        <!-- ── Projetos ── -->
+
+        <article class="card" data-category="project" data-search="portal alegrete sistema web requisitos arquitetura logica">
+          <header class="card-header">
+            <h2 class="card-title">Projeto: Portal Alegrete</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Criar arquitetura lógica para um sistema web.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Levantamento de requisitos e estruturação funcional.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="portal-alegrete/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF do Portal Alegrete (nova aba)"
+              >📄 PDF</a>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="project" data-search="portal alegrete refatorado novo funcionalidades documentacao avancada">
+          <header class="card-header">
+            <h2 class="card-title">Portal Alegrete (Refatorado)</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Atualizar sistema antigo com conceitos modernos.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Novas funcionalidades e documentação avançada.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="portal-alegrete-novo/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF do Portal Alegrete Refatorado (nova aba)"
+              >📄 PDF</a>
+              <a
+                href="portal-alegrete-novo/relatorio da atividade.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir relatório da atividade (nova aba)"
+              >📄 Relatório</a>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="project" data-search="desafio trelica plana engenharia forcas isoestatica algoritmos ia gpt deepseek gemini">
+          <header class="card-header">
+            <h2 class="card-title">Desafio 01: Treliça Plana</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Analisar forças em treliça isostática.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Testes comparativos de algoritmos de IAs.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="problema-1/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF do Desafio 01 (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('problema-1/codigo_gpt_refeito.py')"
+                aria-label="Ver código GPT do Desafio 01: Treliça Plana"
+              >💻 GPT</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="project" data-search="desafio agua abastecimento hidrico demanda autonomia algoritmo controle">
+          <header class="card-header">
+            <h2 class="card-title">Desafio 02: Água</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Calcular demanda e autonomia hídrica.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Algoritmo de controle com comparativas.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="problema-2/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF do Desafio 02 (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('problema-2/abastecimento_gemini.py')"
+                aria-label="Ver código de abastecimento do Desafio 02: Água"
+              >💻 Código</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="project" data-search="engenharia aplicada usina biomassa casca arroz simulador jsx">
+          <header class="card-header">
+            <h2 class="card-title">Engenharia Aplicada</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Traduzir problema de engenharia para código.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Simulador de Usina de Biomassa.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="problema-de-engenharia/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF de Engenharia Aplicada (nova aba)"
+              >📄 PDF</a>
+              <button
+                class="file-link file-link--code"
+                onclick="openCode('problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx')"
+                aria-label="Ver código do simulador de Engenharia Aplicada"
+              >💻 Simulador</button>
+            </div>
+          </footer>
+        </article>
+
+        <article class="card" data-category="project" data-search="relato entrevistas pesquisa qualitativa campo transcricao relatorio">
+          <header class="card-header">
+            <h2 class="card-title">Relato de Entrevistas</h2>
+            <span class="card-badge card-badge--project" role="note">Projeto</span>
+          </header>
+          <div class="card-body">
+            <section class="card-section">
+              <span class="card-section-title">🎯 O Problema</span>
+              <p>Compilar dados qualitativos de campo.</p>
+            </section>
+            <section class="card-section">
+              <span class="card-section-title">💡 A Solução</span>
+              <p>Transcrição e relatório conclusivo.</p>
+            </section>
+          </div>
+          <footer class="card-footer">
+            <span class="card-footer-label">Arquivos</span>
+            <div class="file-links">
+              <a
+                href="relato-entrevistas/index.pdf"
+                class="file-link file-link--pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir PDF do Relato de Entrevistas (nova aba)"
+              >📄 PDF</a>
+            </div>
+          </footer>
+        </article>
+
+      </section><!-- /cards-grid -->
+
+      <!-- Botão voltar ao topo -->
+      <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo da página">
+        ↑
+      </button>
+
+    </main><!-- /main-content -->
+  </div><!-- /layout-wrapper -->
+
+  <!-- ── Modal de código ── -->
+  <div
+    id="codeModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Arquivo de Código</h2>
+        <button id="modalClose" class="modal-close" aria-label="Fechar visualizador de código">✕</button>
+      </header>
+      <div class="modal-body">
+        <pre><code class="language-python" id="codeBlock">Carregando…</code></pre>
+      </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="page-footer" role="contentinfo">
-        <p>&copy; 2026 Lorenzo Ximendes. Portfólio de Engenharia Mecânica - UNIPAMPA.</p>
-    </footer>
+  <!-- ── Footer ── -->
+  <footer class="page-footer" role="contentinfo">
+    <p>© 2026 Lorenzo Ximendes — Portfólio de Engenharia Mecânica · UNIPAMPA Alegrete.</p>
+  </footer>
 
-    <!-- Scripts com Defer -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" defer></script>
-    <script src="js/theme.min.js" defer></script>
-    <script src="js/modal.min.js?v=2" defer></script>
-    <script src="js/filters.min.js" defer></script>
-    <script src="js/main.min.js" defer></script>
+  <!-- ── Scripts (módulos ES6, defer implícito) ── -->
+  <script type="module" src="src/js/theme.js"></script>
+  <script type="module" src="src/js/loader.js"></script>
+  <script type="module" src="src/js/modal.js"></script>
+  <script type="module" src="src/js/menu.js"></script>
+  <script type="module" src="src/js/scroll.js"></script>
+  <script type="module" src="src/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,127 @@
+/* =============================================================================
+   DESIGN SYSTEM — Lorenzo Ximendes | Portfólio de Algoritmos
+   Tokens centralizados para todo o projeto
+   ============================================================================= */
+
+:root {
+  /* ── Paleta Dark (padrão) ── */
+  --color-bg:             #0d1117;
+  --color-bg-secondary:   #161b22;
+  --color-surface:        #1c2128;
+  --color-surface-hover:  #21262d;
+  --color-border:         #30363d;
+  --color-border-hover:   #484f58;
+
+  --color-text-primary:   #e6edf3;
+  --color-text-secondary: #c9d1d9;
+  --color-text-muted:     #8b949e;
+
+  --color-accent-blue:    #58a6ff;
+  --color-accent-green:   #3fb950;
+  --color-accent-purple:  #a371f7;
+  --color-accent-orange:  #f0883e;
+
+  /* Blue tints */
+  --color-blue-subtle:    rgba(88, 166, 255, 0.06);
+  --color-blue-muted:     rgba(88, 166, 255, 0.15);
+
+  /* Green tints */
+  --color-green-subtle:   rgba(63, 185, 80, 0.06);
+  --color-green-muted:    rgba(63, 185, 80, 0.15);
+
+  /* Purple tints */
+  --color-purple-subtle:  rgba(163, 113, 247, 0.06);
+  --color-purple-muted:   rgba(163, 113, 247, 0.15);
+
+  /* ── Tipografia ── */
+  --font-sans:   -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-mono:   'Cascadia Code', Consolas, Monaco, 'Courier New', monospace;
+
+  --text-xs:    0.7rem;
+  --text-sm:    0.8rem;
+  --text-base:  0.875rem;
+  --text-md:    1rem;
+  --text-lg:    1.15rem;
+  --text-xl:    1.4rem;
+  --text-2xl:   1.7rem;
+  --text-3xl:   2.2rem;
+
+  --font-regular: 400;
+  --font-medium:  500;
+  --font-semibold: 600;
+  --font-bold:    700;
+
+  --leading-tight:  1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* ── Espaçamento ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ── Bordas e raios ── */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   14px;
+  --radius-full: 9999px;
+
+  /* ── Sombras ── */
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-xl:  0 20px 60px rgba(0, 0, 0, 0.7);
+  --shadow-blue: 0 0 12px rgba(88, 166, 255, 0.15);
+  --shadow-green: 0 0 12px rgba(63, 185, 80, 0.15);
+
+  /* ── Transições ── */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow:   0.3s ease;
+
+  /* ── Layout ── */
+  --sidebar-width:     280px;
+  --header-height:     56px;
+  --content-max-width: 1400px;
+}
+
+/* ── Tema Light ── */
+[data-theme="light"] {
+  --color-bg:             #ffffff;
+  --color-bg-secondary:   #f6f8fa;
+  --color-surface:        #ffffff;
+  --color-surface-hover:  #f6f8fa;
+  --color-border:         #d0d7de;
+  --color-border-hover:   #afb8c1;
+
+  --color-text-primary:   #1f2328;
+  --color-text-secondary: #24292f;
+  --color-text-muted:     #636e7b;
+
+  --color-accent-blue:    #0969da;
+  --color-accent-green:   #1a7f37;
+  --color-accent-purple:  #8250df;
+  --color-accent-orange:  #bc4c00;
+
+  --color-blue-subtle:    rgba(9, 105, 218, 0.05);
+  --color-blue-muted:     rgba(9, 105, 218, 0.12);
+  --color-green-subtle:   rgba(26, 127, 55, 0.05);
+  --color-green-muted:    rgba(26, 127, 55, 0.12);
+  --color-purple-subtle:  rgba(130, 80, 223, 0.05);
+  --color-purple-muted:   rgba(130, 80, 223, 0.12);
+
+  --shadow-sm:  0 1px 3px rgba(31, 35, 40, 0.1);
+  --shadow-md:  0 4px 12px rgba(31, 35, 40, 0.12);
+  --shadow-lg:  0 10px 30px rgba(31, 35, 40, 0.14);
+  --shadow-xl:  0 20px 60px rgba(31, 35, 40, 0.18);
+  --shadow-blue: 0 0 12px rgba(9, 105, 218, 0.1);
+  --shadow-green: 0 0 12px rgba(26, 127, 55, 0.1);
+}

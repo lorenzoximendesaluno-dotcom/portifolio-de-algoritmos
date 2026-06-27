@@ -1,17 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página não encontrada — Painel de Atividades</title>
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Página não encontrada | Portfólio Lorenzo Ximendes</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A página solicitada não foi encontrada no portfólio de Lorenzo Ximendes.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+  <link rel="stylesheet" href="src/css/variables.css">
+  <link rel="stylesheet" href="src/css/reset.css">
+
+  <script>
+    (function () {
+      const stored = localStorage.getItem('portfolio-theme');
+      const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = (stored === 'dark' || stored === 'light') ? stored : preferred;
+    })();
+  </script>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      padding: 2rem;
+    }
+
+    .error-container {
+      text-align: center;
+      max-width: 480px;
+    }
+
+    .error-code {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .error-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .error-description {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .error-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      background: var(--color-accent-blue);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .error-link:hover {
+      background: #79b8ff;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <main class="main-content" id="conteudo" style="margin: 0 auto; max-width: 600px; padding: 80px 24px; text-align: center;">
-        <h1 style="color: #ffffff; font-size: 1.8rem;">404 — Página não encontrada</h1>
-        <p style="color: var(--text-muted); margin: 16px 0 32px;">O recurso solicitado não existe neste portfólio.</p>
-        <a href="index.html" class="file-link link-pdf" style="display: inline-flex;">← Voltar ao Painel de Atividades</a>
-    </main>
+  <main class="error-container" role="main">
+    <p class="error-code" aria-label="Erro 404">404</p>
+    <h1 class="error-title">Página não encontrada</h1>
+    <p class="error-description">
+      O recurso solicitado não existe neste portfólio ou foi movido para outro endereço.
+    </p>
+    <a href="index.html" class="error-link">← Voltar ao Painel de Atividades</a>
+  </main>
 </body>
 </html>

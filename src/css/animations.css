@@ -1,0 +1,100 @@
+/* =============================================================================
+   ANIMATIONS — Micro-animações e transições globais
+   ============================================================================= */
+
+/* ── Loader de página ── */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent-blue);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.loader-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Entrada dos cards ── */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardReveal 0.3s ease both;
+}
+
+.card:nth-child(1)  { animation-delay: 0.02s; }
+.card:nth-child(2)  { animation-delay: 0.04s; }
+.card:nth-child(3)  { animation-delay: 0.06s; }
+.card:nth-child(4)  { animation-delay: 0.08s; }
+.card:nth-child(5)  { animation-delay: 0.10s; }
+.card:nth-child(6)  { animation-delay: 0.12s; }
+.card:nth-child(7)  { animation-delay: 0.14s; }
+.card:nth-child(8)  { animation-delay: 0.16s; }
+.card:nth-child(9)  { animation-delay: 0.18s; }
+.card:nth-child(10) { animation-delay: 0.20s; }
+.card:nth-child(11) { animation-delay: 0.22s; }
+.card:nth-child(12) { animation-delay: 0.24s; }
+
+/* Cards filtrados não animam de novo */
+.card.filtered-in {
+  animation: cardReveal 0.2s ease both;
+}
+
+/* ── Stat counter ── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+  animation: countUp 0.5s ease 0.2s both;
+}
+
+/* ── Foco pulsante (destaque) ── */
+@keyframes focusPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(88, 166, 255, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(88, 166, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(88, 166, 255, 0); }
+}
+
+/* ── Brilho do botão back-to-top ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
