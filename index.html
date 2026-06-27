@@ -46,7 +46,8 @@
         /* Sobrescreve Prism: preserva quebras de linha, indentação e tabulações */
         .modal-body pre,
         .modal-body pre > code,
-        .modal-body code[class*="language-"] {
+        .modal-body code[class*="language-"],
+        .modal-body code[class*="language-"] .token {
             white-space: pre !important;
             word-wrap: normal !important;
             word-break: normal !important;
@@ -449,7 +450,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" defer></script>
     <script src="js/theme.min.js" defer></script>
-    <script src="js/modal.min.js" defer></script>
+    <script src="js/modal.min.js?v=2" defer></script>
     <script src="js/filters.min.js" defer></script>
     <script src="js/main.min.js" defer></script>
 </body>

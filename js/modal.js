@@ -1,10 +1,39 @@
 /**
  * Modal de visualização de código — preserva quebras de linha e indentação.
- * Usa textContent (nunca innerHTML) para inserir o código-fonte.
+ * Insere o código com textContent; o highlight do Prism é linha a linha
+ * para não colapsar os \n (bug do highlightElement em blocos multilinha).
  */
 
 function normalizeLineEndings(text) {
     return text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+}
+
+function getLanguageInfo(filePath) {
+    if (filePath.endsWith('.jsx')) {
+        return { className: 'language-jsx', lang: 'jsx' };
+    }
+    return { className: 'language-python', lang: 'python' };
+}
+
+/**
+ * Aplica syntax highlight preservando quebras de linha.
+ * Prism.highlightElement() colapsa linhas; highlight() linha a linha corrige isso.
+ */
+function renderCode(codeEl, text, lang) {
+    codeEl.textContent = text;
+
+    if (typeof Prism === 'undefined' || !Prism.languages[lang]) {
+        return;
+    }
+
+    const grammar = Prism.languages[lang];
+    const lines = text.split('\n');
+
+    const highlighted = lines
+        .map((line) => (line.length === 0 ? '' : Prism.highlight(line, grammar, lang)))
+        .join('\n');
+
+    codeEl.innerHTML = highlighted;
 }
 
 function openCode(filePath) {
@@ -18,10 +47,10 @@ function openCode(filePath) {
     title.textContent = filePath;
     codeEl.textContent = 'Carregando código...';
 
-    const langClass = filePath.endsWith('.jsx') ? 'language-jsx' : 'language-python';
-    codeEl.className = langClass;
+    const { className, lang } = getLanguageInfo(filePath);
+    codeEl.className = className;
     if (preEl) {
-        preEl.className = langClass;
+        preEl.className = className;
     }
 
     fetch(filePath)
@@ -30,12 +59,7 @@ function openCode(filePath) {
             return response.text();
         })
         .then((rawText) => {
-            const text = normalizeLineEndings(rawText);
-            codeEl.textContent = text;
-
-            if (typeof Prism !== 'undefined') {
-                Prism.highlightElement(codeEl);
-            }
+            renderCode(codeEl, normalizeLineEndings(rawText), lang);
         })
         .catch((err) => {
             codeEl.textContent = `ERRO: ${err.message}\n\nArquivo ausente no repositório.`;
