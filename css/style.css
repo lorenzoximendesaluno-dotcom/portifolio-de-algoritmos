@@ -322,15 +322,26 @@ body {
     background: #1d1f21;
 }
 
-/* Prism — quebra de linha automática */
+/* Prism — preservação de formatação do código */
+.modal-body pre,
+.modal-body pre > code,
 pre[class*="language-"],
 code[class*="language-"] {
     margin: 0 !important;
     border-radius: 0 !important;
     border: none !important;
     min-height: 100%;
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
+    white-space: pre !important;
+    word-wrap: normal !important;
+    word-break: normal !important;
+    overflow-x: auto;
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+.modal-body pre > code {
+    display: block;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
 }
 
 .sr-only {

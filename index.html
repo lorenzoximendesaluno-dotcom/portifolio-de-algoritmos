@@ -42,6 +42,23 @@
     
     <!-- Prism.js para Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        /* Sobrescreve Prism: preserva quebras de linha, indentação e tabulações */
+        .modal-body pre,
+        .modal-body pre > code,
+        .modal-body code[class*="language-"] {
+            white-space: pre !important;
+            word-wrap: normal !important;
+            word-break: normal !important;
+            overflow-x: auto;
+            tab-size: 4;
+            -moz-tab-size: 4;
+        }
+        .modal-body pre > code {
+            display: block;
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+        }
+    </style>
     
     <style>
         /* CSS Crítico inline para melhor FCP */
