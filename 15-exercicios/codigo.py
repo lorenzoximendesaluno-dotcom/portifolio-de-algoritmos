@@ -18,6 +18,5 @@ def verificar_resistencia_material(tensao_aplicada, limite_escoamento):
     else:
         return "Falha Crítica: Tensão excede limite de segurança!"
 
-# Exemplo de execução
 print(classificar_fluxo_fluido(3500))
 print(verificar_resistencia_material(250, 400))

@@ -5,9 +5,9 @@ import numpy as np
 
 def validar_e_classificar(medicao, tipo_sensor):
     limiares = {
-        'temperatura': {'alerta': 300, 'critico': 500}, # em Celsius
-        'pressao': {'alerta': 20, 'critico': 35},       # em Bar
-        'vibracao': {'alerta': 5, 'critico': 10}        # em mm/s
+        'temperatura': {'alerta': 300, 'critico': 500},
+        'pressao': {'alerta': 20, 'critico': 35},      
+        'vibracao': {'alerta': 5, 'critico': 10}       
     }
     
     limites = limiares.get(tipo_sensor)

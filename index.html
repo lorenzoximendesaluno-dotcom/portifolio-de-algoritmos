@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Atividades - Lorenzo Ximendes</title>
     
-    <!-- Biblioteca Prism.js para deixar o código colorido (Syntax Highlighting) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     
     <style>
@@ -21,7 +20,6 @@
             display: flex; height: 100vh; overflow: hidden;
         }
 
-        /* SIDEBAR */
         .sidebar {
             width: 300px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color);
             padding: 30px 20px; display: flex; flex-direction: column; overflow-y: auto;
@@ -32,18 +30,15 @@
         .student-info { background-color: rgba(255,255,255,0.03); border-radius: 8px; padding: 15px; margin-bottom: 30px; font-size: 0.85rem; color: var(--text-muted); }
         .student-info span { display: block; color: #ffffff; font-weight: bold; margin-bottom: 4px; font-size: 0.95rem; }
 
-        /* CONTEÚDO PRINCIPAL */
         .main-content { flex: 1; padding: 40px; overflow-y: auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; padding-bottom: 40px; }
 
-        /* CARDS */
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
         .card:hover { border-color: var(--accent-blue); transform: translateY(-2px); }
         .card-header { font-size: 1.25rem; font-weight: 600; color: #ffffff; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;}
         .card-section { margin-bottom: 15px; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); }
         .card-section strong { color: #ffffff; display: block; margin-bottom: 5px; font-size: 0.9rem;}
         
-        /* BOTÕES/LINKS */
         .file-links-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .file-link { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; border: 1px solid transparent; transition: 0.2s; cursor: pointer; }
         
@@ -56,7 +51,6 @@
         .link-video { color: var(--accent-purple); background-color: rgba(163, 113, 247, 0.1); border-color: rgba(163, 113, 247, 0.2); }
         .link-img { color: #f0883e; background-color: rgba(240, 136, 62, 0.1); border-color: rgba(240, 136, 62, 0.2); }
 
-        /* MODAL (POP-UP DO CÓDIGO) */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
         .modal-content { background: var(--bg-color); width: 80%; max-width: 900px; height: 85vh; border-radius: 10px; border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .modal-header { padding: 15px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--sidebar-bg); }
@@ -199,6 +193,9 @@
                         <a href="problema-1/codigo deep seek.pdf" class="file-link link-pdf" target="_blank">📄 codigo deep seek.pdf</a>
                         <a href="problema-1/codigo gemini.pdf" class="file-link link-pdf" target="_blank">📄 codigo gemini.pdf</a>
                         <a href="problema-1/codigo gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo gpt.pdf</a>
+                        
+                        <button class="file-link link-python" onclick="openCode('problema-1/codigo_gpt_refeito.py')">💻 Ver codigo_gpt_refeito.py</button>
+                        <button class="file-link link-python" onclick="openCode('problema-1/codigo_deepseek_corrigido.py')">💻 Ver codigo_deepseek_corrigido.py</button>
                     </div>
                 </div>
             </div>
@@ -219,6 +216,8 @@
                         <a href="problema-2/deepseek codigo.pdf" class="file-link link-pdf" target="_blank">📄 deepseek codigo.pdf</a>
                         <a href="problema-2/desafio gpt.pdf" class="file-link link-pdf" target="_blank">📄 desafio gpt.pdf</a>
                         <a href="problema-2/gemini.pdf" class="file-link link-pdf" target="_blank">📄 gemini.pdf</a>
+                        
+                        <button class="file-link link-python" onclick="openCode('problema-2/abastecimento_gemini.py')">💻 Ver abastecimento_gemini.py</button>
                     </div>
                 </div>
             </div>

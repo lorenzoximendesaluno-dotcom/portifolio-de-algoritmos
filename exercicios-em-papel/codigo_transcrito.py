@@ -16,7 +16,7 @@ def conversor_tempo(segundos_totais):
         raise ValueError("Tempo de entrada não pode ser negativo.")
         
     horas = segundos_totais // 3600
-    resto1 = segundos_totais % 3600
+    resto1 = (segundos_totais % 3600)
     minutos = resto1 // 60
     segundos = resto1 % 60
     
