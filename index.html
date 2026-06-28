@@ -1,451 +1,188 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
-
-  <meta name="description" content="Portfólio de exercícios e projetos com foco em engenharia mecânica/algoritmos e organização de arquivos." />
-
-  <style>
-    :root{
-      --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#a9b2d6;
-      --primary:#6ea8fe; --border: rgba(255,255,255,.12);
-      --chip: rgba(110,168,254,.15);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-      background:radial-gradient(1200px 600px at 10% 0%, rgba(110,168,254,.25), transparent 55%),
-                 radial-gradient(800px 500px at 90% 20%, rgba(155,88,255,.18), transparent 55%),
-                 var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    .skip{
-      position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
-    }
-    .skip:focus{left:16px;top:16px;width:auto;height:auto;z-index:9999;padding:10px 14px;background:#fff;color:#000;border-radius:10px}
-
-    header{
-      display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
-      flex-wrap:wrap; margin-bottom:18px;
-    }
-    .hero h1{margin:0 0 8px; font-size: clamp(22px, 3vw, 34px); line-height:1.1}
-    .hero p{margin:0; color:var(--muted); max-width:720px}
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    button.tab{
-      appearance:none; border:1px solid var(--border);
-      background:rgba(255,255,255,.04); color:var(--text);
-      padding:10px 14px; border-radius:12px; cursor:pointer;
-      font-weight:600;
-    }
-    button.tab[aria-pressed="true"]{
-      background: rgba(110,168,254,.18);
-      border-color: rgba(110,168,254,.45);
-    }
-
-    .toolbar{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      flex-wrap:wrap; padding:14px; background:rgba(255,255,255,.04);
-      border:1px solid var(--border); border-radius:16px; margin:18px 0;
-    }
-    .search{
-      flex:1; min-width:240px; display:flex; gap:10px; align-items:center;
-      color:var(--muted);
-    }
-    .search input{
-      width:100%; border-radius:12px; border:1px solid var(--border);
-      background:rgba(0,0,0,.15); color:var(--text); padding:12px 14px; outline:none;
-    }
-    .search input:focus{border-color:rgba(110,168,254,.55); box-shadow:0 0 0 4px rgba(110,168,254,.15)}
-    .chips{display:flex; gap:10px; flex-wrap:wrap}
-    .chip{padding:8px 10px; border-radius:999px; background:var(--chip); border:1px solid rgba(110,168,254,.25); color:var(--text); font-weight:650}
-
-    main{margin-top:14px}
-    .section-title{margin:26px 0 12px}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .card{
-      grid-column: span 6;
-      background:rgba(18,26,51,.65);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px;
-      backdrop-filter: blur(10px);
-    }
-    @media (max-width: 900px){
-      .card{grid-column: span 12;}
-    }
-    .card h3{margin:0 0 6px; font-size:18px}
-    .card p{margin:0 0 12px; color:var(--muted); line-height:1.4}
-    .meta{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px}
-    .pill{font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--border); color:var(--muted); font-weight:650}
-    .links{display:flex; gap:10px; flex-wrap:wrap}
-    .link{
-      text-decoration:none;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-    }
-    .link.primary{border-color:rgba(110,168,254,.45); background:rgba(110,168,254,.15)}
-    footer{margin-top:24px; color:var(--muted); font-size:13px}
-    dialog{
-      width:min(820px, 94vw);
-      border:1px solid var(--border);
-      background: #0f1730;
-      color:var(--text);
-      border-radius:16px;
-      padding:16px;
-    }
-    dialog pre{
-      margin:12px 0 0;
-      background:rgba(0,0,0,.25);
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      max-height:60vh;
-      overflow:auto;
-    }
-    dialog .closeRow{display:flex; justify-content:flex-end}
-    dialog button{
-      border-radius:12px;
-      padding:10px 12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      cursor:pointer;
-      font-weight:800;
-    }
-  </style>
 </head>
 
 <body>
-  <a class="skip" href="#conteudo">Pular para conteúdo principal</a>
+  <a href="#conteudo">Pular para conteúdo principal</a>
 
-  <div class="container">
-    <header>
-      <div class="hero">
-        <h1>Portfólio • Engenharia Mecânica • Turma 80A</h1>
-        <p>
-          Meus estudos e entregas organizados por tema: <strong>exercícios</strong>, <strong>evolução técnica</strong>,
-          <strong>modularização</strong> e <strong>problemas</strong> com análises, códigos e relatórios.
-          Tudo em formato revisável e com arquivos nomeados/agrupados.
-        </p>
-        <div class="actions" aria-label="Atalhos">
-          <button class="tab" type="button" aria-pressed="true" data-filter="all">Todos</button>
-          <button class="tab" type="button" aria-pressed="false" data-filter="exercicios">Exercícios</button>
-          <button class="tab" type="button" aria-pressed="false" data-filter="projetos">Projetos</button>
-        </div>
-      </div>
+  <header>
+    <label>🔎 Busca</label>
+    <input id="busca" type="search" placeholder="Digite para filtrar..." />
+  </header>
 
-      <div class="actions">
-        <a class="link primary" href="#contato">✉️ Falar comigo</a>
-        <a class="link" href="#trabalhos">🧩 Ver trabalhos</a>
-      </div>
-    </header>
+  <h1>Portfólio</h1>
+  <p><strong>Lorenzo Ximendes</strong> • Portfólio de Projetos e Algoritmos</p>
 
-    <section class="toolbar" aria-label="Ferramentas do portfólio">
-      <div class="search">
-        <label for="busca" style="min-width:80px;">🔎 Busca</label>
-        <input id="busca" type="search" placeholder="Digite: problema, código, pdf, simulador, etc..." autocomplete="off" />
-      </div>
+  <main id="conteudo">
+    <h2>📌 Trabalhos e Arquivos</h2>
 
-      <div class="chips" aria-label="Sugestões de busca">
-        <span class="chip">PDF</span>
-        <span class="chip">código.py</span>
-        <span class="chip">problema-1</span>
-        <span class="chip">modularização</span>
-      </div>
-    </section>
+    <h2>10-exercicios</h2>
+    <ul>
+      <li><a href="./10-exercicios/index.pdf">index.pdf</a></li>
+      <li><a href="./10-exercicios/codigo.py">codigo.py</a></li>
+    </ul>
 
-    <main id="conteudo">
-      <h2 class="section-title" id="trabalhos">📌 Trabalhos e Arquivos</h2>
-      <div class="grid" id="grid" role="list"></div>
+    <h2>15-exercicios</h2>
+    <ul>
+      <li><a href="./15-exercicios/index.pdf">index.pdf</a></li>
+      <li><a href="./15-exercicios/codigo.py">codigo.py</a></li>
+    </ul>
 
-      <h2 class="section-title">🧾 Como está organizado</h2>
-      <ul style="color:var(--muted); line-height:1.6; margin-top:0;">
-        <li><strong>Exercícios</strong>: arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
-        <li><strong>Evolução técnica</strong>: código + vídeo (quando houver) + relatório/figuras (PDF)</li>
-        <li><strong>Modularização</strong>: comparação + monitoramento + páginas PDF do material</li>
-        <li><strong>Problemas</strong>: análises por IA + códigos corrigidos + comparações + index</li>
-      </ul>
-    </main>
+    <h2>evolucao-tecnica</h2>
+    <ul>
+      <li><a href="./evolucao-tecnica/index.pdf">index.pdf</a></li>
+      <li><a href="./evolucao-tecnica/app.py">app.py</a></li>
+      <li><a href="./evolucao-tecnica/en.mp4">en.mp4</a></li>
+    </ul>
 
-    <section id="contato" style="margin-top:26px;">
-      <h2>Contato</h2>
-      <p style="color:var(--muted); margin-top:0;">
-        Formulário 100% front-end (placeholders). Se quiser, eu conecto ao seu backend depois.
-      </p>
+    <h2>exercicios-em-papel</h2>
+    <ul>
+      <li><a href="./exercicios-em-papel/index.pdf">index.pdf</a></li>
+      <li><a href="./exercicios-em-papel/codigo_python_melhorado.pdf">codigo_python_melhorado.pdf</a></li>
+      <li><a href="./exercicios-em-papel/codigo_transcrito.py">codigo_transcrito.py</a></li>
+      <li><a href="./exercicios-em-papel/imagem-1.png">imagem-1.png</a></li>
+      <li><a href="./exercicios-em-papel/imagem-2.png">imagem-2.png</a></li>
+      <li><a href="./exercicios-em-papel/imagem-3.png">imagem-3.png</a></li>
+      <li><a href="./exercicios-em-papel/imagem-4.png">imagem-4.png</a></li>
+      <li><a href="./exercicios-em-papel/imagem-5.png">imagem-5.png</a></li>
+      <li><a href="./exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf">Relatorio_Comparativo_Codigos.pdf</a></li>
+    </ul>
 
-      <form onsubmit="event.preventDefault(); alert('Mensagem (demo) — conecte seu backend se quiser.');">
-        <label>Seu nome</label><br />
-        <input style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.15); color:var(--text); outline:none; margin:6px 0 12px;" type="text" required />
-        <label>Seu e-mail</label><br />
-        <input style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.15); color:var(--text); outline:none; margin:6px 0 12px;" type="email" required />
-        <label>Assunto</label><br />
-        <input style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.15); color:var(--text); outline:none; margin:6px 0 12px;" type="text" required />
-        <label>Mensagem</label><br />
-        <textarea style="width:100%; min-height:120px; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(0,0,0,.15); color:var(--text); outline:none; margin:6px 0 12px;" required></textarea>
+    <h2>modularizacao</h2>
+    <ul>
+      <li><a href="./modularizacao/index.pdf">index.pdf</a></li>
+      <li><a href="./modularizacao/comparacao.pdf">comparacao.pdf</a></li>
+      <li><a href="./modularizacao/monitoramento_freio_srad1000.py">monitoramento_freio_srad1000.py</a></li>
+      <li><a href="./modularizacao/pergunta_as_LLMs.pdf">pergunta_as_LLMs.pdf</a></li>
+    </ul>
 
-        <button class="link primary" type="submit">🚀 Enviar mensagem</button>
-        <button class="link" type="reset">🧽 Limpar</button>
-      </form>
-    </section>
+    <h2>portal-alegrete</h2>
+    <ul>
+      <li><a href="./portal-alegrete/index.pdf">index.pdf</a></li>
+    </ul>
 
-    <footer>
-      <p>Feito com foco em organização, acessibilidade e apresentação clara dos arquivos. © <span id="ano"></span></p>
-    </footer>
-  </div>
+    <h2>portal-alegrete-novo</h2>
+    <ul>
+      <li><a href="./portal-alegrete-novo/index.pdf">index.pdf</a></li>
+      <li><a href="./portal-alegrete-novo/relatorio_atividade.pdf">relatorio_atividade.pdf</a></li>
+      <li><a href="./portal-alegrete-novo/relatorio_novos_eventos.pdf">relatorio_novos_eventos.pdf</a></li>
+    </ul>
 
-  <!-- Modal de preview (opcional) -->
-  <dialog id="modal">
-    <div class="closeRow">
-      <button type="button" onclick="modal.close()">Fechar ✖</button>
-    </div>
-    <h3 id="modalTitle" style="margin:6px 0 0;"></h3>
-    <pre><code id="modalContent">// preview</code></pre>
-  </dialog>
+    <h2>problema-1</h2>
+    <ul>
+      <li><a href="./problema-1/index.pdf">index.pdf</a></li>
+      <li><a href="./problema-1/analyse_e_codigo_refeito-gpt.pdf">analyse_e_codigo_refeito-gpt.pdf</a></li>
+      <li><a href="./problema-1/analyse-deepseek.pdf">analyse-deepseek.pdf</a></li>
+      <li><a href="./problema-1/analyse-gemini.pdf">analyse-gemini.pdf</a></li>
+      <li><a href="./problema-1/codigo_deep.pdf">codigo_deep.pdf</a></li>
+      <li><a href="./problema-1/codigo_deepseek_corrigido.py">codigo_deepseek_corrigido.py</a></li>
+      <li><a href="./problema-1/codigo_gemini.pdf">codigo_gemini.pdf</a></li>
+      <li><a href="./problema-1/codigo_gpt.pdf">codigo_gpt.pdf</a></li>
+      <li><a href="./problema-1/codigo_gpt_refeito.py">codigo_gpt_refeito.py</a></li>
+    </ul>
+
+    <h2>problema-2</h2>
+    <ul>
+      <li><a href="./problema-2/index.pdf">index.pdf</a></li>
+      <li><a href="./problema-2/abastecimento_gemini.py">abastecimento_gemini.py</a></li>
+      <li><a href="./problema-2/codigo corrigido gpt.pdf">codigo corrigido gpt.pdf</a></li>
+      <li><a href="./problema-2/codigo_corrigido_deep.pdf">codigo_corrigido_deep.pdf</a></li>
+      <li><a href="./problema-2/codigo_corrigido_gemini.pdf">codigo_corrigido_gemini.pdf</a></li>
+      <li><a href="./problema-2/codigo_deep.pdf">codigo_deep.pdf</a></li>
+      <li><a href="./problema-2/codigo_gpt.pdf">codigo_gpt.pdf</a></li>
+      <li><a href="./problema-2/comparacao.pdf">comparacao.pdf</a></li>
+      <li><a href="./problema-2/desafio_gpt.pdf">desafio_gpt.pdf</a></li>
+      <li><a href="./problema-2/gemini.pdf">gemini.pdf</a></li>
+    </ul>
+
+    <h2>problema-de-engenharia</h2>
+    <ul>
+      <li><a href="./problema-de-engenharia/index.pdf">index.pdf</a></li>
+      <li><a href="./problema-de-engenharia/imagem_1.pdf">imagem_1.pdf</a></li>
+      <li><a href="./problema-de-engenharia/imagem_2.pdf">imagem_2.pdf</a></li>
+      <li><a href="./problema-de-engenharia/imagem_3.pdf">imagem_3.pdf</a></li>
+      <li><a href="./problema-de-engenharia/simulador.jsx">simulador.jsx</a></li>
+    </ul>
+
+    <h2>🧾 Como está organizado</h2>
+    <ul>
+      <li><strong>Exercícios</strong>: arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
+      <li><strong>Evolução técnica</strong>: código + vídeo (quando houver) + relatório/figuras (PDF)</li>
+      <li><strong>Modularização</strong>: comparação + monitoramento + páginas PDF do material</li>
+      <li><strong>Problemas</strong>: análises por IA + códigos corrigidos + comparações + index</li>
+    </ul>
+
+    <h2>📩 Contato</h2>
+    <p>Formulário 100% front-end (placeholders). Se quiser, eu conecto ao seu backend depois.</p>
+
+    <form>
+      <label>Seu nome</label>
+      <input type="text" placeholder="Digite seu nome" />
+
+      <label>Seu e-mail</label>
+      <input type="email" placeholder="nome@exemplo.com" />
+
+      <label>Assunto</label>
+      <input type="text" placeholder="Ex: Projeto, dúvida, feedback..." />
+
+      <label>Mensagem</label>
+      <textarea placeholder="Escreva sua mensagem..."></textarea>
+
+      <button type="button">🚀 Enviar mensagem</button>
+      <button type="reset">🧽 Limpar</button>
+    </form>
+
+    <dialog>
+      <button type="button">Fechar ✖</button>
+      <h3>Prévia</h3>
+      <pre><code>// preview</code></pre>
+    </dialog>
+  </main>
 
   <script>
-    const grid = document.getElementById('grid');
-    const busca = document.getElementById('busca');
-    const tabs = Array.from(document.querySelectorAll('button.tab'));
-    const ano = document.getElementById('ano');
-    ano.textContent = new Date().getFullYear();
+    (function () {
+      const input = document.getElementById('busca');
 
-    // ✅ Dados: ajustados com base na sua lista de pastas/arquivos
-    const items = [
-      // Exercícios
-      {
-        id: '10-exercicios',
-        titulo: '10-exercicios',
-        categoria: 'exercicios',
-        descricao: 'Conjunto de exercícios com código e documentação (PDF).',
-        tags: ['exercicios', 'codigo.py', 'index.pdf'],
-        links: [
-          { label: 'Código (codigo.py)', href: '10-exercicios/codigo.py', kind: 'code' },
-          { label: 'PDF (index.pdf)', href: '10-exercicios/index.pdf', kind: 'pdf' },
-        ]
-      },
-      {
-        id: '15-exercicios',
-        titulo: '15-exercícios',
-        categoria: 'exercicios',
-        descricao: 'Variação/continuação dos exercícios com os mesmos arquivos principais.',
-        tags: ['exercicios', 'codigo.py', 'index.pdf'],
-        links: [
-          { label: 'Código (codigo.py)', href: '15-exercícios/codigo.py', kind: 'code' },
-          { label: 'PDF (index.pdf)', href: '15-exercícios/index.pdf', kind: 'pdf' },
-        ]
-      },
+      // Pega todos os links dentro da lista de trabalhos
+      const links = Array.from(document.querySelectorAll('main a[href]'));
 
-      // Evolução técnica
-      {
-        id: 'evolucao-tecnica',
-        titulo: 'evolução-técnica',
-        categoria: 'projetos',
-        descricao: 'Evolução com código e vídeo (app.py + en.mp4) e material em PDF.',
-        tags: ['evolução', 'app.py', 'en.mp4', 'index.pdf'],
-        links: [
-          { label: 'app.py', href: 'evolução-técnica/app.py', kind: 'code' },
-          { label: 'Vídeo (en.mp4)', href: 'evolução-técnica/en.mp4', kind: 'video' },
-          { label: 'PDF (index.pdf)', href: 'evolução-técnica/index.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Exercícios em papel (com imagens)
-      {
-        id: 'exercicios-em-papel',
-        titulo: 'exercícios-em-papel',
-        categoria: 'projetos',
-        descricao: 'Entrega com PDF comparativo, imagens e código transcrito/melhorado.',
-        tags: ['relatorio', 'imagem', 'comparativo'],
-        links: [
-          { label: 'codigo_python_melhorado.pdf', href: 'exercicios-em-papel/codigo_python_melhorado.pdf', kind: 'pdf' },
-          { label: 'codigo_transcrito.py', href: 'exercicios-em-papel/codigo_transcrito.py', kind: 'code' },
-          { label: 'Imagem 1', href: 'exercicios-em-papel/imagem-1.png', kind: 'image' },
-          { label: 'Imagem 2', href: 'exercicios-em-papel/imagem-2.png', kind: 'image' },
-          { label: 'Imagem 3', href: 'exercicios-em-papel/imagem-3.png', kind: 'image' },
-          { label: 'Imagem 4', href: 'exercicios-em-papel/imagem-4.png', kind: 'image' },
-          { label: 'Imagem 5', href: 'exercicios-em-papel/imagem-5.png', kind: 'image' },
-          { label: 'PDF (index.pdf)', href: 'exercicios-em-papel/index.pdf', kind: 'pdf' },
-          { label: 'Relatório Comparativo', href: 'exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Modularização
-      {
-        id: 'modularizacao',
-        titulo: 'Modularizacao',
-        categoria: 'projetos',
-        descricao: 'Refatoração e modularização com comparações, monitoramento e perguntas para LLMs.',
-        tags: ['modularização', 'monitoramento', 'comparação'],
-        links: [
-          { label: 'comparacao.pdf', href: 'Modularizacao/comparacao.pdf', kind: 'pdf' },
-          { label: 'PDF (index.pdf)', href: 'Modularizacao/index.pdf', kind: 'pdf' },
-          { label: 'monitoramento_freio_srad1000.py', href: 'Modularizacao/monitoramento_freio_srad1000.py', kind: 'code' },
-          { label: 'pergunta_as_LLMs.pdf', href: 'Modularizacao/pergunta_as_LLMs.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Portal Alegrete
-      {
-        id: 'portal-alegrete',
-        titulo: 'portal-alegrete',
-        categoria: 'projetos',
-        descricao: 'Material do portal em PDF.',
-        tags: ['portal', 'index.pdf'],
-        links: [
-          { label: 'PDF (index.pdf)', href: 'portal-alegrete/index.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Portal Alegrete novo
-      {
-        id: 'portal-alegrete-novo',
-        titulo: 'portal-alegrete-novo',
-        categoria: 'projetos',
-        descricao: 'Versão nova do portal com relatórios adicionais.',
-        tags: ['portal', 'relatorio'],
-        links: [
-          { label: 'PDF (index.pdf)', href: 'portal-alegrete-novo/index.pdf', kind: 'pdf' },
-          { label: 'relatorio_atividade.pdf', href: 'portal-alegrete-novo/relatorio_atividade.pdf', kind: 'pdf' },
-          { label: 'relatorio_novos_eventos.pdf', href: 'portal-alegrete-novo/relatorio_novos_eventos.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Problema 1
-      {
-        id: 'problema-1',
-        titulo: 'Problema-1',
-        categoria: 'projetos',
-        descricao: 'Análises comparativas e códigos gerados por diferentes LLMs + versão refeita.',
-        tags: ['problema-1', 'gpt', 'deepseek', 'gemini', 'comparação'],
-        links: [
-          { label: 'analise_e_codigo_refeito-gpt.pdf', href: 'Problema-1/analise_e_codigo_refeito-gpt.pdf', kind: 'pdf' },
-          { label: 'analise-deepseek.pdf', href: 'Problema-1/analise-deepseek.pdf', kind: 'pdf' },
-          { label: 'analise-gemini.pdf', href: 'Problema-1/analise-gemini.pdf', kind: 'pdf' },
-          { label: 'codigo_deep.pdf', href: 'Problema-1/codigo_deep.pdf', kind: 'pdf' },
-          { label: 'codigo_deepseek_corrigido.py', href: 'Problema-1/codigo_deepseek_corrigido.py', kind: 'code' },
-          { label: 'codigo_gemini.pdf', href: 'Problema-1/codigo_gemini.pdf', kind: 'pdf' },
-          { label: 'codigo_gpt.pdf', href: 'Problema-1/codigo_gpt.pdf', kind: 'pdf' },
-          { label: 'codigo_gpt_refeito.py', href: 'Problema-1/codigo_gpt_refeito.py', kind: 'code' },
-          { label: 'PDF (index.pdf)', href: 'Problema-1/index.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Problema 2
-      {
-        id: 'problema-2',
-        titulo: 'Problema-2',
-        categoria: 'projetos',
-        descricao: 'Abastecimento com múltiplas versões/códigos e comparações por IA.',
-        tags: ['problema-2', 'abastecimento', 'gpt', 'deep', 'gemini'],
-        links: [
-          { label: 'abastecimento_gemini.py', href: 'problema-2/abastecimento_gemini.py', kind: 'code' },
-          { label: 'codigo corrigido gpt.pdf', href: 'problema-2/codigo corrigido gpt.pdf', kind: 'pdf' },
-          { label: 'codigo_corrigido_deep.pdf', href: 'problema-2/codigo_corrigido_deep.pdf', kind: 'pdf' },
-          { label: 'codigo_corrigido_gemini.pdf', href: 'problema-2/codigo_corrigido_gemini.pdf', kind: 'pdf' },
-          { label: 'codigo_deep.pdf', href: 'problema-2/codigo_deep.pdf', kind: 'pdf' },
-          { label: 'codigo_gpt.pdf', href: 'problema-2/codigo_gpt.pdf', kind: 'pdf' },
-          { label: 'comparacao.pdf', href: 'problema-2/comparacao.pdf', kind: 'pdf' },
-          { label: 'desafio_gpt.pdf', href: 'problema-2/desafio_gpt.pdf', kind: 'pdf' },
-          { label: 'gemini.pdf', href: 'problema-2/gemini.pdf', kind: 'pdf' },
-          { label: 'PDF (index.pdf)', href: 'problema-2/index.pdf', kind: 'pdf' },
-        ]
-      },
-
-      // Problema de engenharia
-      {
-        id: 'problema-de-engenharia',
-        titulo: 'problema-de-engenharia',
-        categoria: 'projetos',
-        descricao: 'Simulações/documentação com imagens (PDFs) e página principal.',
-        tags: ['engenharia', 'imagens', 'simulador'],
-        links: [
-          { label: 'imagem_1.pdf', href: 'problema-de-engenharia/imagem_1.pdf', kind: 'pdf' },
-          { label: 'imagem_2.pdf', href: 'problema-de-engenharia/imagem_2.pdf', kind: 'pdf' },
-          { label: 'imagem_3.pdf', href: 'problema-de-engenharia/imagem_3.pdf', kind: 'pdf' },
-          { label: 'PDF (index.pdf)', href: 'problema-de-engenharia/index.pdf', kind: 'pdf' },
-          // sim: simulador.jsx e relato-entrevistas parecem ter sido anexados na sua mensagem
-          { label: 'simulador.jsx', href: 'problema-de-engenharia/simulador.jsx', kind: 'code' },
-          { label: 'relato-entrevistas:index.pdf', href: 'problema-de-engenharia/relato-entrevistas/index.pdf', kind: 'pdf' },
-        ]
-      },
-    ];
-
-    // Render card
-    function cardTemplate(item){
-      const badgeCat = item.categoria === 'exercicios' ? '🧪 Exercícios' : '🛠️ Projeto';
-      const tags = item.tags.slice(0, 3).map(t => `<span class="pill">${escapeHtml(t)}</span>`).join('');
-
-      const links = (item.links || []).map(l => {
-        const cls = l.kind === 'pdf' ? 'link' : (l.kind === 'code' ? 'link primary' : 'link');
-        return `<a class="${cls}" href="${encodeURI(l.href)}" target="_blank" rel="noreferrer noopener">${escapeHtml(l.label)}</a>`;
-      }).join('');
-
-      return `
-        <article class="card" role="listitem" data-category="${item.categoria}" data-text="${escapeHtml((item.titulo + ' ' + item.descricao + ' ' + item.tags.join(' ')).toLowerCase())}">
-          <h3>${escapeHtml(item.titulo)}</h3>
-          <p>${escapeHtml(item.descricao)}</p>
-          <div class="meta">
-            <span class="pill">${badgeCat}</span>
-            ${tags}
-          </div>
-          <div class="links">
-            ${links}
-          </div>
-        </article>
-      `;
-    }
-
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, (m) => ({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
-      }[m]));
-    }
-
-    function render(list){
-      grid.innerHTML = list.map(cardTemplate).join('');
-    }
-
-    // Filtro por tab
-    let currentFilter = 'all';
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.forEach(b => b.setAttribute('aria-pressed', 'false'));
-        btn.setAttribute('aria-pressed', 'true');
-        currentFilter = btn.dataset.filter;
-        applyFilters();
-      });
-    });
-
-    // Busca
-    busca.addEventListener('input', () => applyFilters());
-
-    function applyFilters(){
-      const q = (busca.value || '').trim().toLowerCase();
-      let list = items;
-
-      if(currentFilter !== 'all'){
-        list = list.filter(i => i.categoria === currentFilter);
+      // Para manter simples: filtra pelos textos do <a> e pelo caminho do href
+      function norm(s) {
+        return (s || '')
+          .toString()
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
       }
 
-      if(q){
-        list = list.filter(i => (i.titulo + ' ' + i.descricao + ' ' + i.tags.join(' ')).toLowerCase().includes(q));
+      function applyFilter() {
+        const q = norm(input.value.trim());
+
+        // Se vazio, mostra tudo
+        if (!q) {
+          links.forEach(a => {
+            a.parentElement.style.display = '';
+          });
+          return;
+        }
+
+        // Mostra/oculta o <li> com base no link
+        links.forEach(a => {
+          const label = norm(a.textContent);
+          const href = norm(a.getAttribute('href'));
+          const match = label.includes(q) || href.includes(q);
+
+          a.parentElement.style.display = match ? '' : 'none';
+        });
       }
 
-      render(list);
-    }
-
-    render(items);
+      input.addEventListener('input', applyFilter);
+      applyFilter();
+    })();
   </script>
 </body>
 </html>
