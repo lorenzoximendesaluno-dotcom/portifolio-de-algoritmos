@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /.git/
-Disallow: /node_modules/
-
-Sitemap: https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/sitemap.xml
