@@ -1,313 +1,638 @@
 <!doctype html>
-<html>
+<html lang="pt-br">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; }
-  .section { margin-top: 20px; }
-  .codeBox {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 12px;
-    background: #0b1020;
-    color: #e6e6e6;
-    overflow: auto;
-    max-height: 420px;
-    white-space: pre;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
-  .btn {
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background: #f5f5f5;
-    margin-right: 8px;
-  }
-  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  dialog { padding: 16px; border-radius: 10px; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --py-badge: #3572A5;
+      --py-badge-text: #ffffff;
+      --success: #3fb950;
+      --radius: 10px;
+      --transition: 0.2s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── Skip Link ─────────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--accent);
+      color: var(--bg);
+      padding: .4rem .8rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: top var(--transition);
+      z-index: 9999;
+    }
+    .skip-link:focus { top: .5rem; }
+
+    /* ─── Header ────────────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,17,23,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    header label {
+      color: var(--muted);
+      font-size: .85rem;
+      white-space: nowrap;
+    }
+
+    header input[type="search"] {
+      flex: 1;
+      max-width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .45rem .85rem;
+      color: var(--text);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    header input[type="search"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(88,166,255,.15);
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -.5px;
+      background: linear-gradient(135deg, var(--accent) 0%, #a371f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      color: var(--muted);
+      margin-top: .5rem;
+      font-size: 1rem;
+    }
+
+    /* ─── Main ──────────────────────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* ─── Section heading ───────────────────────────────────────────── */
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: .6rem .9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius) var(--radius) 0 0;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+    }
+    .section-title::before {
+      content: "📁";
+      font-size: 1rem;
+    }
+
+    /* ─── File list ─────────────────────────────────────────────────── */
+    .file-list {
+      list-style: none;
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      overflow: hidden;
+    }
+
+    .file-list li {
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: .55rem .9rem;
+      gap: .6rem;
+      transition: background var(--transition);
+      animation: fadeIn .35s ease both;
+    }
+    .file-list li:first-child { border-top: none; }
+    .file-list li:hover { background: rgba(88,166,255,.05); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* file icon */
+    .file-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    /* badge language */
+    .badge {
+      font-size: .68rem;
+      font-weight: 700;
+      padding: .15rem .45rem;
+      border-radius: 4px;
+      letter-spacing: .03em;
+      flex-shrink: 0;
+    }
+    .badge-py  { background: var(--py-badge); color: var(--py-badge-text); }
+    .badge-pdf { background: #d73a49; color: #fff; }
+    .badge-mp4 { background: #6f42c1; color: #fff; }
+    .badge-jpg { background: #e36209; color: #fff; }
+    .badge-jsx { background: #61dafb; color: #0d1117; }
+
+    /* links */
+    .file-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: color var(--transition);
+    }
+    .file-list a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* py viewer button */
+    .btn-viewer {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      background: transparent;
+      border: 1px solid var(--py-badge);
+      color: var(--accent);
+      font-size: .75rem;
+      padding: .25rem .6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background var(--transition), color var(--transition);
+      font-family: inherit;
+    }
+    .btn-viewer:hover {
+      background: var(--py-badge);
+      color: #fff;
+    }
+
+    /* ─── Info box ──────────────────────────────────────────────────── */
+    .info-box {
+      margin-top: 2rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .info-box h2 {
+      font-size: 1rem;
+      margin-bottom: .7rem;
+    }
+    .info-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .info-box li {
+      font-size: .88rem;
+      color: var(--muted);
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .info-box li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ─── Contact form ──────────────────────────────────────────────── */
+    .contact-section {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .contact-section h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .contact-section p  { color: var(--muted); font-size: .85rem; margin-bottom: 1.25rem; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .85rem;
+    }
+    .form-grid .full { grid-column: 1 / -1; }
+
+    .form-group { display: flex; flex-direction: column; gap: .35rem; }
+    .form-group label { font-size: .82rem; color: var(--muted); }
+
+    .form-group input,
+    .form-group textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .55rem .85rem;
+      color: var(--text);
+      font-size: .9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(88,166,255,.12);
+    }
+    .form-group textarea { min-height: 110px; }
+
+    .form-actions {
+      display: flex;
+      gap: .75rem;
+      margin-top: .5rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      padding: .6rem 1.3rem;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .6rem 1.1rem;
+      font-size: .9rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+
+    /* ─── No-results ────────────────────────────────────────────────── */
+    #sem-resultados {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: 1; }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#conteudo">Pular para conteúdo principal</a>
 
-<a href="#conteudo">Pular para conteúdo principal</a>
+  <header>
+    <label for="busca">🔍 Busca</label>
+    <input id="busca" type="search" placeholder="Digite para filtrar..." aria-label="Filtrar arquivos" />
+  </header>
 
-<h1>Portfólio</h1>
-<p><strong>Lorenzo Ximendes</strong> • Portfólio de Projetos e Algoritmos</p>
-
-<h2>📌 Trabalhos e Arquivos</h2>
-
-<!-- =========================
-     LISTAS (links para visualizar/rodar .py)
-     ========================= -->
-
-<h2>10-exercicios</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li>
-    <a href="codigo.py"
-       class="py-link"
-       data-file="codigo.py">codigo.py</a>
-  </li>
-</ul>
-
-<h2>15-exercicios</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li>
-    <a href="codigo.py"
-       class="py-link"
-       data-file="codigo.py">codigo.py</a>
-  </li>
-</ul>
-
-<h2>evolucao-tecnica</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li>
-    <a href="app.py"
-       class="py-link"
-       data-file="app.py">app.py</a>
-  </li>
-  <li><a href="en.mp4">en.mp4</a></li>
-</ul>
-
-<h2>exercicios-em-papel</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li><a href="codigo_python_melhorado.pdf">codigo_python_melhorado.pdf</a></li>
-  <li>
-    <a href="codigo_transcrito.py"
-       class="py-link"
-       data-file="codigo_transcrito.py">codigo_transcrito.py</a>
-  </li>
-  <li><a href="imagem-1.jpg">imagem-1.jpg</a></li>
-  <li><a href="imagem-2.jpg">imagem-2.jpg</a></li>
-  <li><a href="imagem-3.jpg">imagem-3.jpg</a></li>
-  <li><a href="imagem-4.jpg">imagem-4.jpg</a></li>
-  <li><a href="imagem-5.jpg">imagem-5.jpg</a></li>
-  <li><a href="Relatorio_Comparativo_Codigos.pdf">Relatorio_Comparativo_Codigos.pdf</a></li>
-</ul>
-
-<h2>modularizacao</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li><a href="comparacao.pdf">comparacao.pdf</a></li>
-  <li>
-    <a href="monitoramento_freio_srad1000.py"
-       class="py-link"
-       data-file="monitoramento_freio_srad1000.py">
-       monitoramento_freio_srad1000.py
-    </a>
-  </li>
-  <li><a href="pergunta_as_LLMs.pdf">pergunta_as_LLMs.pdf</a></li>
-</ul>
-
-<h2>portal-alegrete</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-</ul>
-
-<h2>portal-alegrete-novo</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li><a href="relatorio_atividade.pdf">relatorio_atividade.pdf</a></li>
-  <li><a href="relatorio_novos_eventos.pdf">relatorio_novos_eventos.pdf</a></li>
-</ul>
-
-<h2>problema-1</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li><a href="analyse_e_codigo_refeito-gpt.pdf">analyse_e_codigo_refeito-gpt.pdf</a></li>
-  <li><a href="analyse-deepseek.pdf">analyse-deepseek.pdf</a></li>
-  <li><a href="analyse-gemini.pdf">analyse-gemini.pdf</a></li>
-  <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
-  <li>
-    <a href="codigo_deepseek_corrigido.py"
-       class="py-link"
-       data-file="codigo_deepseek_corrigido.py">codigo_deepseek_corrigido.py</a>
-  </li>
-  <li><a href="codigo_gemini.pdf">codigo_gemini.pdf</a></li>
-  <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
-  <li>
-    <a href="codigo_gpt_refeito.py"
-       class="py-link"
-       data-file="codigo_gpt_refeito.py">codigo_gpt_refeito.py</a>
-  </li>
-</ul>
-
-<h2>problema-2</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li>
-    <a href="abastecimento_gemini.py"
-       class="py-link"
-       data-file="abastecimento_gemini.py">abastecimento_gemini.py</a>
-  </li>
-  <li><a href="codigo corrigido gpt.pdf">codigo corrigido gpt.pdf</a></li>
-  <li><a href="codigo_corrigido_deep.pdf">codigo_corrigido_deep.pdf</a></li>
-  <li><a href="codigo_corrigido_gemini.pdf">codigo_corrigido_gemini.pdf</a></li>
-  <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
-  <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
-  <li><a href="comparacao.pdf">comparacao.pdf</a></li>
-  <li><a href="desafio_gpt.pdf">desafio_gpt.pdf</a></li>
-  <li><a href="gemini.pdf">gemini.pdf</a></li>
-</ul>
-
-<h2>problema-de-engenharia</h2>
-<ul>
-  <li><a href="index.pdf">index.pdf</a></li>
-  <li><a href="imagem_1.pdf">imagem_1.pdf</a></li>
-  <li><a href="imagem_2.pdf">imagem_2.pdf</a></li>
-  <li><a href="imagem_3.pdf">imagem_3.pdf</a></li>
-  <li><a href="simulador.jsx">simulador.jsx</a></li>
-</ul>
-
-<!-- =========================
-     Visualização / Execução
-     ========================= -->
-<div id="conteudo" class="section"></div>
-
-<h2>🧾 Como está organizado</h2>
-<ul>
-  <li><strong>Exercícios</strong>: arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
-  <li><strong>Evolução técnica</strong>: código + vídeo (quando houver) + relatório/figuras (PDF)</li>
-  <li><strong>Modularização</strong>: comparação + monitoramento + páginas PDF do material</li>
-  <li><strong>Problemas</strong>: análises por IA + códigos corrigidos + comparações + index</li>
-</ul>
-
-<h2>📩 Contato</h2>
-<form>
-  <label>Seu nome</label>
-  <input>
-  <label>Seu e-mail</label>
-  <input>
-  <label>Assunto</label>
-  <input>
-  <label>Mensagem</label>
-  <textarea></textarea>
-  <button type="button">🚀 Enviar mensagem</button>
-  <button type="reset">🧽 Limpar</button>
-</form>
-
-<dialog id="py-dialog">
-  <div class="row" style="justify-content: space-between;">
-    <h3 id="py-title">Prévia do código</h3>
-    <button class="btn" id="closeDialog" type="button">Fechar ✖</button>
+  <div class="hero">
+    <h1>Portfólio</h1>
+    <p><strong>Lorenzo Ximendes</strong> • Portfólio de Projetos e Algoritmos</p>
   </div>
 
-  <div class="row" style="margin-top:10px;">
-    <button class="btn" id="btn-run" type="button">▶️ Executar</button>
-    <button class="btn" id="btn-refresh" type="button">🔄 Recarregar código</button>
-    <span id="status" style="color:#888;">Clique no arquivo .py para visualizar.</span>
-  </div>
+  <main id="conteudo">
+    <h2 style="font-size:1rem;color:var(--muted);margin-bottom:.5rem;">📌 Trabalhos e Arquivos</h2>
 
-  <h4 style="margin-top:14px;">Código</h4>
-  <div class="codeBox" id="py-code">// ...</div>
+    <!-- ── 10-exercicios ── -->
+    <div class="section-group">
+      <div class="section-title">10-exercicios</div>
+      <ul class="file-list">
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./10-exercicios/index.pdf" target="_blank" rel="noopener">index.pdf</a>
+        </li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./10-exercicios/codigo.py" data-label="codigo.py">codigo.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./10-exercicios/codigo.py&name=codigo.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+      </ul>
+    </div>
 
-  <h4 style="margin-top:14px;">Saída / Log</h4>
-  <div class="codeBox" id="py-output" style="background:#111827;">// ...</div>
-</dialog>
+    <!-- ── 15-exercicios ── -->
+    <div class="section-group">
+      <div class="section-title">15-exercicios</div>
+      <ul class="file-list">
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./15-exercicios/index.pdf" target="_blank" rel="noopener">index.pdf</a>
+        </li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./15-exercicios/codigo.py" data-label="codigo.py">codigo.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./15-exercicios/codigo.py&name=codigo.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+      </ul>
+    </div>
 
-<script>
-  const dialog = document.getElementById('py-dialog');
-  const pyTitle = document.getElementById('py-title');
-  const pyCode = document.getElementById('py-code');
-  const pyOutput = document.getElementById('py-output');
-  const statusEl = document.getElementById('status');
+    <!-- ── evolucao-tecnica ── -->
+    <div class="section-group">
+      <div class="section-title">evolucao-tecnica</div>
+      <ul class="file-list">
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./evolucao-tecnica/index.pdf" target="_blank" rel="noopener">index.pdf</a>
+        </li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./evolucao-tecnica/app.py" data-label="app.py">app.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./evolucao-tecnica/app.py&name=app.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+        <li>
+          <span class="file-icon">🎬</span>
+          <span class="badge badge-mp4">MP4</span>
+          <a href="./evolucao-tecnica/en.mp4" target="_blank" rel="noopener">en.mp4</a>
+        </li>
+      </ul>
+    </div>
 
-  const btnRun = document.getElementById('btn-run');
-  const btnRefresh = document.getElementById('btn-refresh');
-  const closeDialog = document.getElementById('closeDialog');
+    <!-- ── exercicios-em-papel ── -->
+    <div class="section-group">
+      <div class="section-title">exercicios-em-papel</div>
+      <ul class="file-list">
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./exercicios-em-papel/index.pdf" target="_blank" rel="noopener">index.pdf</a>
+        </li>
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./exercicios-em-papel/codigo_python_melhorado.pdf" target="_blank" rel="noopener">codigo_python_melhorado.pdf</a>
+        </li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./exercicios-em-papel/codigo_transcrito.py" data-label="codigo_transcrito.py">codigo_transcrito.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./exercicios-em-papel/codigo_transcrito.py&name=codigo_transcrito.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+        <li><span class="file-icon">🖼️</span><span class="badge badge-jpg">JPG</span><a href="./exercicios-em-papel/imagem-1.jpg" target="_blank" rel="noopener">imagem-1.jpg</a></li>
+        <li><span class="file-icon">🖼️</span><span class="badge badge-jpg">JPG</span><a href="./exercicios-em-papel/imagem-2.jpg" target="_blank" rel="noopener">imagem-2.jpg</a></li>
+        <li><span class="file-icon">🖼️</span><span class="badge badge-jpg">JPG</span><a href="./exercicios-em-papel/imagem-3.jpg" target="_blank" rel="noopener">imagem-3.jpg</a></li>
+        <li><span class="file-icon">🖼️</span><span class="badge badge-jpg">JPG</span><a href="./exercicios-em-papel/imagem-4.jpg" target="_blank" rel="noopener">imagem-4.jpg</a></li>
+        <li><span class="file-icon">🖼️</span><span class="badge badge-jpg">JPG</span><a href="./exercicios-em-papel/imagem-5.jpg" target="_blank" rel="noopener">imagem-5.jpg</a></li>
+        <li>
+          <span class="file-icon">📄</span>
+          <span class="badge badge-pdf">PDF</span>
+          <a href="./exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" target="_blank" rel="noopener">Relatorio_Comparativo_Codigos.pdf</a>
+        </li>
+      </ul>
+    </div>
 
-  let currentFile = null;
+    <!-- ── modularizacao ── -->
+    <div class="section-group">
+      <div class="section-title">modularizacao</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./modularizacao/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./modularizacao/comparacao.pdf" target="_blank" rel="noopener">comparacao.pdf</a></li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./modularizacao/monitoramento_freio_srad1000.py" data-label="monitoramento_freio_srad1000.py">monitoramento_freio_srad1000.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./modularizacao/monitoramento_freio_srad1000.py&name=monitoramento_freio_srad1000.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./modularizacao/pergunta_as_LLMs.pdf" target="_blank" rel="noopener">pergunta_as_LLMs.pdf</a></li>
+      </ul>
+    </div>
 
-  // 1) Visualizar o conteúdo do .py (sem "download automático")
-  async function loadPy(file) {
-    statusEl.textContent = 'Carregando código...';
-    pyOutput.textContent = '// (sem execução ainda)';
+    <!-- ── portal-alegrete ── -->
+    <div class="section-group">
+      <div class="section-title">portal-alegrete</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./portal-alegrete/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+      </ul>
+    </div>
 
-    try {
-      // Busca o .py como texto (isso ainda "carrega" do servidor, mas não baixa para o usuário)
-      const res = await fetch(file, { cache: 'no-store' });
-      if (!res.ok) throw new Error('Falha ao carregar: ' + res.status);
+    <!-- ── portal-alegrete-novo ── -->
+    <div class="section-group">
+      <div class="section-title">portal-alegrete-novo</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./portal-alegrete-novo/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./portal-alegrete-novo/relatorio_atividade.pdf" target="_blank" rel="noopener">relatorio_atividade.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./portal-alegrete-novo/relatorio_novos_eventos.pdf" target="_blank" rel="noopener">relatorio_novos_eventos.pdf</a></li>
+      </ul>
+    </div>
 
-      const text = await res.text();
-      pyCode.textContent = text;
-      statusEl.textContent = 'Código carregado. Você pode executar. ✅';
-    } catch (err) {
-      pyCode.textContent = '';
-      statusEl.textContent = 'Erro ao carregar o código.';
-      pyOutput.textContent = String(err);
-    }
-  }
+    <!-- ── problema-1 ── -->
+    <div class="section-group">
+      <div class="section-title">problema-1</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/analyse_e_codigo_refeito-gpt.pdf" target="_blank" rel="noopener">analyse_e_codigo_refeito-gpt.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/analyse-deepseek.pdf" target="_blank" rel="noopener">analyse-deepseek.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/analyse-gemini.pdf" target="_blank" rel="noopener">analyse-gemini.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/codigo_deep.pdf" target="_blank" rel="noopener">codigo_deep.pdf</a></li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./problema-1/codigo_deepseek_corrigido.py" data-label="codigo_deepseek_corrigido.py">codigo_deepseek_corrigido.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./problema-1/codigo_deepseek_corrigido.py&name=codigo_deepseek_corrigido.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/codigo_gemini.pdf" target="_blank" rel="noopener">codigo_gemini.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-1/codigo_gpt.pdf" target="_blank" rel="noopener">codigo_gpt.pdf</a></li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./problema-1/codigo_gpt_refeito.py" data-label="codigo_gpt_refeito.py">codigo_gpt_refeito.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./problema-1/codigo_gpt_refeito.py&name=codigo_gpt_refeito.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+      </ul>
+    </div>
 
-  // 2) Executar o código via backend
-  // Endpoint esperado (exemplo):
-  //   POST /run { file: "codigo.py" }
-  async function runPy(file) {
-    statusEl.textContent = 'Executando...';
-    pyOutput.textContent = '';
+    <!-- ── problema-2 ── -->
+    <div class="section-group">
+      <div class="section-title">problema-2</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+        <li>
+          <span class="file-icon">🐍</span>
+          <span class="badge badge-py">PY</span>
+          <a class="py-link" href="./problema-2/abastecimento_gemini.py" data-label="abastecimento_gemini.py">abastecimento_gemini.py</a>
+          <a class="btn-viewer" href="viewer.html?file=./problema-2/abastecimento_gemini.py&name=abastecimento_gemini.py" target="_blank" rel="noopener">▶ Abrir Código</a>
+        </li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/codigo corrigido gpt.pdf" target="_blank" rel="noopener">codigo corrigido gpt.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/codigo_corrigido_deep.pdf" target="_blank" rel="noopener">codigo_corrigido_deep.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/codigo_corrigido_gemini.pdf" target="_blank" rel="noopener">codigo_corrigido_gemini.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/codigo_deep.pdf" target="_blank" rel="noopener">codigo_deep.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/codigo_gpt.pdf" target="_blank" rel="noopener">codigo_gpt.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/comparacao.pdf" target="_blank" rel="noopener">comparacao.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/desafio_gpt.pdf" target="_blank" rel="noopener">desafio_gpt.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-2/gemini.pdf" target="_blank" rel="noopener">gemini.pdf</a></li>
+      </ul>
+    </div>
 
-    try {
-      const res = await fetch('/run', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ file })
+    <!-- ── problema-de-engenharia ── -->
+    <div class="section-group">
+      <div class="section-title">problema-de-engenharia</div>
+      <ul class="file-list">
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-de-engenharia/index.pdf" target="_blank" rel="noopener">index.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-de-engenharia/imagem_1.pdf" target="_blank" rel="noopener">imagem_1.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-de-engenharia/imagem_2.pdf" target="_blank" rel="noopener">imagem_2.pdf</a></li>
+        <li><span class="file-icon">📄</span><span class="badge badge-pdf">PDF</span><a href="./problema-de-engenharia/imagem_3.pdf" target="_blank" rel="noopener">imagem_3.pdf</a></li>
+        <li>
+          <span class="file-icon">⚛️</span>
+          <span class="badge badge-jsx">JSX</span>
+          <a href="./problema-de-engenharia/simulador.jsx" target="_blank" rel="noopener">simulador.jsx</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ── sem resultados ── -->
+    <p id="sem-resultados">🔍 Nenhum arquivo encontrado para "<span id="termo-busca"></span>".</p>
+
+    <!-- ── Como está organizado ── -->
+    <div class="info-box">
+      <h2>🗒️ Como está organizado</h2>
+      <ul>
+        <li><strong>Exercícios:</strong> arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
+        <li><strong>Evolução técnica:</strong> código + vídeo (quando houver) + relatório/figuras (PDF)</li>
+        <li><strong>Modularização:</strong> comparação + monitoramento + páginas PDF do material</li>
+        <li><strong>Problemas:</strong> análises por IA + códigos corrigidos + comparações + index</li>
+      </ul>
+    </div>
+
+    <!-- ── Contato ── -->
+    <section class="contact-section">
+      <h2>📩 Contato</h2>
+      <p>Formulário 100% front-end (placeholders). Pode ser conectado ao seu backend depois.</p>
+      <form onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nome">Seu nome</label>
+            <input id="nome" type="text" placeholder="Digite seu nome" />
+          </div>
+          <div class="form-group">
+            <label for="email">Seu e-mail</label>
+            <input id="email" type="email" placeholder="nome@exemplo.com" />
+          </div>
+          <div class="form-group full">
+            <label for="assunto">Assunto</label>
+            <input id="assunto" type="text" placeholder="Ex: Projeto, dúvida, feedback..." />
+          </div>
+          <div class="form-group full">
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" placeholder="Escreva sua mensagem..."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">🚀 Enviar mensagem</button>
+          <button type="reset"  class="btn-secondary">🧽 Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    /* ── Busca com filtro ── */
+    (function () {
+      const input  = document.getElementById('busca');
+      const noRes  = document.getElementById('sem-resultados');
+      const termo  = document.getElementById('termo-busca');
+      const grupos = Array.from(document.querySelectorAll('.section-group'));
+
+      function norm(s) {
+        return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function applyFilter() {
+        const q = norm(input.value.trim());
+        let totalVisible = 0;
+
+        grupos.forEach(grupo => {
+          const itens = Array.from(grupo.querySelectorAll('li'));
+          let visInGrupo = 0;
+
+          itens.forEach(li => {
+            const text = norm(li.textContent);
+            const show = !q || text.includes(q);
+            li.style.display = show ? '' : 'none';
+            if (show) visInGrupo++;
+          });
+
+          // esconde o grupo inteiro se nenhum item bate
+          grupo.style.display = visInGrupo === 0 ? 'none' : '';
+          totalVisible += visInGrupo;
+        });
+
+        noRes.style.display  = (q && totalVisible === 0) ? 'block' : 'none';
+        termo.textContent    = input.value.trim();
+      }
+
+      input.addEventListener('input', applyFilter);
+
+      /* ── Interceptar cliques em links .py ── */
+      document.querySelectorAll('a.py-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const file = link.getAttribute('href');
+          const name = link.dataset.label || link.textContent.trim();
+          window.open('viewer.html?file=' + encodeURIComponent(file) + '&name=' + encodeURIComponent(name), '_blank');
+        });
       });
-
-      if (!res.ok) throw new Error('Falha ao executar: ' + res.status);
-
-      // Supondo que o backend devolva JSON: { output: "..." }
-      const data = await res.json();
-      pyOutput.textContent = data.output ?? JSON.stringify(data, null, 2);
-      statusEl.textContent = 'Execução finalizada. ✅';
-    } catch (err) {
-      pyOutput.textContent = String(err);
-      statusEl.textContent = 'Erro na execução.';
-    }
-  }
-
-  function openDialog(file) {
-    currentFile = file;
-    pyTitle.textContent = `Prévia: ${file}`;
-    dialog.showModal();
-    loadPy(file);
-  }
-
-  document.querySelectorAll('.py-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const file = link.getAttribute('data-file');
-      openDialog(file);
-    });
-  });
-
-  btnRun.addEventListener('click', () => {
-    if (!currentFile) return;
-    runPy(currentFile);
-  });
-
-  btnRefresh.addEventListener('click', () => {
-    if (!currentFile) return;
-    loadPy(currentFile);
-  });
-
-  closeDialog.addEventListener('click', () => dialog.close());
-
-  dialog.addEventListener('click', (e) => {
-    const rect = dialog.getBoundingClientRect();
-    const inDialog = (
-      rect.top <= e.clientY &&
-      e.clientY <= rect.bottom &&
-      rect.left <= e.clientX &&
-      e.clientX <= rect.right
-    );
-    if (!inDialog) dialog.close();
-  });
-</script>
-
+    })();
+  </script>
 </body>
 </html>
