@@ -3,141 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lorenzo Ximendes | Engenharia de Software</title>
-    <meta name="description" content="Portfólio de Engenharia de Software: Projetos, Algoritmos e Inovação.">
-    
-    <!-- Fonte Moderna -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <title>Lorenzo Ximendes | Portfólio de Engenharia</title>
     <style>
         :root {
-            --bg: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --text-primary: #ededed;
-            --text-secondary: #a1a1a1;
-            --accent: #3b82f6;
-            --border: rgba(255, 255, 255, 0.1);
-            --radius: 12px;
+            --bg: #050505;
+            --surface: #0c0c0c;
+            --border: #1a1a1a;
+            --text-main: #ededed;
+            --text-muted: #888888;
+            --accent: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            padding: 2rem;
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            padding: 80px 20px;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; }
 
-        header { padding: 4rem 0; }
-        h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; letter-spacing: -0.05em; }
-        p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+        header { margin-bottom: 80px; }
+        h1 { font-size: 2rem; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.02em; }
+        p.subtitle { color: var(--text-muted); font-size: 1rem; }
 
-        h2 { margin: 3rem 0 1.5rem; font-size: 1.5rem; color: var(--text-primary); }
-
-        /* Grid de Projetos e Pastas */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
         }
 
         .card {
-            background: var(--card-bg);
+            background: var(--surface);
             border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 12px;
+            transition: border-color 0.2s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-        }
+        .card:hover { border-color: #404040; }
+        .card h3 { font-size: 0.9rem; font-weight: 500; margin-bottom: 16px; color: var(--text-muted); }
 
-        .card h3 { margin-bottom: 1rem; color: var(--accent); font-family: monospace; }
         .file-list { list-style: none; }
-        .file-list li { margin-bottom: 0.5rem; }
+        .file-list li { margin-bottom: 10px; }
         .file-list a { 
-            color: var(--text-secondary); 
+            color: var(--text-main); 
             text-decoration: none; 
-            font-size: 0.9rem; 
+            font-size: 0.95rem; 
             display: flex; 
-            align-items: center; 
-            gap: 8px;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 0;
         }
-        .file-list a:hover { color: var(--text-primary); text-decoration: underline; }
+        .file-list a:hover { color: var(--text-muted); }
     </style>
 </head>
 <body>
 
-    <main class="container">
-        <header>
-            <h1>Lorenzo Ximendes</h1>
-            <p class="subtitle">Engenheiro de Software em formação. Construindo sistemas escaláveis.</p>
-        </header>
+<main class="container">
+    <header>
+        <h1>Lorenzo Ximendes</h1>
+        <p class="subtitle">Engenharia de Software — Projetos e Algoritmos</p>
+    </header>
 
-        <section id="projetos">
-            <h2>Índice de Entregas</h2>
-            <div class="grid">
-                <!-- Pastas e arquivos -->
-                <article class="card">
-                    <h3>📁 10-exercicios/</h3>
-                    <ul class="file-list">
-                        <li><a href="10-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="10-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li>
-                    </ul>
-                </article>
+    <div class="grid">
+        <!-- 10-exercicios -->
+        <article class="card">
+            <h3>10-exercicios/</h3>
+            <ul class="file-list">
+                <li><a href="10-exercicios/index.pdf">↗ index.pdf</a></li>
+                <li><a href="10-exercicios/codigo.py">↗ codigo.py</a></li>
+            </ul>
+        </article>
 
-                <article class="card">
-                    <h3>📁 15-exercicios/</h3>
-                    <ul class="file-list">
-                        <li><a href="15-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="15-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li>
-                    </ul>
-                </article>
+        <!-- 15-exercicios -->
+        <article class="card">
+            <h3>15-exercicios/</h3>
+            <ul class="file-list">
+                <li><a href="15-exercicios/index.pdf">↗ index.pdf</a></li>
+                <li><a href="15-exercicios/codigo.py">↗ codigo.py</a></li>
+            </ul>
+        </article>
 
-                <article class="card">
-                    <h3>📁 evolucao-tecnica/</h3>
-                    <ul class="file-list">
-                        <li><a href="evolucao-tecnica/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="evolucao-tecnica/app.py" target="_blank">💻 app.py</a></li>
-                    </ul>
-                </article>
+        <!-- evolucao-tecnica -->
+        <article class="card">
+            <h3>evolucao-tecnica/</h3>
+            <ul class="file-list">
+                <li><a href="evolucao-tecnica/index.pdf">↗ index.pdf</a></li>
+                <li><a href="evolucao-tecnica/app.py">↗ app.py</a></li>
+                <li><a href="evolucao-tecnica/en.mp4">↗ en.mp4</a></li>
+            </ul>
+        </article>
 
-                <article class="card">
-                    <h3>📁 modularizacao/</h3>
-                    <ul class="file-list">
-                        <li><a href="modularizacao/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="modularizacao/monitoramento_freio_srad1000.py" target="_blank">💻 monitoramento.py</a></li>
-                    </ul>
-                </article>
+        <!-- exercicios-em-papel -->
+        <article class="card">
+            <h3>exercicios-em-papel/</h3>
+            <ul class="file-list">
+                <li><a href="exercicios-em-papel/index.pdf">↗ index.pdf</a></li>
+                <li><a href="exercicios-em-papel/codigo_python_melhorado.pdf">↗ python_melhorado.pdf</a></li>
+                <li><a href="exercicios-em-papel/codigo_transcrito.py">↗ codigo.py</a></li>
+            </ul>
+        </article>
 
-                <article class="card">
-                    <h3>📁 problema-1/</h3>
-                    <ul class="file-list">
-                        <li><a href="problema-1/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="problema-1/codigo_gpt_refeito.py" target="_blank">💻 codigo_gpt.py</a></li>
-                    </ul>
-                </article>
+        <!-- modularizacao -->
+        <article class="card">
+            <h3>modularizacao/</h3>
+            <ul class="file-list">
+                <li><a href="modularizacao/index.pdf">↗ index.pdf</a></li>
+                <li><a href="modularizacao/monitoramento_freio_srad1000.py">↗ monitoramento.py</a></li>
+            </ul>
+        </article>
 
-                <article class="card">
-                    <h3>📁 problema-2/</h3>
-                    <ul class="file-list">
-                        <li><a href="problema-2/index.pdf" target="_blank">📄 index.pdf</a></li>
-                        <li><a href="problema-2/abastecimento_gemini.py" target="_blank">💻 abastecimento.py</a></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-    </main>
+        <!-- portal-alegrete -->
+        <article class="card">
+            <h3>portal-alegrete/</h3>
+            <ul class="file-list">
+                <li><a href="portal-alegrete/index.pdf">↗ index.pdf</a></li>
+            </ul>
+        </article>
+
+        <!-- portal-alegrete-novo -->
+        <article class="card">
+            <h3>portal-alegrete-novo/</h3>
+            <ul class="file-list">
+                <li><a href="portal-alegrete-novo/index.pdf">↗ index.pdf</a></li>
+                <li><a href="portal-alegrete-novo/relatorio da atividade.pdf">↗ relatorio.pdf</a></li>
+            </ul>
+        </article>
+
+        <!-- problema-1 -->
+        <article class="card">
+            <h3>problema-1/</h3>
+            <ul class="file-list">
+                <li><a href="problema-1/index.pdf">↗ index.pdf</a></li>
+                <li><a href="problema-1/codigo_gpt_refeito.py">↗ codigo_gpt.py</a></li>
+            </ul>
+        </article>
+
+        <!-- problema-2 -->
+        <article class="card">
+            <h3>problema-2/</h3>
+            <ul class="file-list">
+                <li><a href="problema-2/index.pdf">↗ index.pdf</a></li>
+                <li><a href="problema-2/abastecimento_gemini.py">↗ abastecimento.py</a></li>
+            </ul>
+        </article>
+
+        <!-- problema-de-engenharia -->
+        <article class="card">
+            <h3>problema-de-engenharia/</h3>
+            <ul class="file-list">
+                <li><a href="problema-de-engenharia/index.pdf">↗ index.pdf</a></li>
+                <li><a href="problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx">↗ simulador.jsx</a></li>
+            </ul>
+        </article>
+
+        <!-- relato-entrevistas -->
+        <article class="card">
+            <h3>relato-entrevistas/</h3>
+            <ul class="file-list">
+                <li><a href="relato-entrevistas/index.pdf">↗ index.pdf</a></li>
+            </ul>
+        </article>
+    </div>
+</main>
 
 </body>
 </html>
