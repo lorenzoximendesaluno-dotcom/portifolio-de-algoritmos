@@ -6,12 +6,12 @@
     <title>Lorenzo Ximendes | Engenharia de Software</title>
     <meta name="description" content="Portfólio de Engenharia de Software: Projetos, Algoritmos e Inovação.">
     
+    <!-- Fonte Moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Design Tokens - A base do design profissional */
         :root {
             --bg: #0a0a0a;
             --card-bg: rgba(255, 255, 255, 0.03);
@@ -32,19 +32,19 @@
             padding: 2rem;
         }
 
-        .container { max-width: 900px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; }
 
-        /* Estilo do Header */
         header { padding: 4rem 0; }
         h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; letter-spacing: -0.05em; }
         p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
 
-        /* Grid de Projetos Moderno */
-        .projects-grid {
+        h2 { margin: 3rem 0 1.5rem; font-size: 1.5rem; color: var(--text-primary); }
+
+        /* Grid de Projetos e Pastas */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 3rem;
         }
 
         .card {
@@ -62,19 +62,18 @@
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
         }
 
-        .card h3 { margin-bottom: 0.5rem; }
-        .card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
-
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.8rem;
+        .card h3 { margin-bottom: 1rem; color: var(--accent); font-family: monospace; }
+        .file-list { list-style: none; }
+        .file-list li { margin-bottom: 0.5rem; }
+        .file-list a { 
+            color: var(--text-secondary); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
         }
+        .file-list a:hover { color: var(--text-primary); text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -86,14 +85,57 @@
         </header>
 
         <section id="projetos">
-            <h2>Projetos Selecionados</h2>
-            <div class="projects-grid">
+            <h2>Índice de Entregas</h2>
+            <div class="grid">
+                <!-- Pastas e arquivos -->
                 <article class="card">
-                    <h3>Sistema de Monitoramento</h3>
-                    <p>Desenvolvimento de arquitetura para monitoramento em tempo real utilizando Python e sensores.</p>
-                    <a href="#" class="btn">Ver Código</a>
+                    <h3>📁 10-exercicios/</h3>
+                    <ul class="file-list">
+                        <li><a href="10-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="10-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li>
+                    </ul>
                 </article>
-                </div>
+
+                <article class="card">
+                    <h3>📁 15-exercicios/</h3>
+                    <ul class="file-list">
+                        <li><a href="15-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="15-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>📁 evolucao-tecnica/</h3>
+                    <ul class="file-list">
+                        <li><a href="evolucao-tecnica/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="evolucao-tecnica/app.py" target="_blank">💻 app.py</a></li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>📁 modularizacao/</h3>
+                    <ul class="file-list">
+                        <li><a href="modularizacao/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="modularizacao/monitoramento_freio_srad1000.py" target="_blank">💻 monitoramento.py</a></li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>📁 problema-1/</h3>
+                    <ul class="file-list">
+                        <li><a href="problema-1/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="problema-1/codigo_gpt_refeito.py" target="_blank">💻 codigo_gpt.py</a></li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>📁 problema-2/</h3>
+                    <ul class="file-list">
+                        <li><a href="problema-2/index.pdf" target="_blank">📄 index.pdf</a></li>
+                        <li><a href="problema-2/abastecimento_gemini.py" target="_blank">💻 abastecimento.py</a></li>
+                    </ul>
+                </article>
+            </div>
         </section>
     </main>
 
