@@ -3,150 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <title>Painel de Atividades - Lorenzo Ximendes | Portfólio de Algoritmos</title>
-    <meta name="description" content="Portfólio acadêmico com documentação completa de algoritmos, exercícios, projetos práticos e desafios de engenharia mecânica. Histórico de resoluções de problemas e evolução técnica.">
-    <meta name="keywords" content="algoritmos, engenharia mecânica, Python, portfólio acadêmico, exercícios, programação, UNIPAMPA">
-    <meta name="author" content="Lorenzo Ximendes">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Painel de Atividades - Lorenzo Ximendes">
-    <meta property="og:description" content="Portfólio acadêmico com algoritmos, projetos práticos e desafios de engenharia mecânica">
-    <meta property="og:url" content="https://lorenzoximendesaluno-dotcom.github.io/portifolio-de-algoritmos/">
-    <meta property="og:site_name" content="Portfólio Lorenzo Ximendes">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Painel de Atividades - Lorenzo Ximendes">
-    <meta name="twitter:description" content="Portfólio acadêmico com algoritmos e projetos práticos">
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
-    
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <title>Portfólio de Algoritmos - Lorenzo Ximendes</title>
     
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/cards.min.css">
     <link rel="stylesheet" href="css/modal.min.css">
-    <link rel="stylesheet" href="css/responsive.min.css">
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    
     <style>
-        .modal-body pre, .modal-body pre > code, .modal-body code[class*="language-"], .modal-body code[class*="language-"] .token { white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow-x: auto; tab-size: 4; -moz-tab-size: 4; }
-        .modal-body pre > code { display: block; font-family: Consolas, Monaco, 'Courier New', monospace; }
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --border: #30363d;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-color); color: var(--text-main); margin: 0; line-height: 1.6; }
         
-        :root { --bg-color: #0d1117; --sidebar-bg: #161b22; --card-bg: #1c2128; --border-color: #30363d; --text-main: #c9d1d9; --text-muted: #8b949e; --accent-blue: #58a6ff; --accent-green: #3fb950; --accent-purple: #a371f7; }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); }
-        .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--accent-blue); color: white; padding: 8px; z-index: 100; }
-        .skip-to-main:focus { top: 0; }
-
-        /* Estilos da nova Seção de Resumo */
-        .folder-summary-section { margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border-color); max-width: 1200px; margin-left: auto; margin-right: auto; }
-        .summary-header { margin-bottom: 2rem; text-align: center; }
-        .summary-title { font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.5rem; }
-        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-        .summary-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .summary-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-color: var(--accent-blue); }
-        .folder-name { font-size: 1rem; color: var(--accent-blue); margin-top: 0; margin-bottom: 1rem; font-family: monospace; }
-        .folder-files { list-style: none; padding: 0; margin: 0; }
-        .folder-files li { margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
-        .folder-files li a { color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
-        .folder-files li a:hover { color: var(--accent-blue); text-decoration: underline; }
+        /* Estilo da nova seção de índice */
+        .index-section { max-width: 1100px; margin: 4rem auto; padding: 2rem; }
+        .index-header { text-align: center; margin-bottom: 3rem; }
+        .index-header h2 { font-size: 2rem; color: var(--accent-blue); margin-bottom: 0.5rem; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        
+        .doc-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            transition: all 0.3s ease; 
+            position: relative;
+            overflow: hidden;
+        }
+        .doc-card::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: var(--accent-blue); }
+        .doc-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        
+        .doc-title { font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .file-list { list-style: none; padding: 0; }
+        .file-item { margin-bottom: 0.8rem; }
+        .file-link { 
+            display: inline-block; 
+            padding: 0.4rem 0.8rem; 
+            background: #21262d; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            color: var(--text-muted); 
+            font-size: 0.85rem; 
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .file-link:hover { background: #30363d; color: var(--accent-blue); border-color: var(--accent-blue); }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">Pular para conteúdo principal</a>
-    
-    <header class="page-header" role="banner">
-        <div class="header-container">
-            <div class="logo-area">
-                <span class="logo-icon" aria-hidden="true">⚙️</span>
-                <span class="logo-text">ENG. MECÂNICA</span>
+
+    <main class="main-content" id="main-content">
+        <section class="index-section">
+            <div class="index-header">
+                <h2>📁 Arquivo de Entregas</h2>
+                <p>Navegação rápida por diretórios de projeto</p>
             </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
-                <span class="theme-icon" aria-hidden="true">🌙</span>
-            </button>
-        </div>
-    </header>
-    
-    <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Progresso da página" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
-    <div class="layout-wrapper">
-        <aside class="sidebar" role="complementary" aria-label="Informações do aluno">
-            <nav class="sidebar-nav" role="navigation" aria-label="Navegação lateral">
-                <div class="sidebar-header">
-                    <h1 class="sidebar-title">Painel de Atividades</h1>
-                    <p class="sidebar-description">Histórico documentado das resoluções de algoritmos e projetos práticos.</p>
-                </div>
-                <div class="student-info">
-                    <div class="info-item"><strong class="info-label">Aluno:</strong> <span class="info-value">Lorenzo Ximendes</span></div>
-                    <div class="info-item"><strong class="info-label">Turma:</strong> <span class="info-value">80A</span></div>
-                    <div class="info-item"><strong class="info-label">Contato:</strong> <span class="info-value"><a href="mailto:Lorenzoximendes.aluno@unipampa.edu.br">Lorenzoximendes.aluno@unipampa.edu.br</a></span></div>
-                </div>
-            </nav>
-        </aside>
+            <div class="grid-container">
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ 10-exercicios/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="10-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="10-exercicios/codigo.py" class="file-link" target="_blank">💻 codigo.py</a></li>
+                    </ul>
+                </article>
 
-        <main class="main-content" id="main-content" role="main">
-            <section class="search-section">
-                <div class="search-container">
-                    <input type="search" id="searchInput" class="search-input" placeholder="Buscar exercícios, projetos..." aria-label="Campo de busca">
-                    <button class="search-button" id="searchBtn" aria-label="Executar busca">🔍</button>
-                </div>
-            </section>
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ 15-exercicios/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="15-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="15-exercicios/codigo.py" class="file-link" target="_blank">💻 codigo.py</a></li>
+                    </ul>
+                </article>
 
-            <section class="cards-grid" id="cardsGrid">
-                </section>
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ evolucao-tecnica/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="evolucao-tecnica/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="evolucao-tecnica/app.py" class="file-link" target="_blank">💻 app.py</a></li>
+                        <li class="file-item"><a href="evolucao-tecnica/en.mp4" class="file-link" target="_blank">🎬 en.mp4</a></li>
+                    </ul>
+                </article>
 
-            <section class="folder-summary-section">
-                <div class="summary-header">
-                    <h2 class="summary-title">📂 Índice Completo de Entregas</h2>
-                </div>
-                <div class="summary-grid">
-                    <div class="summary-card"><h3 class="folder-name">📁 10-exercicios/</h3><ul class="folder-files"><li><a href="10-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="10-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 15-exercicios/</h3><ul class="folder-files"><li><a href="15-exercicios/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="15-exercicios/codigo.py" target="_blank">💻 codigo.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 evolucao-tecnica/</h3><ul class="folder-files"><li><a href="evolucao-tecnica/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="evolucao-tecnica/app.py" target="_blank">💻 app.py</a></li><li><a href="evolucao-tecnica/en.mp4" target="_blank">🎬 en.mp4</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 exercicios-em-papel/</h3><ul class="folder-files"><li><a href="exercicios-em-papel/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="exercicios-em-papel/codigo_python_melhorado.pdf" target="_blank">📄 codigo_python_melhorado.pdf</a></li><li><a href="exercicios-em-papel/codigo_transcrito.py" target="_blank">💻 codigo_transcrito.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 modularizacao/</h3><ul class="folder-files"><li><a href="modularizacao/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="modularizacao/monitoramento_freio_srad1000.py" target="_blank">💻 monitoramento_freio_srad1000.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 portal-alegrete/</h3><ul class="folder-files"><li><a href="portal-alegrete/index.pdf" target="_blank">📄 index.pdf</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 portal-alegrete-novo/</h3><ul class="folder-files"><li><a href="portal-alegrete-novo/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="portal-alegrete-novo/relatorio da atividade.pdf" target="_blank">📄 relatorio da atividade.pdf</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 problema-1/</h3><ul class="folder-files"><li><a href="problema-1/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="problema-1/codigo_gpt_refeito.py" target="_blank">💻 codigo_gpt_refeito.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 problema-2/</h3><ul class="folder-files"><li><a href="problema-2/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="problema-2/abastecimento_gemini.py" target="_blank">💻 abastecimento_gemini.py</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 problema-de-engenharia/</h3><ul class="folder-files"><li><a href="problema-de-engenharia/index.pdf" target="_blank">📄 index.pdf</a></li><li><a href="problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx" target="_blank">💻 simulador_visual_usina_biomassa_casca_arroz.jsx</a></li></ul></div>
-                    <div class="summary-card"><h3 class="folder-name">📁 relato-entrevistas/</h3><ul class="folder-files"><li><a href="relato-entrevistas/index.pdf" target="_blank">📄 index.pdf</a></li></ul></div>
-                </div>
-            </section>
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ exercicios-em-papel/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="exercicios-em-papel/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="exercicios-em-papel/codigo_python_melhorado.pdf" class="file-link" target="_blank">📄 codigo_python_melhorado.pdf</a></li>
+                        <li class="file-item"><a href="exercicios-em-papel/codigo_transcrito.py" class="file-link" target="_blank">💻 codigo_transcrito.py</a></li>
+                    </ul>
+                </article>
+                
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ modularizacao/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="modularizacao/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="modularizacao/monitoramento_freio_srad1000.py" class="file-link" target="_blank">💻 monitoramento_freio_srad1000.py</a></li>
+                    </ul>
+                </article>
 
-            <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑ Topo</button>
-        </main>
-    </div>
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ portal-alegrete/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="portal-alegrete/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                    </ul>
+                </article>
 
-    <div class="modal-overlay" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle">Arquivo de Código</h2>
-                <button class="close-btn" onclick="closeCode()" aria-label="Fechar">✕</button>
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ portal-alegrete-novo/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="portal-alegrete-novo/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="portal-alegrete-novo/relatorio da atividade.pdf" class="file-link" target="_blank">📄 relatorio da atividade.pdf</a></li>
+                    </ul>
+                </article>
+
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ problema-1/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="problema-1/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="problema-1/codigo_gpt_refeito.py" class="file-link" target="_blank">💻 codigo_gpt_refeito.py</a></li>
+                    </ul>
+                </article>
+                
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ problema-2/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="problema-2/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="problema-2/abastecimento_gemini.py" class="file-link" target="_blank">💻 abastecimento_gemini.py</a></li>
+                    </ul>
+                </article>
+
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ problema-de-engenharia/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="problema-de-engenharia/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                        <li class="file-item"><a href="problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx" class="file-link" target="_blank">💻 simulador.jsx</a></li>
+                    </ul>
+                </article>
+
+                <article class="doc-card">
+                    <h3 class="doc-title">⚙️ relato-entrevistas/</h3>
+                    <ul class="file-list">
+                        <li class="file-item"><a href="relato-entrevistas/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
+                    </ul>
+                </article>
+
             </div>
-            <div class="modal-body">
-                <pre id="codeWrapper"><code class="language-python" id="codeBlock"></code></pre>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer class="page-footer" role="contentinfo">
         <p>&copy; 2026 Lorenzo Ximendes. Portfólio de Engenharia Mecânica - UNIPAMPA.</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" defer></script>
-    <script src="js/theme.min.js" defer></script>
-    <script src="js/modal.min.js?v=2" defer></script>
-    <script src="js/filters.min.js" defer></script>
-    <script src="js/main.min.js" defer></script>
 </body>
 </html>
