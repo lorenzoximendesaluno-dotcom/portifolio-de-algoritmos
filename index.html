@@ -1,174 +1,1332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lorenzo Ximendes | Portfólio de Engenharia</title>
-    <style>
-        :root {
-            --bg: #050505;
-            --surface: #0c0c0c;
-            --border: #1a1a1a;
-            --text-main: #ededed;
-            --text-muted: #888888;
-            --accent: #ffffff;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg); 
-            color: var(--text-main); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.5;
-            padding: 80px 20px;
-        }
+  <title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
+  <meta name="description" content="Portfólio moderno de Lorenzo Ximendes: projetos, exercícios, habilidades e contato. Design premium, acessível e responsivo." />
+  <meta name="keywords" content="portfólio, front-end, engenharia de software, algoritmos, projetos, GitHub Pages" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://SEU-DOMINIO.github.io/SEU-REPO/" />
 
-        .container { max-width: 800px; margin: 0 auto; }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lorenzo Ximendes • Portfólio" />
+  <meta property="og:description" content="Projetos, exercícios e habilidades de Engenharia de Software." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://SEU-DOMINIO.github.io/SEU-REPO/" />
+  <meta property="og:image" content="https://SEU-DOMINIO.github.io/SEU-REPO/og.png" />
 
-        header { margin-bottom: 80px; }
-        h1 { font-size: 2rem; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.02em; }
-        p.subtitle { color: var(--text-muted); font-size: 1rem; }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lorenzo Ximendes • Portfólio" />
+  <meta name="twitter:description" content="Projetos, exercícios e habilidades." />
+  <meta name="twitter:image" content="https://SEU-DOMINIO.github.io/SEU-REPO/og.png" />
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
-        }
+  <!-- Favicons (placeholders: mantenha/ajuste conforme seus arquivos) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 24px;
-            border-radius: 12px;
-            transition: border-color 0.2s ease;
-        }
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0b1220" />
 
-        .card:hover { border-color: #404040; }
-        .card h3 { font-size: 0.9rem; font-weight: 500; margin-bottom: 16px; color: var(--text-muted); }
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lorenzo Ximendes",
+    "jobTitle": "Engenharia de Software (Estudante)",
+    "url": "https://SEU-DOMINIO.github.io/SEU-REPO/",
+    "sameAs": [
+      "https://github.com/SEU_USUARIO",
+      "https://linkedin.com/in/SEU_USUARIO"
+    ]
+  }
+  </script>
 
-        .file-list { list-style: none; }
-        .file-list li { margin-bottom: 10px; }
-        .file-list a { 
-            color: var(--text-main); 
-            text-decoration: none; 
-            font-size: 0.95rem; 
-            display: flex; 
-            align-items: center;
-            gap: 10px;
-            padding: 4px 0;
-        }
-        .file-list a:hover { color: var(--text-muted); }
-    </style>
+  <style>
+    /* =========================
+       Design Tokens (GitHub Pages friendly)
+    ========================== */
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1220;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.085);
+      --text:#EAF1FF;
+      --muted:rgba(234,241,255,.72);
+      --faint:rgba(234,241,255,.52);
+      --border:rgba(255,255,255,.14);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+      --brand:#7C5CFF;
+      --brand2:#22D3EE;
+      --good:#34D399;
+
+      --ring: rgba(124,92,255,.42);
+
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 12px;
+
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 20px;
+      --space-5: 28px;
+      --space-6: 40px;
+      --space-7: 64px;
+
+      --max: 1120px;
+
+      --h1: clamp(2.05rem, 1.6rem + 1.6vw, 3.25rem);
+      --h2: clamp(1.25rem, 1.1rem + .6vw, 1.75rem);
+      --h3: 1.05rem;
+
+      --p: clamp(.98rem, .9rem + .2vw, 1.08rem);
+      --small: .92rem;
+
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    /* Dark/Light Mode */
+    html[data-theme="light"]{
+      --bg0:#F7F8FF;
+      --bg1:#FFFFFF;
+      --card:rgba(15,23,42,.05);
+      --card2:rgba(15,23,42,.075);
+      --text:#0B1220;
+      --muted:rgba(11,18,32,.72);
+      --faint:rgba(11,18,32,.55);
+      --border:rgba(11,18,32,.14);
+      --shadow: 0 18px 50px rgba(15,23,42,.12);
+      --ring: rgba(124,92,255,.28);
+      --themeColor:#EEF0FF;
+    }
+
+    /* Base */
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 550px at 20% -10%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(900px 550px at 90% 5%, rgba(34,211,238,.25), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.5;
+      letter-spacing: .1px;
+      overflow-x: hidden;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    img{ max-width:100%; display:block; }
+
+    /* Skip link */
+    .skip-link{
+      position:absolute;
+      left:-999px; top: 12px;
+      background: var(--text);
+      color: var(--bg1);
+      padding: 10px 12px;
+      border-radius: 12px;
+      z-index: 9999;
+      font-weight: 700;
+    }
+    .skip-link:focus{ left: 12px; outline: 3px solid var(--ring); outline-offset: 2px; }
+
+    /* Focus */
+    :focus-visible{
+      outline: 3px solid var(--ring);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
+    /* Layout helpers */
+    .container{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+    .section{ padding: var(--space-7) 0; position: relative; }
+    .section--sm{ padding: 48px 0; }
+    .section-title{
+      font-size: var(--h2);
+      margin: 0 0 var(--space-3);
+      letter-spacing: -.3px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: var(--p);
+      margin: 0;
+      max-width: 68ch;
+    }
+
+    /* Glass / cards */
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7,10,18,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    html[data-theme="light"] header{
+      background: rgba(247,248,255,.72);
+      border-bottom: 1px solid rgba(11,18,32,.08);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px; font-weight: 800;
+    }
+    .logo{
+      width: 36px; height: 36px;
+      border-radius: 14px;
+      background:
+        radial-gradient(12px 12px at 30% 25%, rgba(255,255,255,.7), transparent 60%),
+        linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 25px rgba(124,92,255,.25);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    nav{
+      display:flex; align-items:center; gap: 16px; flex-wrap: wrap;
+    }
+    .nav-link{
+      color: var(--muted);
+      font-weight: 650;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+    }
+    .nav-link:hover{
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    /* Controls */
+    .controls{
+      display:flex; align-items:center; gap: 10px; justify-content: flex-end; flex-wrap: wrap;
+    }
+    .btn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+      display:inline-flex; align-items:center; gap: 10px;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.075);
+      border-color: rgba(255,255,255,.22);
+    }
+    .btn:active{ transform: translateY(0px); }
+    .btn-primary{
+      border-color: rgba(124,92,255,.42);
+      background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(34,211,238,.14));
+    }
+    .btn-ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.12);
+      color: var(--muted);
+    }
+
+    .icon{
+      width: 18px; height: 18px; display:inline-block;
+    }
+
+    .search{
+      display:flex; align-items:center; gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .search input{
+      background: transparent; border: none; outline: none;
+      color: var(--text);
+      width: min(320px, 42vw);
+      font-weight: 650;
+    }
+    .search input::placeholder{ color: rgba(234,241,255,.55); }
+    html[data-theme="light"] .search input::placeholder{ color: rgba(11,18,32,.45); }
+
+    /* Hero */
+    .hero{
+      padding: 42px 0 0;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-card{
+      padding: 22px;
+      border-radius: var(--radius-xl);
+    }
+    .hero-badge{
+      display:inline-flex; align-items:center; gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 750;
+      margin-bottom: 14px;
+    }
+    .hero h1{
+      margin: 0 0 14px;
+      font-size: var(--h1);
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+    }
+    .gradient-text{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p{ margin: 0 0 18px; color: var(--muted); font-size: var(--p); max-width: 70ch; }
+    .hero-actions{ display:flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-aside{
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      display:flex; flex-direction: column; gap: 14px;
+    }
+    .stat-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat{
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .stat strong{ font-size: 1.25rem; letter-spacing: -.6px; }
+    .stat span{ color: var(--muted); font-weight: 650; font-size: var(--small); display:block; margin-top: 6px; }
+
+    /* Segmented / Filters */
+    .filters{
+      display:flex; align-items:center; gap: 10px; flex-wrap: wrap;
+      margin: var(--space-4) 0;
+    }
+    .seg{
+      display:flex; gap: 8px; flex-wrap: wrap;
+      padding: 8px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .seg button{
+      border:none;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 800;
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor:pointer;
+      transition: background .18s var(--ease), color .18s var(--ease), transform .18s var(--ease);
+    }
+    .seg button:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); color: var(--text); }
+    .seg button[aria-pressed="true"]{
+      background: linear-gradient(135deg, rgba(124,92,255,.26), rgba(34,211,238,.14));
+      color: var(--text);
+      border: 1px solid rgba(124,92,255,.35);
+    }
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      transition: transform .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease);
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(500px 140px at 18% 0%, rgba(124,92,255,.22), transparent 55%),
+                  radial-gradient(420px 160px at 90% 20%, rgba(34,211,238,.18), transparent 55%);
+      opacity: 0;
+      transition: opacity .22s var(--ease);
+      pointer-events:none;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.22);
+    }
+    .card:hover::before{ opacity: 1; }
+    .card > *{ position: relative; z-index: 1; }
+
+    .card h3{ margin: 10px 0 10px; font-size: 1.05rem; letter-spacing: -.3px; }
+    .card .meta{ color: var(--muted); font-weight: 700; font-size: var(--small); }
+    .pill-row{ display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .pill{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .86rem;
+      color: var(--muted);
+    }
+    .card p{ margin: 10px 0 14px; color: var(--muted); font-size: var(--small); }
+
+    .card-actions{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+    .btn-card{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight: 850;
+      cursor:pointer;
+      transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+      display:inline-flex; align-items:center; gap: 10px;
+    }
+    .btn-card:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+
+    /* Skeleton */
+    .skeleton{
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      position: relative;
+      min-height: 220px;
+    }
+    .skeleton::after{
+      content:"";
+      position:absolute; top:0; left:-40%;
+      width: 40%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      animation: shimmer 1.1s infinite;
+    }
+    @keyframes shimmer{
+      to{ left: 100%; }
+    }
+
+    /* Scroll reveal */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About / Experience */
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .panel{
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .list{
+      margin: 0; padding-left: 18px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .list li{ margin: 10px 0; }
+    .timeline{
+      display:flex; flex-direction: column; gap: 12px;
+    }
+    .t-item{
+      display:flex; gap: 12px;
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+    }
+    .t-dot{
+      width: 12px; height: 12px; margin-top: 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 6px rgba(124,92,255,.12);
+      flex: 0 0 auto;
+    }
+    .t-item strong{ display:block; }
+    .t-item span{ color: var(--muted); font-weight: 650; display:block; margin-top: 4px; font-size: var(--small); }
+
+    /* Skills */
+    .skill-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .skill{
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+    }
+    .skill-top{
+      display:flex; align-items:center; gap: 10px;
+      margin-bottom: 10px;
+    }
+    .skill-icon{
+      width: 34px; height: 34px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(124,92,255,.18), rgba(34,211,238,.10));
+      display:grid; place-items:center;
+    }
+    .bar{
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .bar > i{
+      display:block; height: 100%;
+      width: var(--w);
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      border-radius: 999px;
+    }
+    .skill small{
+      color: var(--muted);
+      display:block; margin-top: 10px; font-weight: 700;
+    }
+
+    /* Contact form */
+    form .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    label{
+      display:block;
+      font-weight: 800;
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 8px;
+    }
+    input, textarea{
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding: 12px 12px;
+      font-weight: 650;
+      outline: none;
+      transition: border-color .18s var(--ease), background .18s var(--ease), transform .18s var(--ease);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus{
+      border-color: rgba(124,92,255,.55);
+      background: rgba(255,255,255,.05);
+    }
+    .form-actions{ display:flex; gap: 12px; flex-wrap: wrap; align-items:center; margin-top: 14px; }
+    .feedback{
+      font-weight: 800;
+      color: var(--muted);
+      min-height: 20px;
+    }
+    .feedback.ok{ color: var(--good); }
+    .feedback.err{ color: #FB7185; }
+
+    /* Footer */
+    footer{
+      padding: 30px 0 46px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+    }
+    .footer-inner{
+      display:flex; justify-content: space-between; align-items: center;
+      gap: 14px; flex-wrap: wrap;
+    }
+    .social{
+      display:flex; gap: 10px; flex-wrap: wrap;
+    }
+    .small-muted{ color: var(--muted); font-weight: 700; font-size: var(--small); }
+    .to-top{
+      border-radius: 999px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      cursor:pointer;
+      font-weight: 850;
+      transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+    }
+    .to-top:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+
+    /* Modal */
+    dialog{
+      width: min(720px, 92vw);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(11,18,32,.75);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      padding: 16px 16px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    html[data-theme="light"] dialog{
+      background: rgba(255,255,255,.85);
+    }
+    dialog::backdrop{ background: rgba(0,0,0,.6); }
+    .modal-head{
+      display:flex; justify-content: space-between; align-items: center; gap: 10px;
+      padding: 0 2px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      margin-bottom: 12px;
+    }
+    .modal-head strong{ font-size: 1.05rem; letter-spacing: -.3px; }
+    .modal-close{
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      cursor:pointer;
+      font-weight: 900;
+    }
+    dialog pre{
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 12px;
+      border-radius: 16px;
+      max-height: 50vh;
+      overflow:auto;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .two-col{ grid-template-columns: 1fr; }
+      .skill-grid{ grid-template-columns: repeat(2, 1fr); }
+      .search input{ width: min(240px, 52vw); }
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+      .skill-grid{ grid-template-columns: 1fr; }
+      form .row{ grid-template-columns: 1fr; }
+      nav{ gap: 8px; }
+      .header-inner{ padding: 12px 0; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .card, .btn, .nav-link{ transition: none !important; }
+      .skeleton::after{ animation: none !important; }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#conteudo">Pular para conteúdo principal</a>
 
-<main class="container">
-    <header>
-        <h1>Lorenzo Ximendes</h1>
-        <p class="subtitle">Engenharia de Software — Projetos e Algoritmos</p>
-    </header>
+  <header>
+    <div class="container header-inner">
+      <div class="brand" aria-label="Marca do portfólio">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Lorenzo Ximendes</span>
+      </div>
 
-    <div class="grid">
-        <!-- 10-exercicios -->
-        <article class="card">
-            <h3>10-exercicios/</h3>
-            <ul class="file-list">
-                <li><a href="10-exercicios/index.pdf">↗ index.pdf</a></li>
-                <li><a href="10-exercicios/codigo.py">↗ codigo.py</a></li>
-            </ul>
-        </article>
+      <nav aria-label="Navegação principal">
+        <a class="nav-link" href="#sobre">Sobre</a>
+        <a class="nav-link" href="#projetos">Projetos</a>
+        <a class="nav-link" href="#habilidades">Habilidades</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
 
-        <!-- 15-exercicios -->
-        <article class="card">
-            <h3>15-exercicios/</h3>
-            <ul class="file-list">
-                <li><a href="15-exercicios/index.pdf">↗ index.pdf</a></li>
-                <li><a href="15-exercicios/codigo.py">↗ codigo.py</a></li>
-            </ul>
-        </article>
+      <div class="controls">
+        <div class="search" role="search" aria-label="Busca por projetos e exercícios">
+          <span aria-hidden="true">🔍</span>
+          <input id="searchInput" type="search" placeholder="Buscar (ex: treliça, portal...)" autocomplete="off" />
+        </div>
 
-        <!-- evolucao-tecnica -->
-        <article class="card">
-            <h3>evolucao-tecnica/</h3>
-            <ul class="file-list">
-                <li><a href="evolucao-tecnica/index.pdf">↗ index.pdf</a></li>
-                <li><a href="evolucao-tecnica/app.py">↗ app.py</a></li>
-                <li><a href="evolucao-tecnica/en.mp4">↗ en.mp4</a></li>
-            </ul>
-        </article>
-
-        <!-- exercicios-em-papel -->
-        <article class="card">
-            <h3>exercicios-em-papel/</h3>
-            <ul class="file-list">
-                <li><a href="exercicios-em-papel/index.pdf">↗ index.pdf</a></li>
-                <li><a href="exercicios-em-papel/codigo_python_melhorado.pdf">↗ python_melhorado.pdf</a></li>
-                <li><a href="exercicios-em-papel/codigo_transcrito.py">↗ codigo.py</a></li>
-            </ul>
-        </article>
-
-        <!-- modularizacao -->
-        <article class="card">
-            <h3>modularizacao/</h3>
-            <ul class="file-list">
-                <li><a href="modularizacao/index.pdf">↗ index.pdf</a></li>
-                <li><a href="modularizacao/monitoramento_freio_srad1000.py">↗ monitoramento.py</a></li>
-            </ul>
-        </article>
-
-        <!-- portal-alegrete -->
-        <article class="card">
-            <h3>portal-alegrete/</h3>
-            <ul class="file-list">
-                <li><a href="portal-alegrete/index.pdf">↗ index.pdf</a></li>
-            </ul>
-        </article>
-
-        <!-- portal-alegrete-novo -->
-        <article class="card">
-            <h3>portal-alegrete-novo/</h3>
-            <ul class="file-list">
-                <li><a href="portal-alegrete-novo/index.pdf">↗ index.pdf</a></li>
-                <li><a href="portal-alegrete-novo/relatorio da atividade.pdf">↗ relatorio.pdf</a></li>
-            </ul>
-        </article>
-
-        <!-- problema-1 -->
-        <article class="card">
-            <h3>problema-1/</h3>
-            <ul class="file-list">
-                <li><a href="problema-1/index.pdf">↗ index.pdf</a></li>
-                <li><a href="problema-1/codigo_gpt_refeito.py">↗ codigo_gpt.py</a></li>
-            </ul>
-        </article>
-
-        <!-- problema-2 -->
-        <article class="card">
-            <h3>problema-2/</h3>
-            <ul class="file-list">
-                <li><a href="problema-2/index.pdf">↗ index.pdf</a></li>
-                <li><a href="problema-2/abastecimento_gemini.py">↗ abastecimento.py</a></li>
-            </ul>
-        </article>
-
-        <!-- problema-de-engenharia -->
-        <article class="card">
-            <h3>problema-de-engenharia/</h3>
-            <ul class="file-list">
-                <li><a href="problema-de-engenharia/index.pdf">↗ index.pdf</a></li>
-                <li><a href="problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx">↗ simulador.jsx</a></li>
-            </ul>
-        </article>
-
-        <!-- relato-entrevistas -->
-        <article class="card">
-            <h3>relato-entrevistas/</h3>
-            <ul class="file-list">
-                <li><a href="relato-entrevistas/index.pdf">↗ index.pdf</a></li>
-            </ul>
-        </article>
+        <button id="themeBtn" class="btn btn-ghost" type="button" aria-label="Alternar tema claro/escuro">
+          <span aria-hidden="true">🌗</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+      </div>
     </div>
-</main>
+  </header>
 
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card glass reveal">
+            <div class="hero-badge">
+              <span aria-hidden="true">⚡</span>
+              <span>Portfólio • Engenharia de Software • Front-end</span>
+            </div>
+
+            <h1>
+              Construindo soluções com <span class="gradient-text">arquitetura</span>, <span class="gradient-text">UI</span> e <span class="gradient-text">performance</span>.
+            </h1>
+
+            <p>
+              Aqui estão meus <strong>exercícios</strong>, <strong>projetos</strong> e um resumo das minhas <strong>habilidades técnicas</strong>.
+              Tudo com foco em experiência do usuário, organização e qualidade.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projetos">
+                <span aria-hidden="true">🧩</span> Ver trabalhos
+              </a>
+              <a class="btn" href="#contato">
+                <span aria-hidden="true">✉️</span> Falar comigo
+              </a>
+            </div>
+
+            <div class="filters" aria-label="Filtros de conteúdo">
+              <div class="seg" role="group" aria-label="Filtrar por tipo">
+                <button type="button" data-filter="all" aria-pressed="true">Todos</button>
+                <button type="button" data-filter="exercicio" aria-pressed="false">Exercícios</button>
+                <button type="button" data-filter="projeto" aria-pressed="false">Projetos</button>
+              </div>
+            </div>
+
+            <p class="small-muted">
+              Dica: use a busca no topo para filtrar por palavras-chave.
+            </p>
+          </div>
+
+          <aside class="hero-aside glass reveal" aria-label="Resumo do portfólio">
+            <div class="stat-grid">
+              <div class="stat">
+                <strong id="statCount">—</strong>
+                <span>Itens no catálogo</span>
+              </div>
+              <div class="stat">
+                <strong>UX</strong>
+                <span>Hierarquia e legibilidade</span>
+              </div>
+              <div class="stat">
+                <strong>Perf</strong>
+                <span>Cards com carregamento leve</span>
+              </div>
+              <div class="stat">
+                <strong>Acc</strong>
+                <span>Focus visível e semântica</span>
+              </div>
+            </div>
+
+            <div class="panel" style="padding:16px;">
+              <strong style="display:block; margin-bottom:8px;">🧠 Qualidade técnica</strong>
+              <p class="small-muted" style="margin:0;">
+                Estrutura semântica • UI premium • Responsividade • SEO • Acessibilidade • Código limpo e organizado.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section section--sm">
+      <div class="container">
+        <div class="two-col">
+          <div class="panel reveal">
+            <h2 class="section-title">Sobre mim</h2>
+            <p class="lead">
+              Sou estudante de Engenharia de Software e gosto de transformar requisitos em interfaces bem estruturadas,
+              performáticas e acessíveis. Meu foco é aprender e entregar experiências com padrão profissional.
+            </p>
+            <ul class="list" style="margin-top: 14px;">
+              <li>Design moderno com hierarquia clara e tipografia coerente</li>
+              <li>Semântica HTML + acessibilidade (teclado e foco visível)</li>
+              <li>Performance e melhorias que impactam Lighthouse</li>
+            </ul>
+          </div>
+
+          <div class="panel reveal">
+            <h2 class="section-title">Como uso meus estudos</h2>
+            <p class="lead">
+              Eu organizo exercícios e projetos em blocos claros: problema → solução → arquivos.  
+              Assim, fica fácil revisar, evoluir e apresentar os resultados.
+            </p>
+            <div class="timeline" style="margin-top: 14px;">
+              <div class="t-item">
+                <span class="t-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Algoritmos e fundamentos</strong>
+                  <span>Fixação de conceitos básicos com abordagem incremental.</span>
+                </div>
+              </div>
+              <div class="t-item">
+                <span class="t-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Refatoração e modularização</strong>
+                  <span>Redução de complexidade e criação de componentes reutilizáveis.</span>
+                </div>
+              </div>
+              <div class="t-item">
+                <span class="t-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Projetos aplicados</strong>
+                  <span>Arquitetura lógica, documentação e evolução do sistema.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS / EXERCÍCIOS (CATÁLOGO) -->
+    <section id="projetos" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Projetos e Exercícios</h2>
+        <p class="lead reveal">
+          Cards com descrição, tecnologias e ações.  
+          Clique em “Código / PDF / Demo” (links são placeholders — ajuste para seus arquivos).
+        </p>
+
+        <div class="filters reveal" style="margin-top: 18px;">
+          <div class="seg" role="group" aria-label="Filtrar itens novamente (categoria)">
+            <button type="button" data-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" data-filter="exercicio" aria-pressed="false">Exercícios</button>
+            <button type="button" data-filter="projeto" aria-pressed="false">Projetos</button>
+          </div>
+        </div>
+
+        <div id="catalog" class="grid" aria-live="polite" aria-label="Catálogo de itens">
+          <!-- Skeletons -->
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+          <div class="skeleton" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section section--sm">
+      <div class="container">
+        <h2 class="section-title reveal">Habilidades & Tecnologias</h2>
+        <p class="lead reveal">
+          Distribuição de competências baseada no seu foco em Engenharia de Software e Front-end.
+          (Ajuste percentuais conforme seu domínio real.)
+        </p>
+
+        <div class="skill-grid" style="margin-top: 18px;">
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">🧠</div>
+              <div>
+                <strong>Algoritmos</strong>
+                <div class="small-muted">Estruturas e lógica</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de Algoritmos">
+              <i style="--w: 86%"></i>
+            </div>
+            <small>Complexidade, testes e refatoração</small>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">🧩</div>
+              <div>
+                <strong>Arquitetura</strong>
+                <div class="small-muted">Modularização</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de Arquitetura">
+              <i style="--w: 78%"></i>
+            </div>
+            <small>Organização, manutenção e reuso</small>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">🎨</div>
+              <div>
+                <strong>UI/UX</strong>
+                <div class="small-muted">Hierarquia e acessibilidade</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de UI/UX">
+              <i style="--w: 74%"></i>
+            </div>
+            <small>Design premium e foco visível</small>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">⚡</div>
+              <div>
+                <strong>Performance</strong>
+                <div class="small-muted">SEO e Lighthouse</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de Performance">
+              <i style="--w: 70%"></i>
+            </div>
+            <small>Render eficiente e redução de CLS</small>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">♿</div>
+              <div>
+                <strong>Acessibilidade</strong>
+                <div class="small-muted">WCAG</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de Acessibilidade">
+              <i style="--w: 72%"></i>
+            </div>
+            <small>Semântica, aria-label e keyboard</small>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-top">
+              <div class="skill-icon" aria-hidden="true">🛠️</div>
+              <div>
+                <strong>JavaScript</strong>
+                <div class="small-muted">Organização</div>
+              </div>
+            </div>
+            <div class="bar" aria-label="Nível de JavaScript">
+              <i style="--w: 68%"></i>
+            </div>
+            <small>Funções, render e microinterações</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Contato</h2>
+        <p class="lead reveal">
+          Este formulário é 100% front-end (sem backend).  
+          Ele valida campos e simula envio com feedback visual.
+        </p>
+
+        <div class="panel reveal" style="margin-top: 18px;">
+          <form id="contactForm" novalidate>
+            <div class="row">
+              <div>
+                <label for="name">Seu nome</label>
+                <input id="name" name="name" type="text" placeholder="Ex: Lorenzo" required />
+              </div>
+              <div>
+                <label for="email">Seu e-mail</label>
+                <input id="email" name="email" type="email" placeholder="ex: voce@email.com" required />
+              </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <label for="topic">Assunto</label>
+              <input id="topic" name="topic" type="text" placeholder="Ex: Projeto / Oportunidade" required />
+            </div>
+
+            <div style="margin-top: 12px;">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" placeholder="Conte um pouco sobre sua demanda..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span aria-hidden="true">🚀</span> Enviar mensagem
+              </button>
+              <button class="btn btn-ghost" type="button" id="resetBtn">
+                <span aria-hidden="true">🧽</span> Limpar
+              </button>
+              <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <div class="brand" style="font-size: .98rem;">
+            <span class="logo" aria-hidden="true" style="width: 30px; height:30px; border-radius: 12px;"></span>
+            <span>Lorenzo Ximendes</span>
+          </div>
+          <div class="small-muted" style="margin-top: 8px;">
+            © <span id="year"></span> • Engenharia de Software • Portfólio moderno
+          </div>
+        </div>
+
+        <div class="social" aria-label="Redes sociais">
+          <a class="btn btn-ghost" href="https://github.com/SEU_USUARIO" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">🐙</span> GitHub
+          </a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/SEU_USUARIO" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">in</span> LinkedIn
+          </a>
+          <a class="btn btn-ghost" href="mailto:SEU_EMAIL@dominio.com">
+            <span aria-hidden="true">✉️</span> Email
+          </a>
+
+          <button class="to-top" type="button" id="toTopBtn" aria-label="Voltar ao topo">
+            ↑ Topo
+          </button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal for "Código" -->
+  <dialog id="codeDialog" aria-label="Modal para visualização de conteúdo">
+    <div class="modal-head">
+      <strong id="modalTitle">Arquivo</strong>
+      <button class="modal-close" type="button" id="modalClose">Fechar</button>
+    </div>
+    <div id="modalBody">
+      <pre><code>// Conteúdo do arquivo aparecerá aqui…</code></pre>
+    </div>
+  </dialog>
+
+  <script>
+    (function(){
+      const catalogEl = document.getElementById('catalog');
+      const searchInput = document.getElementById('searchInput');
+      const yearEl = document.getElementById('year');
+      const toTopBtn = document.getElementById('toTopBtn');
+      const themeBtn = document.getElementById('themeBtn');
+      const themeLabel = document.getElementById('themeLabel');
+
+      const dialog = document.getElementById('codeDialog');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalClose = document.getElementById('modalClose');
+      const modalBodyCode = dialog.querySelector('pre code');
+
+      yearEl.textContent = new Date().getFullYear();
+
+      // Data model (ajuste links depois)
+      const items = [
+        // Exercícios Básicos (10)
+        { id: 'ex1', type: 'exercicio', title: '10 Exercícios Básicos', problem: 'Fixação de estruturas e operadores.', solution: 'Sequências e lógica com validações simples.', tags: ['Algoritmos', 'Fundamentos'], links: [{label:'PDF', href:'./ex1.pdf'},{label:'Código', action:'openCode', code:'// Código do exercício 1\nprint("Hello")'}] },
+
+        // Exercícios Condicionais (15)
+        { id: 'ex2', type: 'exercicio', title: '15 Exercícios (Condicionais)', problem: 'Tomada de decisão e regras.', solution: 'Estruturas if/else aprofundadas.', tags: ['Condicionais', 'Regras'], links: [{label:'PDF', href:'./ex2.pdf'},{label:'Código', action:'openCode', code:'// Código do exercício 2\nif (x > y) { /* ... */ }'}] },
+
+        // Evolução Técnica
+        { id: 'ex3', type: 'exercicio', title: 'Evolução Técnica', problem: 'Identificar gargalos e otimizar.', solution: 'Refatoração reduzindo complexidade ciclomática.', tags: ['Refatoração', 'Otimização'], links: [{label:'PDF', href:'./ex3.pdf'},{label:'app.py', action:'openCode', code:'# app.py (placeholder)\nprint("Refatorado!")'}] },
+
+        // Exercícios em Papel
+        { id: 'ex4', type: 'exercicio', title: 'Exercícios em Papel', problem: 'Desenvolver algoritmos sem IDEs.', solution: 'Testes de mesa manuais e validação.', tags: ['Testes', 'Lógica'], links: [{label:'PDF', href:'./ex4.pdf'},{label:'Código', action:'openCode', code:'# Versão melhorada (placeholder)'}] },
+
+        // Modularização de Código
+        { id: 'ex5', type: 'exercicio', title: 'Modularização de Código', problem: 'Evitar código longo/repetitivo.', solution: 'Segmentar em funções e módulos isolados.', tags: ['Modularização', 'Manutenção'], links: [{label:'PDF', href:'./ex5.pdf'},{label:'Código', action:'openCode', code:'// Modularização (placeholder)'}] },
+
+        // Projetos
+        { id: 'p1', type: 'projeto', title: 'Projeto: Portal Alegrete', problem: 'Criar arquitetura lógica para sistema web.', solution: 'Levantamento de requisitos e estrutura funcional.', tags: ['Arquitetura', 'Requisitos'], links: [{label:'PDF', href:'./portal-alegrete.pdf'},{label:'Demo', href:'#'}] },
+
+        { id: 'p2', type: 'projeto', title: 'Portal Alegrete (Refatorado)', problem: 'Atualizar sistema antigo com conceitos modernos.', solution: 'Novas funcionalidades e documentação avançada.', tags: ['Refatoração', 'Documentação'], links: [{label:'PDF', href:'./portal-alegrete-refatorado.pdf'},{label:'Relatório', href:'./relatorio.pdf'}] },
+
+        { id: 'p3', type: 'projeto', title: 'Desafio 01: Treliça Plana', problem: 'Analisar forças em treliça isostática.', solution: 'Testes comparativos de algoritmos de IAs.', tags: ['Engenharia', 'IA'], links: [{label:'PDF', href:'./trelica.pdf'},{label:'GPT', action:'openCode', code:'// Prompt / resultado GPT (placeholder)'}] },
+
+        { id: 'p4', type: 'projeto', title: 'Desafio 02: Água', problem: 'Calcular demanda e autonomia hídrica.', solution: 'Algoritmo de controle com comparativas.', tags: ['Simulação', 'Controle'], links: [{label:'PDF', href:'./agua.pdf'},{label:'Código', action:'openCode', code:'// Código do algoritmo (placeholder)'}] },
+
+        { id: 'p5', type: 'projeto', title: 'Engenharia Aplicada', problem: 'Traduzir problema para código.', solution: 'Simulador de Usina de Biomassa.', tags: ['Simulação', 'Modelagem'], links: [{label:'PDF', href:'./biomassa.pdf'},{label:'Simulador', href:'#'}] },
+
+        { id: 'p6', type: 'projeto', title: 'Relato de Entrevistas', problem: 'Compilar dados qualitativos de campo.', solution: 'Transcrição e relatório conclusivo.', tags: ['Pesquisa', 'Relatório'], links: [{label:'PDF', href:'./entrevistas.pdf'},{label:'Arquivo', action:'openCode', code:'// Relatório (placeholder)'}] }
+      ];
+
+      // Theme handling
+      const THEME_KEY = 'portfolio-theme';
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+      const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', initialTheme);
+      themeLabel.textContent = initialTheme === 'light' ? 'Light' : 'Dark';
+
+      function toggleTheme(){
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+        themeLabel.textContent = next === 'light' ? 'Light' : 'Dark';
+      }
+
+      themeBtn.addEventListener('click', toggleTheme);
+
+      // Catalog state
+      let filter = 'all';
+
+      function escapeHtml(str){
+        return String(str)
+          .replaceAll('&','&amp;')
+          .replaceAll('<','&lt;')
+          .replaceAll('>','&gt;')
+          .replaceAll('"','&quot;')
+          .replaceAll("'","&#039;");
+      }
+
+      function renderSkeletons(){
+        catalogEl.innerHTML = '';
+        const n = 6;
+        for(let i=0;i<n;i++){
+          const s = document.createElement('div');
+          s.className = 'skeleton';
+          s.setAttribute('aria-hidden', 'true');
+          catalogEl.appendChild(s);
+        }
+      }
+
+      function createCard(item){
+        const card = document.createElement('article');
+        card.className = 'card reveal';
+        card.setAttribute('data-type', item.type);
+        card.setAttribute('aria-label', item.title);
+
+        const typeLabel = item.type === 'projeto' ? 'Projeto' : 'Exercício';
+
+        card.innerHTML = `
+          <div class="meta">${typeLabel}</div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.problem)}</p>
+          <div class="pill-row" aria-label="Tecnologias e tags">
+            ${(item.tags || []).slice(0,4).map(t => `<span class="pill">${escapeHtml(t)}</span>`).join('')}
+          </div>
+          <p style="margin-top:10px;">💡 <strong>Solução:</strong> ${escapeHtml(item.solution)}</p>
+          <div class="card-actions" aria-label="Ações">
+            ${(item.links || []).map(l => {
+              if(l.action === 'openCode'){
+                return `<button class="btn-card" type="button" data-open-code data-code="${escapeHtml(l.code)}" data-title="${escapeHtml(l.label)}">
+                          <span aria-hidden="true">💻</span> ${escapeHtml(l.label)}
+                        </button>`;
+              }
+              return `<a class="btn-card" href="${escapeHtml(l.href)}" target="_blank" rel="noreferrer">
+                        <span aria-hidden="true">📄</span> ${escapeHtml(l.label)}
+                      </a>`;
+            }).join('')}
+          </div>
+        `;
+        return card;
+      }
+
+      function applyFilterAndSearch(){
+        const q = (searchInput.value || '').trim().toLowerCase();
+        const filtered = items.filter(it => {
+          const typeOk = filter === 'all' ? true : it.type === filter;
+          if(!typeOk) return false;
+          if(!q) return true;
+
+          const hay = [
+            it.title,
+            it.problem,
+            it.solution,
+            ...(it.tags || [])
+          ].join(' ').toLowerCase();
+
+          return hay.includes(q);
+        });
+
+        document.getElementById('statCount').textContent = String(filtered.length);
+
+        // render
+        catalogEl.innerHTML = '';
+        if(filtered.length === 0){
+          const empty = document.createElement('div');
+          empty.className = 'panel reveal';
+          empty.style.gridColumn = '1 / -1';
+          empty.innerHTML = `<strong>Nenhum resultado encontrado.</strong><p class="small-muted" style="margin:10px 0 0;">
+            Tente outra busca ou selecione “Todos”.
+          </p>`;
+          catalogEl.appendChild(empty);
+          return;
+        }
+
+        for(const it of filtered){
+          catalogEl.appendChild(createCard(it));
+        }
+      }
+
+      // Filter buttons (sincroniza todos os grupos)
+      function syncFilterButtons(){
+        const groups = document.querySelectorAll('[data-filter]');
+        groups.forEach(btn => {
+          const v = btn.getAttribute('data-filter');
+          const pressed = (v === filter);
+          btn.setAttribute('aria-pressed', String(pressed));
+        });
+      }
+
+      document.querySelectorAll('[data-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          filter = btn.getAttribute('data-filter');
+          syncFilterButtons();
+
+          // loading simulation (microinteração)
+          renderSkeletons();
+          window.setTimeout(() => applyFilterAndSearch(), 240);
+        });
+      });
+
+      // Search
+      let searchTimer = null;
+      searchInput.addEventListener('input', () => {
+        window.clearTimeout(searchTimer);
+        searchTimer = window.setTimeout(() => {
+          renderSkeletons();
+          window.setTimeout(() => applyFilterAndSearch(), 160);
+        }, 180);
+      });
+
+      // Modal
+      catalogEl.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-open-code]');
+        if(!btn) return;
+
+        const title = btn.getAttribute('data-title') || 'Arquivo';
+        const code = btn.getAttribute('data-code') || '';
+
+        modalTitle.textContent = title;
+        // Use textContent-like behavior by directly putting escaped HTML inside code.
+        modalBodyCode.textContent = code;
+        dialog.showModal();
+      });
+
+      modalClose.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (e) => {
+        const rect = dialog.getBoundingClientRect();
+        const inDialog =
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom;
+
+        if(!inDialog) dialog.close();
+      });
+      window.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && dialog.open) dialog.close();
+      });
+
+      // Contact form validation (front-end only)
+      const form = document.getElementById('contactForm');
+      const resetBtn = document.getElementById('resetBtn');
+      const feedback = document.getElementById('feedback');
+
+      function setFeedback(msg, kind){
+        feedback.classList.remove('ok','err');
+        if(kind) feedback.classList.add(kind);
+        feedback.textContent = msg;
+      }
+
+      function isValidEmail(email){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setFeedback('', '');
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const topic = document.getElementById('topic').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if(!name || name.length < 2){
+          setFeedback('Por favor, informe seu nome (mín. 2 caracteres).', 'err');
+          return;
+        }
+        if(!email || !isValidEmail(email)){
+          setFeedback('Por favor, informe um e-mail válido.', 'err');
+          return;
+        }
+        if(!topic || topic.length < 3){
+          setFeedback('Por favor, informe um assunto (mín. 3 caracteres).', 'err');
+          return;
+        }
+        if(!message || message.length < 10){
+          setFeedback('Por favor, escreva uma mensagem (mín. 10 caracteres).', 'err');
+          return;
+        }
+
+        // Simula envio
+        setFeedback('Enviando mensagem…', '');
+        await new Promise(r => setTimeout(r, 650));
+
+        setFeedback('✅ Mensagem enviada! (simulação no front-end)', 'ok');
+        form.reset();
+      });
+
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        setFeedback('', '');
+      });
+
+      // To top
+      toTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        for(const entry of entries){
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        }
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => io.observe(el));
+
+      // Initial render
+      renderSkeletons();
+      window.setTimeout(() => {
+        syncFilterButtons();
+        applyFilterAndSearch();
+      }, 260);
+    })();
+  </script>
 </body>
 </html>
