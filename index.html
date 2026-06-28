@@ -3,163 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Algoritmos - Lorenzo Ximendes</title>
+    <title>Lorenzo Ximendes | Engenharia de Software</title>
+    <meta name="description" content="Portfólio de Engenharia de Software: Projetos, Algoritmos e Inovação.">
     
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/cards.min.css">
-    <link rel="stylesheet" href="css/modal.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Design Tokens - A base do design profissional */
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-blue: #58a6ff;
-            --accent-green: #3fb950;
-            --text-main: #e6edf3;
-            --text-muted: #8b949e;
-            --border: #30363d;
+            --bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-primary: #ededed;
+            --text-secondary: #a1a1a1;
+            --accent: #3b82f6;
+            --border: rgba(255, 255, 255, 0.1);
+            --radius: 12px;
         }
-        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-color); color: var(--text-main); margin: 0; line-height: 1.6; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Estilo da nova seção de índice */
-        .index-section { max-width: 1100px; margin: 4rem auto; padding: 2rem; }
-        .index-header { text-align: center; margin-bottom: 3rem; }
-        .index-header h2 { font-size: 2rem; color: var(--accent-blue); margin-bottom: 0.5rem; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        
-        .doc-card { 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            border-radius: 12px; 
-            padding: 1.5rem; 
-            transition: all 0.3s ease; 
-            position: relative;
-            overflow: hidden;
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
         }
-        .doc-card::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: var(--accent-blue); }
-        .doc-card:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        
-        .doc-title { font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-        .file-list { list-style: none; padding: 0; }
-        .file-item { margin-bottom: 0.8rem; }
-        .file-link { 
-            display: inline-block; 
-            padding: 0.4rem 0.8rem; 
-            background: #21262d; 
-            border-radius: 6px; 
-            text-decoration: none; 
-            color: var(--text-muted); 
-            font-size: 0.85rem; 
-            transition: 0.2s;
-            border: 1px solid transparent;
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        /* Estilo do Header */
+        header { padding: 4rem 0; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; letter-spacing: -0.05em; }
+        p.subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+
+        /* Grid de Projetos Moderno */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
-        .file-link:hover { background: #30363d; color: var(--accent-blue); border-color: var(--accent-blue); }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+        }
+
+        .card h3 { margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
 
-    <main class="main-content" id="main-content">
-        <section class="index-section">
-            <div class="index-header">
-                <h2>📁 Arquivo de Entregas</h2>
-                <p>Navegação rápida por diretórios de projeto</p>
-            </div>
+    <main class="container">
+        <header>
+            <h1>Lorenzo Ximendes</h1>
+            <p class="subtitle">Engenheiro de Software em formação. Construindo sistemas escaláveis.</p>
+        </header>
 
-            <div class="grid-container">
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ 10-exercicios/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="10-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="10-exercicios/codigo.py" class="file-link" target="_blank">💻 codigo.py</a></li>
-                    </ul>
+        <section id="projetos">
+            <h2>Projetos Selecionados</h2>
+            <div class="projects-grid">
+                <article class="card">
+                    <h3>Sistema de Monitoramento</h3>
+                    <p>Desenvolvimento de arquitetura para monitoramento em tempo real utilizando Python e sensores.</p>
+                    <a href="#" class="btn">Ver Código</a>
                 </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ 15-exercicios/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="15-exercicios/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="15-exercicios/codigo.py" class="file-link" target="_blank">💻 codigo.py</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ evolucao-tecnica/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="evolucao-tecnica/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="evolucao-tecnica/app.py" class="file-link" target="_blank">💻 app.py</a></li>
-                        <li class="file-item"><a href="evolucao-tecnica/en.mp4" class="file-link" target="_blank">🎬 en.mp4</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ exercicios-em-papel/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="exercicios-em-papel/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="exercicios-em-papel/codigo_python_melhorado.pdf" class="file-link" target="_blank">📄 codigo_python_melhorado.pdf</a></li>
-                        <li class="file-item"><a href="exercicios-em-papel/codigo_transcrito.py" class="file-link" target="_blank">💻 codigo_transcrito.py</a></li>
-                    </ul>
-                </article>
-                
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ modularizacao/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="modularizacao/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="modularizacao/monitoramento_freio_srad1000.py" class="file-link" target="_blank">💻 monitoramento_freio_srad1000.py</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ portal-alegrete/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="portal-alegrete/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ portal-alegrete-novo/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="portal-alegrete-novo/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="portal-alegrete-novo/relatorio da atividade.pdf" class="file-link" target="_blank">📄 relatorio da atividade.pdf</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ problema-1/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="problema-1/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="problema-1/codigo_gpt_refeito.py" class="file-link" target="_blank">💻 codigo_gpt_refeito.py</a></li>
-                    </ul>
-                </article>
-                
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ problema-2/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="problema-2/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="problema-2/abastecimento_gemini.py" class="file-link" target="_blank">💻 abastecimento_gemini.py</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ problema-de-engenharia/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="problema-de-engenharia/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                        <li class="file-item"><a href="problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx" class="file-link" target="_blank">💻 simulador.jsx</a></li>
-                    </ul>
-                </article>
-
-                <article class="doc-card">
-                    <h3 class="doc-title">⚙️ relato-entrevistas/</h3>
-                    <ul class="file-list">
-                        <li class="file-item"><a href="relato-entrevistas/index.pdf" class="file-link" target="_blank">📄 index.pdf</a></li>
-                    </ul>
-                </article>
-
-            </div>
+                </div>
         </section>
     </main>
 
-    <footer class="page-footer" role="contentinfo">
-        <p>&copy; 2026 Lorenzo Ximendes. Portfólio de Engenharia Mecânica - UNIPAMPA.</p>
-    </footer>
 </body>
 </html>
