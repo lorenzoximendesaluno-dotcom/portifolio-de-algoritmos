@@ -1,138 +1,313 @@
 <!doctype html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lorenzo Ximendes • Portfólio de Projetos e Algoritmos</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  .section { margin-top: 20px; }
+  .codeBox {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    background: #0b1020;
+    color: #e6e6e6;
+    overflow: auto;
+    max-height: 420px;
+    white-space: pre;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  .btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    margin-right: 8px;
+  }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  dialog { padding: 16px; border-radius: 10px; }
+</style>
 </head>
 <body>
-  <a href="#conteudo">Pular para conteúdo principal</a>
 
-  <h1 id="conteudo">
-    Portfólio
-    <p><strong>Lorenzo Ximendes</strong> • Portfólio de Projetos e Algoritmos</p>
-  </h1>
+<a href="#conteudo">Pular para conteúdo principal</a>
 
-  <h2>📌 Trabalhos e Arquivos</h2>
+<h1>Portfólio</h1>
+<p><strong>Lorenzo Ximendes</strong> • Portfólio de Projetos e Algoritmos</p>
 
-  <h2>10-exercicios</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="codigo.py">codigo.py</a></li>
-  </ul>
+<h2>📌 Trabalhos e Arquivos</h2>
 
-  <h2>15-exercicios</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="codigo.py">codigo.py</a></li>
-  </ul>
+<!-- =========================
+     LISTAS (links para visualizar/rodar .py)
+     ========================= -->
 
-  <h2>evolucao-tecnica</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="app.py">app.py</a></li>
-    <li><a href="en.mp4">en.mp4</a></li>
-  </ul>
+<h2>10-exercicios</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li>
+    <a href="codigo.py"
+       class="py-link"
+       data-file="codigo.py">codigo.py</a>
+  </li>
+</ul>
 
-  <h2>exercicios-em-papel</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="codigo_python_melhorado.pdf">codigo_python_melhorado.pdf</a></li>
-    <li><a href="codigo_transcrito.py">codigo_transcrito.py</a></li>
-    <li><a href="imagem-1.jpg">imagem-1.jpg</a></li>
-    <li><a href="imagem-2.jpg">imagem-2.jpg</a></li>
-    <li><a href="imagem-3.jpg">imagem-3.jpg</a></li>
-    <li><a href="imagem-4.jpg">imagem-4.jpg</a></li>
-    <li><a href="imagem-5.jpg">imagem-5.jpg</a></li>
-    <li><a href="Relatorio_Comparativo_Codigos.pdf">Relatorio_Comparativo_Codigos.pdf</a></li>
-  </ul>
+<h2>15-exercicios</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li>
+    <a href="codigo.py"
+       class="py-link"
+       data-file="codigo.py">codigo.py</a>
+  </li>
+</ul>
 
-  <h2>modularizacao</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="comparacao.pdf">comparacao.pdf</a></li>
-    <li><a href="monitoramento_freio_srad1000.py">monitoramento_freio_srad1000.py</a></li>
-    <li><a href="pergunta_as_LLMs.pdf">pergunta_as_LLMs.pdf</a></li>
-  </ul>
+<h2>evolucao-tecnica</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li>
+    <a href="app.py"
+       class="py-link"
+       data-file="app.py">app.py</a>
+  </li>
+  <li><a href="en.mp4">en.mp4</a></li>
+</ul>
 
-  <h2>portal-alegrete</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-  </ul>
+<h2>exercicios-em-papel</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li><a href="codigo_python_melhorado.pdf">codigo_python_melhorado.pdf</a></li>
+  <li>
+    <a href="codigo_transcrito.py"
+       class="py-link"
+       data-file="codigo_transcrito.py">codigo_transcrito.py</a>
+  </li>
+  <li><a href="imagem-1.jpg">imagem-1.jpg</a></li>
+  <li><a href="imagem-2.jpg">imagem-2.jpg</a></li>
+  <li><a href="imagem-3.jpg">imagem-3.jpg</a></li>
+  <li><a href="imagem-4.jpg">imagem-4.jpg</a></li>
+  <li><a href="imagem-5.jpg">imagem-5.jpg</a></li>
+  <li><a href="Relatorio_Comparativo_Codigos.pdf">Relatorio_Comparativo_Codigos.pdf</a></li>
+</ul>
 
-  <h2>portal-alegrete-novo</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="relatorio_atividade.pdf">relatorio_atividade.pdf</a></li>
-    <li><a href="relatorio_novos_eventos.pdf">relatorio_novos_eventos.pdf</a></li>
-  </ul>
+<h2>modularizacao</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li><a href="comparacao.pdf">comparacao.pdf</a></li>
+  <li>
+    <a href="monitoramento_freio_srad1000.py"
+       class="py-link"
+       data-file="monitoramento_freio_srad1000.py">
+       monitoramento_freio_srad1000.py
+    </a>
+  </li>
+  <li><a href="pergunta_as_LLMs.pdf">pergunta_as_LLMs.pdf</a></li>
+</ul>
 
-  <h2>problema-1</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="analyse_e_codigo_refeito-gpt.pdf">analyse_e_codigo_refeito-gpt.pdf</a></li>
-    <li><a href="analyse-deepseek.pdf">analyse-deepseek.pdf</a></li>
-    <li><a href="analyse-gemini.pdf">analyse-gemini.pdf</a></li>
-    <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
-    <li><a href="codigo_deepseek_corrigido.py">codigo_deepseek_corrigido.py</a></li>
-    <li><a href="codigo_gemini.pdf">codigo_gemini.pdf</a></li>
-    <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
-    <li><a href="codigo_gpt_refeito.py">codigo_gpt_refeito.py</a></li>
-  </ul>
+<h2>portal-alegrete</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+</ul>
 
-  <h2>problema-2</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="abastecimento_gemini.py">abastecimento_gemini.py</a></li>
-    <li><a href="codigo corrigido gpt.pdf">codigo corrigido gpt.pdf</a></li>
-    <li><a href="codigo_corrigido_deep.pdf">codigo_corrigido_deep.pdf</a></li>
-    <li><a href="codigo_corrigido_gemini.pdf">codigo_corrigido_gemini.pdf</a></li>
-    <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
-    <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
-    <li><a href="comparacao.pdf">comparacao.pdf</a></li>
-    <li><a href="desafio_gpt.pdf">desafio_gpt.pdf</a></li>
-    <li><a href="gemini.pdf">gemini.pdf</a></li>
-  </ul>
+<h2>portal-alegrete-novo</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li><a href="relatorio_atividade.pdf">relatorio_atividade.pdf</a></li>
+  <li><a href="relatorio_novos_eventos.pdf">relatorio_novos_eventos.pdf</a></li>
+</ul>
 
-  <h2>problema-de-engenharia</h2>
-  <ul>
-    <li><a href="index.pdf">index.pdf</a></li>
-    <li><a href="imagem_1.pdf">imagem_1.pdf</a></li>
-    <li><a href="imagem_2.pdf">imagem_2.pdf</a></li>
-    <li><a href="imagem_3.pdf">imagem_3.pdf</a></li>
-    <li><a href="simulador.jsx">simulador.jsx</a></li>
-  </ul>
+<h2>problema-1</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li><a href="analyse_e_codigo_refeito-gpt.pdf">analyse_e_codigo_refeito-gpt.pdf</a></li>
+  <li><a href="analyse-deepseek.pdf">analyse-deepseek.pdf</a></li>
+  <li><a href="analyse-gemini.pdf">analyse-gemini.pdf</a></li>
+  <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
+  <li>
+    <a href="codigo_deepseek_corrigido.py"
+       class="py-link"
+       data-file="codigo_deepseek_corrigido.py">codigo_deepseek_corrigido.py</a>
+  </li>
+  <li><a href="codigo_gemini.pdf">codigo_gemini.pdf</a></li>
+  <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
+  <li>
+    <a href="codigo_gpt_refeito.py"
+       class="py-link"
+       data-file="codigo_gpt_refeito.py">codigo_gpt_refeito.py</a>
+  </li>
+</ul>
 
-  <h2>🧾 Como está organizado</h2>
-  <ul>
-    <li><strong>Exercícios</strong>: arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
-    <li><strong>Evolução técnica</strong>: código + vídeo (quando houver) + relatório/figuras (PDF)</li>
-    <li><strong>Modularização</strong>: comparação + monitoramento + páginas PDF do material</li>
-    <li><strong>Problemas</strong>: análises por IA + códigos corrigidos + comparações + index</li>
-  </ul>
+<h2>problema-2</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li>
+    <a href="abastecimento_gemini.py"
+       class="py-link"
+       data-file="abastecimento_gemini.py">abastecimento_gemini.py</a>
+  </li>
+  <li><a href="codigo corrigido gpt.pdf">codigo corrigido gpt.pdf</a></li>
+  <li><a href="codigo_corrigido_deep.pdf">codigo_corrigido_deep.pdf</a></li>
+  <li><a href="codigo_corrigido_gemini.pdf">codigo_corrigido_gemini.pdf</a></li>
+  <li><a href="codigo_deep.pdf">codigo_deep.pdf</a></li>
+  <li><a href="codigo_gpt.pdf">codigo_gpt.pdf</a></li>
+  <li><a href="comparacao.pdf">comparacao.pdf</a></li>
+  <li><a href="desafio_gpt.pdf">desafio_gpt.pdf</a></li>
+  <li><a href="gemini.pdf">gemini.pdf</a></li>
+</ul>
 
-  <h2>📩 Contato</h2>
-  <form>
-    <label>Seu nome</label>
-    <input />
+<h2>problema-de-engenharia</h2>
+<ul>
+  <li><a href="index.pdf">index.pdf</a></li>
+  <li><a href="imagem_1.pdf">imagem_1.pdf</a></li>
+  <li><a href="imagem_2.pdf">imagem_2.pdf</a></li>
+  <li><a href="imagem_3.pdf">imagem_3.pdf</a></li>
+  <li><a href="simulador.jsx">simulador.jsx</a></li>
+</ul>
 
-    <label>Seu e-mail</label>
-    <input />
+<!-- =========================
+     Visualização / Execução
+     ========================= -->
+<div id="conteudo" class="section"></div>
 
-    <label>Assunto</label>
-    <input />
+<h2>🧾 Como está organizado</h2>
+<ul>
+  <li><strong>Exercícios</strong>: arquivos principais (ex: <em>codigo.py</em>, <em>index.pdf</em>)</li>
+  <li><strong>Evolução técnica</strong>: código + vídeo (quando houver) + relatório/figuras (PDF)</li>
+  <li><strong>Modularização</strong>: comparação + monitoramento + páginas PDF do material</li>
+  <li><strong>Problemas</strong>: análises por IA + códigos corrigidos + comparações + index</li>
+</ul>
 
-    <label>Mensagem</label>
-    <textarea></textarea>
+<h2>📩 Contato</h2>
+<form>
+  <label>Seu nome</label>
+  <input>
+  <label>Seu e-mail</label>
+  <input>
+  <label>Assunto</label>
+  <input>
+  <label>Mensagem</label>
+  <textarea></textarea>
+  <button type="button">🚀 Enviar mensagem</button>
+  <button type="reset">🧽 Limpar</button>
+</form>
 
-    <button type="button">🚀 Enviar mensagem</button>
-    <button type="reset">🧽 Limpar</button>
-  </form>
+<dialog id="py-dialog">
+  <div class="row" style="justify-content: space-between;">
+    <h3 id="py-title">Prévia do código</h3>
+    <button class="btn" id="closeDialog" type="button">Fechar ✖</button>
+  </div>
 
-  <dialog>
-    <button type="button">Fechar ✖</button>
-    <h3>Prévia</h3>
-    <pre><code>// preview</code></pre>
-  </dialog>
+  <div class="row" style="margin-top:10px;">
+    <button class="btn" id="btn-run" type="button">▶️ Executar</button>
+    <button class="btn" id="btn-refresh" type="button">🔄 Recarregar código</button>
+    <span id="status" style="color:#888;">Clique no arquivo .py para visualizar.</span>
+  </div>
+
+  <h4 style="margin-top:14px;">Código</h4>
+  <div class="codeBox" id="py-code">// ...</div>
+
+  <h4 style="margin-top:14px;">Saída / Log</h4>
+  <div class="codeBox" id="py-output" style="background:#111827;">// ...</div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('py-dialog');
+  const pyTitle = document.getElementById('py-title');
+  const pyCode = document.getElementById('py-code');
+  const pyOutput = document.getElementById('py-output');
+  const statusEl = document.getElementById('status');
+
+  const btnRun = document.getElementById('btn-run');
+  const btnRefresh = document.getElementById('btn-refresh');
+  const closeDialog = document.getElementById('closeDialog');
+
+  let currentFile = null;
+
+  // 1) Visualizar o conteúdo do .py (sem "download automático")
+  async function loadPy(file) {
+    statusEl.textContent = 'Carregando código...';
+    pyOutput.textContent = '// (sem execução ainda)';
+
+    try {
+      // Busca o .py como texto (isso ainda "carrega" do servidor, mas não baixa para o usuário)
+      const res = await fetch(file, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Falha ao carregar: ' + res.status);
+
+      const text = await res.text();
+      pyCode.textContent = text;
+      statusEl.textContent = 'Código carregado. Você pode executar. ✅';
+    } catch (err) {
+      pyCode.textContent = '';
+      statusEl.textContent = 'Erro ao carregar o código.';
+      pyOutput.textContent = String(err);
+    }
+  }
+
+  // 2) Executar o código via backend
+  // Endpoint esperado (exemplo):
+  //   POST /run { file: "codigo.py" }
+  async function runPy(file) {
+    statusEl.textContent = 'Executando...';
+    pyOutput.textContent = '';
+
+    try {
+      const res = await fetch('/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ file })
+      });
+
+      if (!res.ok) throw new Error('Falha ao executar: ' + res.status);
+
+      // Supondo que o backend devolva JSON: { output: "..." }
+      const data = await res.json();
+      pyOutput.textContent = data.output ?? JSON.stringify(data, null, 2);
+      statusEl.textContent = 'Execução finalizada. ✅';
+    } catch (err) {
+      pyOutput.textContent = String(err);
+      statusEl.textContent = 'Erro na execução.';
+    }
+  }
+
+  function openDialog(file) {
+    currentFile = file;
+    pyTitle.textContent = `Prévia: ${file}`;
+    dialog.showModal();
+    loadPy(file);
+  }
+
+  document.querySelectorAll('.py-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const file = link.getAttribute('data-file');
+      openDialog(file);
+    });
+  });
+
+  btnRun.addEventListener('click', () => {
+    if (!currentFile) return;
+    runPy(currentFile);
+  });
+
+  btnRefresh.addEventListener('click', () => {
+    if (!currentFile) return;
+    loadPy(currentFile);
+  });
+
+  closeDialog.addEventListener('click', () => dialog.close());
+
+  dialog.addEventListener('click', (e) => {
+    const rect = dialog.getBoundingClientRect();
+    const inDialog = (
+      rect.top <= e.clientY &&
+      e.clientY <= rect.bottom &&
+      rect.left <= e.clientX &&
+      e.clientX <= rect.right
+    );
+    if (!inDialog) dialog.close();
+  });
+</script>
+
 </body>
 </html>
