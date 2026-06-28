@@ -79,6 +79,22 @@
         .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--accent-blue); color: white; padding: 8px; z-index: 100; }
         .skip-to-main:focus { top: 0; }
     </style>
+
+    <style>
+        /* Estilos da Seção de Resumo de Pastas */
+        .folder-summary-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .summary-header { margin-bottom: 2rem; text-align: center; }
+        .summary-title { font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .summary-description { color: var(--text-muted); font-size: 0.95rem; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .summary-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .summary-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-color: var(--accent-blue); }
+        .folder-name { font-size: 1rem; color: var(--accent-blue); margin-top: 0; margin-bottom: 1rem; font-family: Consolas, Monaco, 'Courier New', monospace; }
+        .folder-files { list-style: none; padding: 0; margin: 0; }
+        .folder-files li { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .folder-files li:last-child { margin-bottom: 0; }
+    </style>
+
 </head>
 <body>
     <!-- Skip to Main Link (Acessibilidade) -->
@@ -420,6 +436,29 @@
                         </div>
                     </div>
                 </article>
+            </section>
+
+            
+            <!-- Resumo de Entregas por Pasta -->
+            <section class="folder-summary-section" aria-label="Resumo de entregas por pasta">
+                <div class="summary-header">
+                    <h2 class="summary-title">📂 Índice Completo de Entregas</h2>
+                    <p class="summary-description">Lista de todos os trabalhos organizados por diretório.</p>
+                </div>
+                
+                <div class="summary-grid">
+                    <div class="summary-card"><h3 class="folder-name">📁 10-exercicios/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 codigo.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 15-exercicios/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 codigo.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 evolucao-tecnica/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 app.py</li><li>🎬 en.mp4</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 exercicios-em-papel/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>📄 codigo_python_melhorado.pdf</li><li>💻 codigo_transcrito.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 modularizacao/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 monitoramento_freio_srad1000.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 portal-alegrete/</h3><ul class="folder-files"><li>📄 index.pdf</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 portal-alegrete-novo/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>📄 relatorio da atividade.pdf</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 problema-1/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 codigo_gpt_refeito.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 problema-2/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 abastecimento_gemini.py</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 problema-de-engenharia/</h3><ul class="folder-files"><li>📄 index.pdf</li><li>💻 simulador_visual_usina_biomassa_casca_arroz.jsx</li></ul></div>
+                    <div class="summary-card"><h3 class="folder-name">📁 relato-entrevistas/</h3><ul class="folder-files"><li>📄 index.pdf</li></ul></div>
+                </div>
             </section>
 
             <!-- Botão Topo -->
