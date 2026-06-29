@@ -558,6 +558,16 @@
       .stats-bar { gap: .5rem; }
       .stat-card { min-width: 100px; padding: .75rem .85rem; }
     }
+  
+    /* ── respiro visual ── */
+    .section-header { margin-bottom: 1.25rem !important; }
+    .modules { gap: 1.25rem; }
+    .mod-body { padding: 1.1rem 1.25rem 1.4rem; }
+    .file-list { gap: .6rem; }
+    .info-grid { gap: 1.1rem; }
+    .info-card { padding: 1.4rem 1.5rem; line-height: 1.75; }
+    .info-card-title { font-size: 1rem; margin-bottom: .55rem; font-weight: 600; }
+    main { padding-bottom: 3rem; }
   </style>
 </head>
 <body>
@@ -596,8 +606,15 @@
       <span class="meta-tag">Modularização</span>
       <span class="meta-tag">GPT · DeepSeek · Gemini</span>
     </div>
-  </div>
-</section>
+  
+    <p class="hero-sub" style="margin-top:1.25rem;font-size:.88rem;border-top:1px solid var(--border);padding-top:1rem;line-height:1.75;">
+      Durante a disciplina, percebi que a maior dificuldade estava menos na sintaxe e mais
+      no raciocínio antes de começar a escrever: entender o problema de verdade. A comparação
+      entre os modelos de IA me surpreendeu — cada ferramenta errou de formas diferentes,
+      o que me forçou a desenvolver um olhar crítico sobre as sugestões geradas. Hoje
+      escreveria funções menores, mais bem nomeadas e documentadas desde o início.
+    </p>
+  </div></section>
 
 <!-- ── STATS ── -->
 <div class="stats-bar" aria-label="Estatísticas">
@@ -903,7 +920,7 @@
   </div><!-- /modules -->
 
   <!-- sem resultados -->
-  <div id="sem-resultados" role="status" aria-live="polite">
+  <div id="sem-resultados" role="status" aria-live="polite" style="display:none;">
     <p>Nenhum arquivo encontrado.</p>
   </div>
 
@@ -918,55 +935,19 @@
     </div>
   </div>
   <!-- ── INFO CARDS ── -->
-  <div class="section-header" style="margin-top:2.5rem;">
-    <h2>Mapa do Portfólio</h2>
+    <div class="section-header" style="margin-top:2.5rem;">
+    <h2>Contato</h2>
   </div>
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-card-title">Exercícios</div>
-      <p>Listas de algoritmos desenvolvidos em Python, com enunciados e soluções comentadas. O foco está em lógica de programação, estruturas condicionais, repetição e funções.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">Evolução Técnica</div>
-      <p>Registro do processo de melhoria do código ao longo da disciplina, com comparação entre versões, vídeo demonstrativo e análise das decisões tomadas.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">Modularização</div>
-      <p>Aplicação prática de funções, passagem de parâmetros e organização modular do código no contexto do monitoramento do sistema de freios SRAD1000.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">Análise com IA</div>
-      <p>Comparação entre soluções geradas por GPT, DeepSeek e Gemini, com análise crítica de lógica, clareza e precisão das respostas.</p>
-    </div>
-  </div>
-
-  <div class="contact-wrap">
-    <div class="contact-card">
-      <div class="full">
-        <p class="contact-title">Entre em contato</p>
-        <p class="contact-sub">Utilize o formulário abaixo para entrar em contato.</p>
-      </div>
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input id="nome" type="text" placeholder="Seu nome completo" />
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" placeholder="nome@exemplo.com" />
-      </div>
-      <div class="form-group full">
-        <label for="assunto">Assunto</label>
-        <input id="assunto" type="text" placeholder="Ex: Projeto, dúvida, feedback..." />
-      </div>
-      <div class="form-group full">
-        <label for="msg">Mensagem</label>
-        <textarea id="msg" placeholder="Escreva sua mensagem..."></textarea>
-      </div>
-      <div class="form-actions full">
-        <button class="btn-primary" type="button">🚀 Enviar mensagem</button>
-        <button class="btn-ghost"   type="reset"  onclick="document.getElementById('nome').value='';document.getElementById('email').value='';document.getElementById('assunto').value='';document.getElementById('msg').value=''">🧽 Limpar</button>
-      </div>
-    </div>
+  <div style="text-align:center;padding:1.5rem 1rem 2.5rem;color:var(--text2);font-size:.95rem;line-height:2.2;">
+    <p>Para comentários, dúvidas ou sugestões sobre os projetos apresentados:</p>
+    <p style="margin-top:.75rem;">
+      <strong style="color:var(--text);">E-mail:</strong>
+      <a href="mailto:seuemail@exemplo.com" style="color:var(--accent2);margin-left:.4rem;">seuemail@exemplo.com</a>
+    </p>
+    <p>
+      <strong style="color:var(--text);">GitHub:</strong>
+      <a href="https://github.com/lorenzoximendes" target="_blank" rel="noopener" style="color:var(--accent2);margin-left:.4rem;">github.com/lorenzoximendes</a>
+    </p>
   </div>
 
 </main>
@@ -974,13 +955,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <p>© 2025 <a href="#">Lorenzo Ximendes</a> · Engenharia Mecânica · Algoritmos</p>
-  <div class="footer-stack">
-    <span class="tech-pill">Python</span>
-    <span class="tech-pill">Pyodide</span>
-    <span class="tech-pill">Highlight.js</span>
-    <span class="tech-pill">GitHub Pages</span>
-    <span class="tech-pill">Vanilla JS</span>
-  </div>
+  <p style="margin-top:.4rem;font-size:.75rem;color:var(--text3);">Desenvolvido com Python · Vanilla JS · GitHub Pages</p>
 </footer>
 
 <script>
@@ -1043,7 +1018,7 @@
       }
     });
 
-    noResults.style.display = (q && totalVisible === 0) ? 'block' : 'none';
+    if (q && totalVisible === 0) { noResults.style.removeProperty('display'); } else { noResults.style.display = 'none'; }
     termoEl.textContent = busca.value.trim();
   });
 
