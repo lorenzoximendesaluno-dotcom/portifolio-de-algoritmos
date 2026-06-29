@@ -537,6 +537,22 @@
     /* ═══════════════════════════════════════════════════
        RESPONSIVE TWEAKS
     ═══════════════════════════════════════════════════ */
+    .hero { padding-bottom: 1.5rem; }
+    .hero h1 { line-height: 1.1; }
+    .hero-meta-compact { margin-top: 1rem; opacity: .9; }
+    .topbar-right .chip:first-child { display:none; }
+    .modules { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .module { height: 100%; }
+    .mod-header { align-items:flex-start; gap:.9rem; }
+    .mod-title { font-size: 1.02rem; }
+    .mod-title small { display:block; margin-top:.25rem; color: var(--text2); font-weight:400; }
+    .mod-body { border-top: 1px solid var(--border); margin-top:.85rem; padding-top:.85rem; }
+    .file-item { border-radius: 10px; background: rgba(255,255,255,.02); padding: .7rem .8rem; }
+    .file-link, .btn-open { min-width: 92px; justify-content:center; }
+    #sem-resultados { display:none; }
+
+    @media (max-width: 900px) { .modules { grid-template-columns: 1fr; } }
+
     @media (max-width: 540px) {
       .topbar-brand { display: none; }
       .stats-bar { gap: .5rem; }
@@ -571,38 +587,15 @@
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Apresentação">
   <div>
-    <p class="hero-eyebrow">Algoritmos em Engenharia</p>
-    <h1>
-      Portfólio Acadêmico —<br />
-      <em>Algoritmos em Engenharia</em>
-    </h1>
-    <p class="hero-sub">
-      Coleção de exercícios, projetos e estudos desenvolvidos ao longo da disciplina de <strong>Algoritmos em Engenharia Mecânica</strong>. O percurso vai do pseudocódigo ao código Python funcional, com análise comparativa entre modelos de inteligência artificial (<strong>GPT, DeepSeek e Gemini</strong>).
-    </p>
-    <div class="hero-meta">
-      <span class="meta-tag">🐍 Python</span>
-      <span class="meta-tag">⚙️ Engenharia Mecânica</span>
-      <span class="meta-tag">🤖 GPT · DeepSeek · Gemini</span>
-      <span class="meta-tag">📐 Algoritmos</span>
-      <span class="meta-tag">🔧 Modularização</span>
+    <p class="hero-eyebrow">Lorenzo Ximendes · Engenharia Mecânica</p>
+    <h1>Portfólio de Projetos e Algoritmos</h1>
+    <p class="hero-sub">Disciplina de Algoritmos em Engenharia Mecânica. Este portfólio reúne exercícios, projetos e análises desenvolvidos ao longo da disciplina, do pseudocódigo ao código Python funcional.</p>
+    <div class="hero-meta hero-meta-compact">
+      <span class="meta-tag">Python</span>
+      <span class="meta-tag">Algoritmos</span>
+      <span class="meta-tag">Modularização</span>
+      <span class="meta-tag">GPT · DeepSeek · Gemini</span>
     </div>
-    <p class="hero-sub" style="margin-top:1.25rem;font-size:.88rem;border-top:1px solid var(--border);padding-top:1rem;">
-      Durante a disciplina, percebi que as maiores dificuldades estavam menos na sintaxe e mais no raciocínio por trás de cada solução: entender o problema antes de começar a escrever código. A comparação entre os modelos de IA me surpreendeu — cada ferramenta errou de formas diferentes, o que me forçou a desenvolver um olhar crítico sobre as sugestões geradas. Hoje escreveria funções menores e mais bem documentadas desde o início.
-    </p>
-  </div>
-  <div class="hero-visual" aria-hidden="true">
-    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="18" stroke="#3b82f6" stroke-width="3"/>
-      <circle cx="60" cy="60" r="28" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <circle cx="60" cy="60" r="40" stroke="#a78bfa" stroke-width="1" stroke-dasharray="2 4"/>
-      <path d="M60 20v8M60 92v8M20 60h8M92 60h8" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
-      <path d="M33 33l5.6 5.6M81.4 81.4l5.6 5.6M87 33l-5.6 5.6M38.6 81.4L33 87" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="60" cy="60" r="6" fill="#3b82f6"/>
-      <circle cx="60" cy="32" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="60" cy="88" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="32" cy="60" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="88" cy="60" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-    </svg>
   </div>
 </section>
 
@@ -614,15 +607,15 @@
   </div>
   <div class="stat-card">
     <div class="stat-num">9</div>
-    <div class="stat-label">Arquivos .py</div>
+    <div class="stat-label">Arquivos Python</div>
   </div>
   <div class="stat-card">
     <div class="stat-num">3</div>
-    <div class="stat-label">IAs Comparadas</div>
+    <div class="stat-label">IAs comparadas</div>
   </div>
   <div class="stat-card">
-    <div class="stat-num">3</div>
-    <div class="stat-label">Projetos Aplicados</div>
+    <div class="stat-num">4</div>
+    <div class="stat-label">Projetos aplicados</div>
   </div>
 </div>
 
@@ -639,7 +632,7 @@
     <div class="module open" data-group="10-exercicios">
       <div class="mod-header" role="button" aria-expanded="true" tabindex="0">
         <div class="mod-icon ico-blue">📝</div>
-        <div class="mod-title">10-exercicios<small>Lista 1 — Exercícios Iniciais de Algoritmos</small></div>
+        <div class="mod-title">Lista 1 - Exercícios Iniciais<small>Fundamentos de algoritmos e primeiras soluções em Python</small></div>
         <span class="mod-count">2 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
@@ -669,7 +662,7 @@
     <div class="module" data-group="15-exercicios">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-blue">📝</div>
-        <div class="mod-title">15-exercicios<small>Lista 2 — Exercícios Ampliados de Algoritmos</small></div>
+        <div class="mod-title">Lista 2 - Exercícios Ampliados<small>Consolidação de lógica, estruturas e resolução de problemas</small></div>
         <span class="mod-count">2 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
@@ -699,7 +692,7 @@
     <div class="module" data-group="evolucao-tecnica">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-green">📈</div>
-        <div class="mod-title">evolucao-tecnica<small>Refinamento de lógica, estrutura e clareza do código ao longo da disciplina</small></div>
+        <div class="mod-title">Evolução Técnica<small>Refinamento de lógica, estrutura e clareza do código</small></div>
         <span class="mod-count">3 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
@@ -737,14 +730,14 @@
     <div class="module" data-group="exercicios-em-papel">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-yellow">✏️</div>
-        <div class="mod-title">exercicios-em-papel<small>Registros manuscritos com digitalização e transcrição para Python</small></div>
+        <div class="mod-title">Exercícios em Papel<small>Registros manuscritos com digitalização e transcrição para Python</small></div>
         <span class="mod-count">9 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./exercicios-em-papel/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_python_melhorado.pdf</span><a class="file-link" href="./exercicios-em-papel/codigo_python_melhorado.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./exercicios-em-papel/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_python_melhorado.pdf</span><a class="file-link" href="./exercicios-em-papel/codigo_python_melhorado.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
           <li class="file-item">
             <span class="badge b-py">PY</span>
             <span class="file-name">codigo_transcrito.py</span>
@@ -753,12 +746,12 @@
               Abrir Código
             </a>
           </li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-1.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-1.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-2.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-2.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-3.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-3.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-4.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-4.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-5.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-5.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">Relatorio_Comparativo_Codigos.pdf</span><a class="file-link" href="./exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-1.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-1.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver vídeo</a></li>
+          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-2.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-2.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver imagem</a></li>
+          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-3.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-3.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver imagem</a></li>
+          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-4.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-4.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver imagem</a></li>
+          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-5.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-5.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver imagem</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">Relatorio_Comparativo_Codigos.pdf</span><a class="file-link" href="./exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
         </ul>
       </div>
     </div>
@@ -767,14 +760,14 @@
     <div class="module" data-group="modularizacao">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-purple">🔧</div>
-        <div class="mod-title">modularizacao<small>Organização modular do código e análise de abordagens com modelos de linguagem</small></div>
+        <div class="mod-title">Modularização<small>Organização modular do código e análise de abordagens</small></div>
         <span class="mod-count">4 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./modularizacao/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./modularizacao/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./modularizacao/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./modularizacao/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
           <li class="file-item">
             <span class="badge b-py">PY</span>
             <span class="file-name">monitoramento_freio_srad1000.py</span>
@@ -783,7 +776,7 @@
               Abrir Código
             </a>
           </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">pergunta_as_LLMs.pdf</span><a class="file-link" href="./modularizacao/pergunta_as_LLMs.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">pergunta_as_LLMs.pdf</span><a class="file-link" href="./modularizacao/pergunta_as_LLMs.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
         </ul>
       </div>
     </div>
@@ -792,13 +785,13 @@
     <div class="module" data-group="portal-alegrete">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-cyan">🌐</div>
-        <div class="mod-title">portal-alegrete<small>Projeto de portal web desenvolvido como aplicação prática</small></div>
+        <div class="mod-title">Portal Alegrete<small>Projeto de portal web desenvolvido como aplicação prática</small></div>
         <span class="mod-count">1 arquivo</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
         </ul>
       </div>
     </div>
@@ -807,15 +800,15 @@
     <div class="module" data-group="portal-alegrete-novo">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-cyan">🌐</div>
-        <div class="mod-title">portal-alegrete-novo<small>Versão refatorada e documentada do portal web</small></div>
+        <div class="mod-title">Portal Alegrete - Versão Refatorada<small>Refatoração, melhoria estrutural e documentação</small></div>
         <span class="mod-count">3 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete-novo/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_atividade.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_atividade.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_novos_eventos.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_novos_eventos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete-novo/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_atividade.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_atividade.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_novos_eventos.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_novos_eventos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
         </ul>
       </div>
     </div>
@@ -824,17 +817,17 @@
     <div class="module" data-group="problema-1">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-red">🤖</div>
-        <div class="mod-title">problema-1<small>Análise comparativa entre modelos de linguagem: GPT, DeepSeek e Gemini</small></div>
+        <div class="mod-title">Comparação de IAs - Problema 1<small>Comparação entre GPT, DeepSeek e Gemini</small></div>
         <span class="mod-count">9 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-1/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse_e_codigo_refeito-gpt.pdf</span><a class="file-link" href="./problema-1/analyse_e_codigo_refeito-gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-deepseek.pdf</span><a class="file-link" href="./problema-1/analyse-deepseek.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-gemini.pdf</span><a class="file-link" href="./problema-1/analyse-gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-1/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-1/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse_e_codigo_refeito-gpt.pdf</span><a class="file-link" href="./problema-1/analyse_e_codigo_refeito-gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-deepseek.pdf</span><a class="file-link" href="./problema-1/analyse-deepseek.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-gemini.pdf</span><a class="file-link" href="./problema-1/analyse-gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-1/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
           <li class="file-item">
             <span class="badge b-py">PY</span>
             <span class="file-name">codigo_deepseek_corrigido.py</span>
@@ -843,8 +836,8 @@
               Abrir Código
             </a>
           </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gemini.pdf</span><a class="file-link" href="./problema-1/codigo_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-1/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gemini.pdf</span><a class="file-link" href="./problema-1/codigo_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-1/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
           <li class="file-item">
             <span class="badge b-py">PY</span>
             <span class="file-name">codigo_gpt_refeito.py</span>
@@ -861,13 +854,13 @@
     <div class="module" data-group="problema-2">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-red">🤖</div>
-        <div class="mod-title">problema-2<small>Desafio avançado com correção e revisão assistida por modelos de linguagem</small></div>
+        <div class="mod-title">Comparação de IAs - Problema 2<small>Desafio avançado com correção e revisão assistida por IA</small></div>
         <span class="mod-count">10 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-2/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-2/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
           <li class="file-item">
             <span class="badge b-py">PY</span>
             <span class="file-name">abastecimento_gemini.py</span>
@@ -876,14 +869,14 @@
               Abrir Código
             </a>
           </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo corrigido gpt.pdf</span><a class="file-link" href="./problema-2/codigo corrigido gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_deep.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_gemini.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-2/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-2/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./problema-2/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">desafio_gpt.pdf</span><a class="file-link" href="./problema-2/desafio_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">gemini.pdf</span><a class="file-link" href="./problema-2/gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo corrigido gpt.pdf</span><a class="file-link" href="./problema-2/codigo corrigido gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_deep.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_gemini.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-2/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-2/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./problema-2/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">desafio_gpt.pdf</span><a class="file-link" href="./problema-2/desafio_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">gemini.pdf</span><a class="file-link" href="./problema-2/gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
         </ul>
       </div>
     </div>
@@ -892,17 +885,17 @@
     <div class="module" data-group="problema-de-engenharia">
       <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
         <div class="mod-icon ico-purple">⚙️</div>
-        <div class="mod-title">problema-de-engenharia<small>Simulador interativo aplicado a um problema real de Engenharia Mecânica</small></div>
+        <div class="mod-title">Problema de Engenharia<small>Simulador interativo aplicado à Engenharia Mecânica</small></div>
         <span class="mod-count">5 arquivos</span>
         <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
       </div>
       <div class="mod-body">
         <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-de-engenharia/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_1.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_1.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_2.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_2.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_3.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_3.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jsx">JSX</span><span class="file-name">simulador.jsx</span><a class="file-link" href="./problema-de-engenharia/simulador.jsx" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-de-engenharia/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_1.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_1.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_2.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_2.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_3.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_3.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver PDF</a></li>
+          <li class="file-item"><span class="badge b-jsx">JSX</span><span class="file-name">simulador.jsx</span><a class="file-link" href="./problema-de-engenharia/simulador.jsx" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver arquivo</a></li>
         </ul>
       </div>
     </div>
@@ -911,7 +904,7 @@
 
   <!-- sem resultados -->
   <div id="sem-resultados" role="status" aria-live="polite">
-    <p>Nenhum arquivo encontrado para <strong id="termo-busca"></strong>.</p>
+    <p>Nenhum arquivo encontrado.</p>
   </div>
 
   <!-- ── DESTAQUE IA ── -->
@@ -926,31 +919,27 @@
   </div>
   <!-- ── INFO CARDS ── -->
   <div class="section-header" style="margin-top:2.5rem;">
-    <h2>Organização do Portfólio</h2>
+    <h2>Mapa do Portfólio</h2>
   </div>
   <div class="info-grid">
     <div class="info-card">
-      <div class="info-card-title">📝 Exercícios</div>
-      <p>Listas de algoritmos desenvolvidos em Python, com enunciados e soluções comentadas. Foco em lógica de programação, estruturas condicionais, de repetição e funções — base para todo o restante da disciplina.</p>
+      <div class="info-card-title">Exercícios</div>
+      <p>Listas de algoritmos desenvolvidos em Python, com enunciados e soluções comentadas. O foco está em lógica de programação, estruturas condicionais, repetição e funções.</p>
     </div>
     <div class="info-card">
-      <div class="info-card-title">📈 Evolução Técnica</div>
-      <p>Documentação do processo de melhoria do código ao longo da disciplina: código-fonte, vídeo demonstrativo e relatório de análise comparativa entre versões. O foco está em mostrar não só o resultado final, mas o caminho percorrido — incluindo erros, correções e decisões tomadas.</p>
+      <div class="info-card-title">Evolução Técnica</div>
+      <p>Registro do processo de melhoria do código ao longo da disciplina, com comparação entre versões, vídeo demonstrativo e análise das decisões tomadas.</p>
     </div>
     <div class="info-card">
-      <div class="info-card-title">🔧 Modularização</div>
-      <p>Aplicação prática de modularização e passagem de parâmetros, com comparação entre diferentes abordagens de implementação. O código foi aplicado no contexto do monitoramento do sistema de freios SRAD1000 — equipamento utilizado no projeto de Fórmula SAE da universidade. Inclui uso de modelos de linguagem (LLMs) como apoio técnico na análise das soluções.</p>
+      <div class="info-card-title">Modularização</div>
+      <p>Aplicação prática de funções, passagem de parâmetros e organização modular do código no contexto do monitoramento do sistema de freios SRAD1000.</p>
     </div>
     <div class="info-card">
-      <div class="info-card-title">🤖 Análise com Inteligência Artificial</div>
-      <p>Comparação entre soluções geradas por GPT, DeepSeek e Gemini para problemas de algoritmos, com análise crítica das diferenças em lógica, estilo de código e precisão das correções. A seção evidencia os limites de cada modelo e a importância de um olhar crítico sobre as respostas geradas por inteligência artificial.</p>
+      <div class="info-card-title">Análise com IA</div>
+      <p>Comparação entre soluções geradas por GPT, DeepSeek e Gemini, com análise crítica de lógica, clareza e precisão das respostas.</p>
     </div>
   </div>
 
-  <!-- ── CONTACT ── -->
-  <div class="section-header" style="margin-top:2.5rem;">
-    <h2>Contato</h2>
-  </div>
   <div class="contact-wrap">
     <div class="contact-card">
       <div class="full">
