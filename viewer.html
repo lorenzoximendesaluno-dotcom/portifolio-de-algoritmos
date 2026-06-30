@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Viewer</title>
+
+  <!-- Highlight.js — syntax highlighting -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
+  <!-- Pyodide — execução Python no browser -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+  <style>
+    /* ─── Reset & Tokens ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2128;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
+      --radius: 8px;
+      --font-mono: "Cascadia Code", "Fira Code", "JetBrains Mono",
+                   "Source Code Pro", Consolas, monospace;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+    }
+
+    /* ─── Layout ───────────────────────────────────────────────────── */
+    .app {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+
+    /* ─── Toolbar ──────────────────────────────────────────────────── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .55rem .9rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .toolbar .file-info {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex: 1;
+      min-width: 0;
+    }
+    .toolbar .file-icon { font-size: 1rem; }
+    .toolbar .file-name {
+      font-family: var(--font-mono);
+      font-size: .85rem;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .toolbar .lang-badge {
+      background: #3572A5;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      padding: .15rem .45rem;
+      border-radius: 4px;
+      letter-spacing: .04em;
+    }
+
+    /* toolbar buttons */
+    .toolbar .actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      font-size: .78rem;
+      font-family: inherit;
+      padding: .3rem .7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .btn:hover { background: var(--surface2); border-color: var(--accent); color: var(--accent); }
+    .btn.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #0d1117;
+      font-weight: 700;
+    }
+    .btn.primary:hover { background: #56d364; border-color: #56d364; }
+    .btn.primary:disabled,
+    .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+    .btn.danger { border-color: var(--red); color: var(--red); }
+    .btn.danger:hover { background: rgba(248,81,73,.1); }
+
+    /* ─── Editor area ──────────────────────────────────────────────── */
+    .editor-wrap {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* line numbers */
+    .line-numbers {
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1rem .6rem 1rem .8rem;
+      font-family: var(--font-mono);
+      font-size: .82rem;
+      line-height: 1.55;
+      color: var(--muted);
+      user-select: none;
+      overflow: hidden;
+      text-align: right;
+      min-width: 3rem;
+    }
+
+    /* code block */
+    .code-scroll {
+      flex: 1;
+      overflow: auto;
+      padding: 1rem 1.25rem;
+    }
+
+    pre {
+      margin: 0;
+      padding: 0;
+    }
+    pre code.hljs {
+      background: transparent !important;
+      padding: 0 !important;
+      font-family: var(--font-mono);
+      font-size: .82rem;
+      line-height: 1.55;
+      display: block;
+      white-space: pre;
+    }
+
+    /* ─── Input area (for input()) ─────────────────────────────────── */
+    .input-area {
+      display: none;
+      padding: .6rem .9rem;
+      background: var(--surface2);
+      border-top: 1px solid var(--border);
+      gap: .5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .input-area.visible { display: flex; }
+    .input-area label { font-size: .82rem; color: var(--yellow); white-space: nowrap; }
+    .input-area input[type="text"] {
+      flex: 1;
+      min-width: 180px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .35rem .7rem;
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: .82rem;
+      outline: none;
+    }
+    .input-area input:focus { border-color: var(--accent); }
+    .input-area .hint { font-size: .75rem; color: var(--muted); }
+
+    /* ─── Console ──────────────────────────────────────────────────── */
+    .console-wrap {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      min-height: 140px;
+      max-height: 38vh;
+      resize: vertical;
+      overflow: hidden;
+    }
+
+    .console-header {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .9rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+      flex-shrink: 0;
+    }
+    .console-header span { font-size: .8rem; color: var(--muted); flex: 1; }
+    .console-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
+    }
+    .console-dot.running { background: var(--yellow); animation: pulse .8s infinite; }
+    .console-dot.ok      { background: var(--green); }
+    .console-dot.error   { background: var(--red); }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50%      { opacity: .3; }
+    }
+
+    .console-output {
+      flex: 1;
+      overflow-y: auto;
+      padding: .6rem .9rem;
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: #c9d1d9;
+    }
+    .console-output .out-ok    { color: #c9d1d9; }
+    .console-output .out-error { color: var(--red); }
+    .console-output .out-sys   { color: var(--muted); font-style: italic; }
+    .console-output .out-warn  { color: var(--yellow); }
+    .console-output .out-input { color: var(--yellow); }
+
+    /* ─── Loading overlay ──────────────────────────────────────────── */
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(13,17,23,.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 999;
+      transition: opacity .3s;
+    }
+    #loading-overlay.hidden { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 38px; height: 38px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loading-overlay p { color: var(--muted); font-size: .9rem; }
+
+    /* ─── Toast ────────────────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--green);
+      color: #0d1117;
+      font-weight: 600;
+      padding: .5rem 1rem;
+      border-radius: 8px;
+      font-size: .85rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .25s, transform .25s;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ─── Fullscreen ───────────────────────────────────────────────── */
+    .app:fullscreen { overflow: auto; }
+
+    /* ─── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      .toolbar .file-name { max-width: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading overlay (Pyodide init) -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <p id="loading-msg">Carregando visualizador...</p>
+</div>
+
+<!-- Toast -->
+<div id="toast">✅ Copiado!</div>
+
+<div class="app" id="app">
+
+  <!-- ── Toolbar ── -->
+  <div class="toolbar">
+    <div class="file-info">
+      <span class="file-icon">🐍</span>
+      <span class="file-name" id="file-name-label">arquivo.py</span>
+      <span class="lang-badge">Python</span>
+    </div>
+    <div class="actions">
+      <button class="btn primary" id="btn-run"    title="Executar código">▶ Executar</button>
+      <button class="btn"         id="btn-copy"   title="Copiar código">📋 Copiar</button>
+      <button class="btn danger"  id="btn-clear"  title="Limpar console">🗑 Console</button>
+      <button class="btn"         id="btn-dl"     title="Baixar arquivo">⬇ Baixar</button>
+      <button class="btn"         id="btn-fs"     title="Tela cheia">⛶ Tela cheia</button>
+      <a class="btn" id="btn-colab" href="#" target="_blank" rel="noopener" title="Abrir no Google Colab"
+         style="text-decoration:none;">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg"
+             alt="Open in Colab" style="height:16px;vertical-align:middle;" />
+      </a>
+    </div>
+  </div>
+
+  <!-- ── Editor ── -->
+  <div class="editor-wrap" id="editor-wrap">
+    <div class="line-numbers" id="line-numbers" aria-hidden="true"></div>
+    <div class="code-scroll">
+      <pre><code id="code-block" class="language-python"></code></pre>
+    </div>
+  </div>
+
+  <!-- ── Input area ── -->
+  <div class="input-area" id="input-area">
+    <label for="user-input">⌨️ Entrada (input()):</label>
+    <input type="text" id="user-input" placeholder="Digite o valor e pressione Enter..." />
+    <span class="hint">Cada linha = uma entrada</span>
+    <button class="btn primary" id="btn-run-input">▶ Executar com entrada</button>
+  </div>
+
+  <!-- ── Console ── -->
+  <div class="console-wrap">
+    <div class="console-header">
+      <div class="console-dot" id="console-dot"></div>
+      <span>Saída do programa</span>
+      <button class="btn" id="btn-clear-inline" style="padding:.2rem .5rem;font-size:.72rem;">
+        limpar
+      </button>
+    </div>
+    <div class="console-output" id="console-output">
+      <span class="out-sys">// Console pronto. Clique em ▶ Executar para rodar o código.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   Python Viewer + Executor — viewer.html
+   Usa: Highlight.js (syntax highlight) + Pyodide (execução Python)
+═══════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  // ── Elementos ─────────────────────────────────────────────────
+  const $ = id => document.getElementById(id);
+  const loadingOverlay = $('loading-overlay');
+  const loadingMsg     = $('loading-msg');
+  const fileNameLabel  = $('file-name-label');
+  const codeBlock      = $('code-block');
+  const lineNumbers    = $('line-numbers');
+  const consoleOutput  = $('console-output');
+  const consoleDot     = $('console-dot');
+  const inputArea      = $('input-area');
+  const userInput      = $('user-input');
+  const toast          = $('toast');
+  const btnRun         = $('btn-run');
+  const btnCopy        = $('btn-copy');
+  const btnClear       = $('btn-clear');
+  const btnClearInline = $('btn-clear-inline');
+  const btnDl          = $('btn-dl');
+  const btnFs          = $('btn-fs');
+  const btnColab       = $('btn-colab');
+  const btnRunInput    = $('btn-run-input');
+
+  // ── Estado ────────────────────────────────────────────────────
+  let rawCode   = '';
+  let pyodide   = null;
+  let pyReady   = false;
+  let fileUrl   = '';
+  let fileName  = 'arquivo.py';
+
+  // ── Params da URL ─────────────────────────────────────────────
+  const params = new URLSearchParams(location.search);
+  fileUrl  = params.get('file')  || '';
+  fileName = params.get('name')  || (fileUrl ? fileUrl.split('/').pop() : 'arquivo.py');
+  fileNameLabel.textContent = fileName;
+  document.title = fileName + ' — Python Viewer';
+
+  // Colab badge: aponta para o URL do arquivo raw (best effort)
+  if (fileUrl) {
+    const ghMatch = location.hostname.match(/^(.+)\.github\.io$/);
+    if (ghMatch) {
+      const user = ghMatch[1];
+      // tenta construir URL raw do github
+      const rawUrl = 'https://raw.githubusercontent.com/' + user + '/' + user + '.github.io/main/' + fileUrl.replace(/^\.\//,'');
+      btnColab.href = 'https://colab.research.google.com/github/' + user + '/' + user + '.github.io/blob/main/' + fileUrl.replace(/^\.\//,'');
+    } else {
+      btnColab.style.display = 'none';
+    }
+  } else {
+    btnColab.style.display = 'none';
+  }
+
+  // ── Utilitários ───────────────────────────────────────────────
+  function showToast(msg = '✅ Copiado!') {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  }
+
+  function appendConsole(html) {
+    consoleOutput.insertAdjacentHTML('beforeend', html);
+    consoleOutput.scrollTop = consoleOutput.scrollHeight;
+  }
+
+  function clearConsole() {
+    consoleOutput.innerHTML = '';
+    consoleDot.className = 'console-dot';
+  }
+
+  function setDot(state) { // 'running' | 'ok' | 'error' | ''
+    consoleDot.className = 'console-dot' + (state ? ' ' + state : '');
+  }
+
+  function escHtml(s) {
+    return String(s)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;');
+  }
+
+  // ── Gerar line numbers ─────────────────────────────────────────
+  function buildLineNumbers(code) {
+    const lines = code.split('\n');
+    lineNumbers.innerHTML = lines.map((_,i) => '<div>' + (i+1) + '</div>').join('');
+  }
+
+  // ── Carregar e exibir código ───────────────────────────────────
+  async function loadCode() {
+    if (!fileUrl) {
+      rawCode = '# Nenhum arquivo especificado.\nprint("Olá, Mundo!")';
+      renderCode(rawCode);
+      hideLoading();
+      return;
+    }
+
+    try {
+      loadingMsg.textContent = 'Carregando ' + fileName + '...';
+      const resp = await fetch(fileUrl, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status + ': ' + resp.statusText);
+      rawCode = await resp.text();
+    } catch (err) {
+      rawCode = '# Erro ao carregar o arquivo:\n# ' + err.message;
+      appendConsole('<span class="out-error">Erro ao carregar arquivo: ' + escHtml(err.message) + '</span>\n');
+      setDot('error');
+    }
+
+    renderCode(rawCode);
+    detectInputUsage(rawCode);
+    hideLoading();
+  }
+
+  function renderCode(code) {
+    codeBlock.textContent = code;
+    hljs.highlightElement(codeBlock);
+    buildLineNumbers(code);
+  }
+
+  function hideLoading() {
+    loadingOverlay.classList.add('hidden');
+    setTimeout(() => loadingOverlay.style.display = 'none', 350);
+  }
+
+  // ── Detectar uso de input() ────────────────────────────────────
+  function detectInputUsage(code) {
+    const usesInput = /\binput\s*\(/.test(code);
+    inputArea.classList.toggle('visible', usesInput);
+  }
+
+  // ── Inicializar Pyodide ────────────────────────────────────────
+  async function initPyodide() {
+    loadingMsg.textContent = 'Inicializando Python (Pyodide)...';
+    try {
+      pyodide = await loadPyodide({
+        stdout: (text) => appendConsole('<span class="out-ok">' + escHtml(text) + '\n</span>'),
+        stderr: (text) => appendConsole('<span class="out-error">' + escHtml(text) + '\n</span>'),
+      });
+      pyReady = true;
+      btnRun.disabled    = false;
+      btnRunInput.disabled = false;
+    } catch (err) {
+      appendConsole('<span class="out-error">Falha ao inicializar Python: ' + escHtml(err.message) + '</span>\n');
+      setDot('error');
+      btnRun.textContent = '⚠ Indisponível';
+    }
+  }
+
+  // ── Pacotes disponíveis no Pyodide via micropip ───────────────
+  // (subconjunto dos mais comuns; adicione mais conforme necessário)
+  const PYODIDE_PACKAGES = new Set([
+    'numpy', 'pandas', 'matplotlib', 'scipy', 'scikit-learn',
+    'sympy', 'pillow', 'requests', 'beautifulsoup4', 'lxml',
+    'openpyxl', 'xlrd', 'statsmodels', 'networkx', 'nltk',
+    'seaborn', 'plotly', 'bokeh', 'cryptography', 'pydantic',
+    'httpx', 'aiohttp', 'regex', 'attrs', 'ujson',
+    // aliases comuns → nome do pacote no micropip
+  ]);
+
+  // Mapeamento: nome do import → nome do pacote micropip (quando diferentes)
+  const IMPORT_TO_PKG = {
+    'sklearn': 'scikit-learn',
+    'cv2': 'opencv-python',
+    'bs4': 'beautifulsoup4',
+    'PIL': 'pillow',
+    'dateutil': 'python-dateutil',
+  };
+
+  /**
+   * Extrai os nomes de módulos de topo de `import X` e `from X import Y`
+   * e retorna apenas os que existem no catálogo do Pyodide/micropip.
+   */
+  function detectPackages(code) {
+    const found = new Set();
+    const re = /^(?:import|from)\s+([a-zA-Z_][a-zA-Z0-9_]*)/gm;
+    let m;
+    while ((m = re.exec(code)) !== null) {
+      const name = m[1];
+      const pkg  = IMPORT_TO_PKG[name] || name;
+      if (PYODIDE_PACKAGES.has(pkg)) found.add(pkg);
+    }
+    return [...found];
+  }
+
+  // ── Executar código ───────────────────────────────────────────
+  async function runCode(inputLines) {
+    if (!pyReady) {
+      appendConsole('<span class="out-warn">⚠ Pyodide ainda não está pronto. Aguarde...</span>\n');
+      return;
+    }
+    if (!rawCode.trim()) {
+      appendConsole('<span class="out-warn">⚠ Nenhum código para executar.</span>\n');
+      return;
+    }
+
+    clearConsole();
+    setDot('running');
+    btnRun.disabled      = true;
+    btnRunInput.disabled = true;
+    appendConsole('<span class="out-sys">▶ Executando ' + escHtml(fileName) + '...\n</span>');
+
+    // ── Instalar pacotes necessários via micropip ────────────────
+    const pkgs = detectPackages(rawCode);
+    if (pkgs.length > 0) {
+      appendConsole('<span class="out-sys">📦 Instalando pacotes: ' + escHtml(pkgs.join(', ')) + '...\n</span>');
+      try {
+        await pyodide.loadPackagesFromImports(rawCode);
+        appendConsole('<span class="out-sys">✔ Pacotes prontos.\n</span>');
+      } catch (pkgErr) {
+        // Fallback: tenta micropip um a um
+        await pyodide.runPythonAsync('import micropip');
+        for (const pkg of pkgs) {
+          try {
+            await pyodide.runPythonAsync('await micropip.install("' + pkg + '")');
+            appendConsole('<span class="out-sys">  ✔ ' + escHtml(pkg) + ' instalado.\n</span>');
+          } catch (e) {
+            appendConsole('<span class="out-warn">  ⚠ Não foi possível instalar ' + escHtml(pkg) + ': ' + escHtml(e.message) + '\n</span>');
+          }
+        }
+      }
+    }
+
+    try {
+      // Injeta mock de input() se necessário
+      if (inputLines && inputLines.length > 0) {
+        const safeInputs = JSON.stringify(inputLines);
+        await pyodide.runPythonAsync(`
+import builtins
+_inputs = iter(${safeInputs})
+def _mock_input(prompt=''):
+    val = next(_inputs, '')
+    if prompt:
+        print(prompt + val)
+    else:
+        print(val)
+    return val
+builtins.input = _mock_input
+`);
+      } else {
+        // reset input para lançar exceção descritiva se usado sem entrada
+        await pyodide.runPythonAsync(`
+import builtins
+def _mock_input(prompt=''):
+    print((prompt or '') + '[ENTRADA NÃO FORNECIDA]')
+    return ''
+builtins.input = _mock_input
+`);
+      }
+
+      await pyodide.runPythonAsync(rawCode);
+      setDot('ok');
+      appendConsole('\n<span class="out-sys">✅ Execução concluída.</span>\n');
+    } catch (err) {
+      setDot('error');
+      const errMsg = err.message || String(err);
+      appendConsole('\n<span class="out-error">❌ Erro:\n' + escHtml(errMsg) + '</span>\n');
+    } finally {
+      btnRun.disabled      = false;
+      btnRunInput.disabled = false;
+    }
+  }
+
+  // ── Eventos ───────────────────────────────────────────────────
+  btnRun.addEventListener('click', () => runCode([]));
+
+  btnRunInput.addEventListener('click', () => {
+    const lines = userInput.value.split('\n').filter(l => l.trim() !== '');
+    runCode(lines.length ? lines : []);
+  });
+
+  userInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      const lines = userInput.value.split('\n').filter(l => l.trim() !== '');
+      runCode(lines.length ? lines : []);
+    }
+  });
+
+  btnCopy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(rawCode);
+      showToast('✅ Código copiado!');
+    } catch {
+      showToast('⚠ Use Ctrl+C para copiar.');
+    }
+  });
+
+  btnClear.addEventListener('click', clearConsole);
+  btnClearInline.addEventListener('click', clearConsole);
+
+  btnDl.addEventListener('click', () => {
+    const blob = new Blob([rawCode], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fileName;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  btnFs.addEventListener('click', () => {
+    const app = document.getElementById('app');
+    if (!document.fullscreenElement) {
+      app.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  });
+
+  // ── Sincronizar scroll de line-numbers com code ───────────────
+  const codeScroll = document.querySelector('.code-scroll');
+  codeScroll.addEventListener('scroll', () => {
+    lineNumbers.style.marginTop = '-' + codeScroll.scrollTop + 'px';
+  });
+
+  // ── Inicialização ─────────────────────────────────────────────
+  btnRun.disabled      = true;
+  btnRunInput.disabled = true;
+
+  // Carrega código e Pyodide em paralelo
+  Promise.all([loadCode(), initPyodide()]).catch(console.error);
+
+})();
+</script>
+</body>
+</html>
