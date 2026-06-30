@@ -1,1193 +1,254 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio Acadêmico de Algoritmos em Engenharia — Lorenzo Ximendes</title>
-  
-  
-  <style type="text/css">@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:800;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:400;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:JetBrains Mono;font-style:normal;font-weight:500;src:url(/cf-fonts/v/jetbrains-mono/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Atividades - Engenharia Mecânica</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
 
-  <style>
-    /* ═══════════════════════════════════════════════════
-       TOKENS
-    ═══════════════════════════════════════════════════ */
-    :root {
-      --bg:          #0a0e17;
-      --bg2:         #0f1521;
-      --surface:     #131c2e;
-      --surface2:    #1a2540;
-      --border:      #1e2d47;
-      --border2:     #253554;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-      --accent:      #3b82f6;
-      --accent2:     #60a5fa;
-      --accent-glow: rgba(59,130,246,.18);
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-      --green:       #22c55e;
-      --green-glow:  rgba(34,197,94,.15);
-      --yellow:      #f59e0b;
-      --red:         #ef4444;
-      --purple:      #a78bfa;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
 
-      --text:        #e2e8f0;
-      --text2:       #94a3b8;
-      --text3:       #64748b;
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.2s ease;
+        }
 
-      --mono:        "JetBrains Mono", "Fira Code", Consolas, monospace;
-      --sans:        "Inter", system-ui, sans-serif;
-      --radius:      12px;
-      --radius-sm:   8px;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    /* ═══════════════════════════════════════════════════
-       RESET
-    ═══════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; color-scheme: dark; }
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font-family: var(--sans); cursor: pointer; }
+        .card-header {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
 
-    /* ═══════════════════════════════════════════════════
-       BACKGROUND GRID & GLOW
-    ═══════════════════════════════════════════════════ */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(rgba(59,130,246,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59,130,246,.04) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      top: -200px; left: 50%;
-      transform: translateX(-50%);
-      width: 900px; height: 600px;
-      background: radial-gradient(ellipse at center,
-        rgba(59,130,246,.12) 0%,
-        rgba(167,139,250,.06) 40%,
-        transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
+        .card-section {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
 
-    /* all content above pseudo-elements */
-    header, main, footer, .skip-link { position: relative; z-index: 1; }
+        .file-links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-    /* ═══════════════════════════════════════════════════
-       SKIP LINK
-    ═══════════════════════════════════════════════════ */
-    .skip-link {
-      position: absolute; top: -100%; left: 1rem;
-      background: var(--accent); color: #fff;
-      padding: .4rem .9rem; border-radius: var(--radius-sm);
-      font-weight: 600; font-size: .85rem;
-      transition: top .2s; z-index: 9999;
-    }
-    .skip-link:focus { top: .6rem; }
+        .file-link {
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            transition: opacity 0.2s;
+        }
 
-    /* ═══════════════════════════════════════════════════
-       TOPBAR
-    ═══════════════════════════════════════════════════ */
-    .topbar {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,14,23,.82);
-      backdrop-filter: blur(16px) saturate(1.4);
-      border-bottom: 1px solid var(--border);
-      padding: .7rem 1.5rem;
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .topbar-brand {
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      white-space: nowrap;
-    }
-    .topbar-brand span { color: var(--text3); font-weight: 400; }
+        .file-link:hover {
+            opacity: 0.9;
+        }
 
-    .topbar-search {
-      flex: 1; max-width: 380px;
-      display: flex; align-items: center; gap: .5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: .38rem .75rem;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .topbar-search:focus-within {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-glow);
-    }
-    .topbar-search svg { flex-shrink: 0; color: var(--text3); }
-    .topbar-search input {
-      flex: 1; background: none; border: none;
-      color: var(--text); font-size: .88rem;
-      font-family: var(--sans);
-      outline: none;
-    }
-    .topbar-search input::placeholder { color: var(--text3); }
+        .link-pdf { background-color: #e74c3c; }
+        .link-python { background-color: #f39c12; }
+        
+        /* Modal de Visualização de Código */
+        #codeModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .topbar-right { margin-left: auto; display: flex; align-items: center; gap: .5rem; }
-    .chip {
-      display: inline-flex; align-items: center; gap: .3rem;
-      font-size: .72rem; font-weight: 600;
-      letter-spacing: .04em; text-transform: uppercase;
-      padding: .25rem .6rem;
-      border-radius: 20px;
-      border: 1px solid var(--border2);
-      color: var(--text2);
-      white-space: nowrap;
-    }
-    .chip-green { border-color: rgba(34,197,94,.3); color: var(--green); background: var(--green-glow); }
-    .chip-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+        .modal-content {
+            background: #1d1f21;
+            width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            overflow: auto;
+            position: relative;
+            padding: 20px;
+        }
 
-    /* ═══════════════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════════════ */
-    .hero {
-      max-width: 900px; margin: 0 auto;
-      padding: 4rem 1.5rem 2.5rem;
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: end; gap: 2rem;
-    }
-    @media (max-width: 640px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-    }
-
-    .hero-eyebrow {
-      font-size: .78rem; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .75rem;
-      display: flex; align-items: center; gap: .5rem;
-    }
-    .hero-eyebrow::before {
-      content: "";
-      display: inline-block; width: 28px; height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -.03em;
-      color: #fff;
-    }
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      margin-top: 1rem;
-      font-size: 1rem; color: var(--text2);
-      max-width: 540px;
-    }
-
-    .hero-meta {
-      margin-top: 1.5rem;
-      display: flex; flex-wrap: wrap; gap: .6rem;
-    }
-    .meta-tag {
-      font-size: .78rem; font-weight: 500;
-      padding: .3rem .75rem;
-      border-radius: 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text2);
-    }
-
-    /* gear visual */
-    .hero-visual {
-      width: 120px; height: 120px;
-      opacity: .18;
-    }
-    .hero-visual svg { width: 100%; height: 100%; }
-
-    /* ═══════════════════════════════════════════════════
-       STATS BAR
-    ═══════════════════════════════════════════════════ */
-    .stats-bar {
-      max-width: 900px; margin: 0 auto 2.5rem;
-      padding: 0 1.5rem;
-      display: flex; flex-wrap: wrap; gap: .75rem;
-    }
-    .stat-card {
-      flex: 1; min-width: 120px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: .9rem 1.1rem;
-      display: flex; flex-direction: column; gap: .2rem;
-      transition: border-color .2s, transform .2s;
-    }
-    .stat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .stat-num {
-      font-size: 1.55rem; font-weight: 800;
-      color: #fff; line-height: 1;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label { font-size: .75rem; color: var(--text3); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
-
-    /* ═══════════════════════════════════════════════════
-       SECTION DIVIDER
-    ═══════════════════════════════════════════════════ */
-    .section-header {
-      max-width: 900px; margin: 0 auto;
-      padding: 0 1.5rem .75rem;
-      display: flex; align-items: center; gap: .75rem;
-    }
-    .section-header h2 {
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--text3);
-    }
-    .section-header::after {
-      content: ""; flex: 1;
-      height: 1px; background: var(--border);
-    }
-
-    /* ═══════════════════════════════════════════════════
-       MODULE CARDS
-    ═══════════════════════════════════════════════════ */
-    .modules {
-      max-width: 900px; margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex; flex-direction: column; gap: 1rem;
-    }
-
-    .module {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .module:hover {
-      border-color: var(--border2);
-      box-shadow: 0 4px 24px rgba(0,0,0,.35);
-    }
-
-    /* module header */
-    .mod-header {
-      display: flex; align-items: center;
-      gap: .75rem; padding: .85rem 1.1rem;
-      cursor: pointer;
-      background: var(--surface);
-      user-select: none;
-      transition: background .15s;
-    }
-    .mod-header:hover { background: var(--surface2); }
-
-    .mod-icon {
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-    }
-    /* icon palettes */
-    .ico-blue   { background: rgba(59,130,246,.15);  }
-    .ico-green  { background: rgba(34,197,94,.15);   }
-    .ico-purple { background: rgba(167,139,250,.15); }
-    .ico-yellow { background: rgba(245,158,11,.15);  }
-    .ico-red    { background: rgba(239,68,68,.12);   }
-    .ico-cyan   { background: rgba(34,211,238,.12);  }
-
-    .mod-title {
-      flex: 1;
-      font-size: .95rem; font-weight: 600;
-      color: var(--text);
-    }
-    .mod-title small {
-      display: block;
-      font-size: .75rem; font-weight: 400;
-      color: var(--text3); margin-top: .05rem;
-    }
-
-    .mod-count {
-      font-size: .75rem; font-weight: 600;
-      color: var(--text3);
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: .15rem .55rem;
-      white-space: nowrap;
-    }
-    .mod-chevron {
-      color: var(--text3);
-      transition: transform .25s;
-      flex-shrink: 0;
-    }
-    .module.open .mod-chevron { transform: rotate(180deg); }
-
-    /* file list */
-    .mod-body {
-      max-height: 0; overflow: hidden;
-      transition: max-height .3s cubic-bezier(.4,0,.2,1);
-      border-top: 1px solid transparent;
-    }
-    .module.open .mod-body {
-      max-height: 800px;
-      border-top-color: var(--border);
-    }
-
-    .file-list { list-style: none; }
-    .file-item {
-      display: flex; align-items: center;
-      gap: .6rem; padding: .6rem 1.1rem;
-      border-bottom: 1px solid var(--border);
-      transition: background .15s;
-      animation: slideIn .2s ease both;
-    }
-    .file-item:last-child { border-bottom: none; }
-    .file-item:hover { background: rgba(59,130,246,.04); }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-8px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    /* badge */
-    .badge {
-      font-family: var(--mono);
-      font-size: .62rem; font-weight: 700;
-      padding: .15rem .42rem; border-radius: 5px;
-      letter-spacing: .04em; flex-shrink: 0;
-    }
-    .b-py  { background: rgba(53,114,165,.25); color: #79c0ff; border: 1px solid rgba(53,114,165,.4); }
-    .b-pdf { background: rgba(239,68,68,.15);  color: #fca5a5; border: 1px solid rgba(239,68,68,.3); }
-    .b-mp4 { background: rgba(167,139,250,.15);color: #c4b5fd; border: 1px solid rgba(167,139,250,.3);}
-    .b-jpg { background: rgba(245,158,11,.15); color: #fcd34d; border: 1px solid rgba(245,158,11,.3);}
-    .b-jsx { background: rgba(34,211,238,.12); color: #67e8f9; border: 1px solid rgba(34,211,238,.3);}
-
-    .file-name {
-      font-size: .875rem; color: var(--text2);
-      font-family: var(--mono);
-      flex: 1; min-width: 0;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      transition: color .15s;
-    }
-    .file-item:hover .file-name { color: var(--text); }
-
-    /* py open button */
-    .btn-open {
-      display: inline-flex; align-items: center; gap: .28rem;
-      font-size: .72rem; font-weight: 600;
-      padding: .28rem .65rem; border-radius: 6px;
-      border: 1px solid rgba(59,130,246,.35);
-      background: rgba(59,130,246,.08);
-      color: var(--accent2);
-      text-decoration: none;
-      white-space: nowrap; flex-shrink: 0;
-      transition: background .15s, border-color .15s, color .15s;
-    }
-    .btn-open:hover {
-      background: rgba(59,130,246,.18);
-      border-color: var(--accent);
-      color: #fff;
-    }
-    .btn-open svg { flex-shrink: 0; }
-
-    /* pdf link */
-    .file-link {
-      font-size: .72rem; color: var(--text3);
-      transition: color .15s; flex-shrink: 0;
-      display: inline-flex; align-items: center; gap: .25rem;
-    }
-    .file-link:hover { color: var(--accent2); }
-
-    /* ═══════════════════════════════════════════════════
-       NO RESULTS
-    ═══════════════════════════════════════════════════ */
-    #sem-resultados {
-      display: none; text-align: center;
-      padding: 3rem 1rem;
-    }
-    #sem-resultados p { color: var(--text3); font-size: .95rem; }
-    #sem-resultados strong { color: var(--accent2); }
-
-    /* ═══════════════════════════════════════════════════
-       INFO CARDS
-    ═══════════════════════════════════════════════════ */
-    .info-grid {
-      max-width: 900px; margin: 2.5rem auto 0;
-      padding: 0 1.5rem;
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: .75rem;
-    }
-    .info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.1rem;
-      transition: border-color .2s;
-    }
-    .info-card:hover { border-color: var(--border2); }
-    .info-card-title {
-      font-size: .75rem; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .5rem;
-    }
-    .info-card p { font-size: .82rem; color: var(--text2); }
-    .info-card p em { font-style: normal; color: var(--text); }
-
-    /* ═══════════════════════════════════════════════════
-       CONTACT
-    ═══════════════════════════════════════════════════ */
-    .contact-wrap {
-      max-width: 900px; margin: 2.5rem auto 0;
-      padding: 0 1.5rem;
-    }
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
-    }
-    @media (max-width: 560px) { .contact-card { grid-template-columns: 1fr; } }
-
-    .contact-card .full { grid-column: 1 / -1; }
-    .contact-title {
-      font-size: 1.05rem; font-weight: 700;
-      margin-bottom: .25rem;
-    }
-    .contact-sub { font-size: .82rem; color: var(--text3); margin-bottom: 1.25rem; }
-
-    .form-group { display: flex; flex-direction: column; gap: .35rem; }
-    .form-group label {
-      font-size: .75rem; font-weight: 600;
-      letter-spacing: .04em; color: var(--text3);
-      text-transform: uppercase;
-    }
-    .form-group input,
-    .form-group textarea {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: .55rem .85rem;
-      color: var(--text); font-size: .88rem;
-      font-family: var(--sans); outline: none;
-      transition: border-color .2s, box-shadow .2s;
-      resize: vertical;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-glow);
-    }
-    .form-group textarea { min-height: 100px; }
-
-    .form-actions { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: .5rem; }
-    .btn-primary {
-      background: var(--accent); color: #fff;
-      border: none; border-radius: var(--radius-sm);
-      padding: .6rem 1.3rem; font-size: .88rem; font-weight: 700;
-      transition: background .2s, transform .15s;
-    }
-    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
-    .btn-ghost {
-      background: transparent; color: var(--text2);
-      border: 1px solid var(--border); border-radius: var(--radius-sm);
-      padding: .6rem 1.1rem; font-size: .88rem;
-      transition: border-color .2s, color .2s;
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
-
-    /* ═══════════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════════ */
-    footer {
-      max-width: 900px; margin: 3rem auto 0;
-      padding: 1.5rem 1.5rem;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: .75rem;
-    }
-    footer p { font-size: .78rem; color: var(--text3); }
-    footer a { color: var(--accent2); }
-    .footer-stack { display: flex; gap: .5rem; flex-wrap: wrap; }
-    .tech-pill {
-      font-size: .68rem; font-weight: 600;
-      padding: .2rem .5rem; border-radius: 5px;
-      background: var(--surface); border: 1px solid var(--border);
-      color: var(--text3); letter-spacing: .04em;
-    }
-
-    /* ═══════════════════════════════════════════════════
-       RESPONSIVE TWEAKS
-    ═══════════════════════════════════════════════════ */
-    @media (max-width: 540px) {
-      .topbar-brand { display: none; }
-      .stats-bar { gap: .5rem; }
-      .stat-card { min-width: 100px; padding: .75rem .85rem; }
-    }
-  </style>
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
-<a class="skip-link" href="#conteudo">Pular para conteúdo principal</a>
-
-<!-- ── TOPBAR ── -->
-<header class="topbar">
-  <span class="topbar-brand">Lorenzo <span>Ximendes</span></span>
-
-  <div class="topbar-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-    </svg>
-    <input id="busca" type="search" placeholder="Filtrar arquivos..." aria-label="Filtrar arquivos" />
-  </div>
-
-  <div class="topbar-right">
-    <span class="chip chip-green">
-      <span class="chip-dot"></span>
-      Portfólio ativo
-    </span>
-    <span class="chip">Eng. Mecânica</span>
-  </div>
-</header>
-
-<<<<<<< HEAD
-            <div class="card">
-                <div class="card-header">Evolução Técnica</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Identificar gargalos em um código previamente desenvolvido e propor otimizações.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Refatoração do script original, reduzindo a complexidade ciclomática.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="evolucao-tecnica/index.txt" class="file-link link-txt" target="_blank">📄 index.txt</a>
-                        <button class="file-link link-python" onclick="openCode('evolucao-tecnica/app.py')">💻 app.py</button>
-                        <a href="evolucao-tecnica/en.mp4" class="file-link link-video" target="_blank">🎬 en.mp4</a>
-                    </div>
-                </div>
-            </div>
-=======
-<!-- ── HERO ── -->
-<section class="hero" aria-label="Apresentação">
-  <div>
-    <p class="hero-eyebrow">Algoritmos em Engenharia</p>
-    <h1>
-      Portfólio Acadêmico de<br />
-      <em>Algoritmos em Engenharia</em>
-    </h1>
-    <p class="hero-sub">
-      Este portfólio reúne as atividades desenvolvidas na disciplina de <strong>Algoritmos em Engenharia</strong>, do curso de <strong>Engenharia Mecânica</strong>. O objetivo é documentar minha evolução no raciocínio lógico, na implementação em Python, na modularização de programas e no uso de modelos de linguagem (LLMs) como apoio à análise e revisão de soluções — do pseudocódigo à versão funcional e refinada.
-    </p>
-    <div class="hero-meta">
-      <span class="meta-tag">🐍 Python</span>
-      <span class="meta-tag">⚙️ Engenharia Mecânica</span>
-      <span class="meta-tag">🤖 IA Comparativa</span>
-      <span class="meta-tag">📐 Algoritmos</span>
-      <span class="meta-tag">🔧 Modularização</span>
+    <div class="header">
+        <h1>Painel de Atividades - Engenharia Mecânica ⚙️</h1>
+        <p><strong>Aluno:</strong> Lorenzo Ximendes | <strong>Turma:</strong> 80A</p>
     </div>
-    <p class="hero-sub" style="margin-top:1.25rem;font-size:.88rem;border-top:1px solid var(--border);padding-top:1rem;">
-      Ao longo das atividades, desenvolvi maior domínio da lógica de programação, da estruturação de funções
-      e da organização modular do código. Também aprimorei minha capacidade de identificar erros, testar soluções
-      e documentar o processo de desenvolvimento — competências fundamentais para a prática da Engenharia Mecânica.
-    </p>
-  </div>
-  <div class="hero-visual" aria-hidden="true">
-    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="18" stroke="#3b82f6" stroke-width="3"/>
-      <circle cx="60" cy="60" r="28" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <circle cx="60" cy="60" r="40" stroke="#a78bfa" stroke-width="1" stroke-dasharray="2 4"/>
-      <path d="M60 20v8M60 92v8M20 60h8M92 60h8" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
-      <path d="M33 33l5.6 5.6M81.4 81.4l5.6 5.6M87 33l-5.6 5.6M38.6 81.4L33 87" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="60" cy="60" r="6" fill="#3b82f6"/>
-      <circle cx="60" cy="32" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="60" cy="88" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="32" cy="60" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-      <circle cx="88" cy="60" r="4" fill="#1e2d47" stroke="#3b82f6" stroke-width="1.5"/>
-    </svg>
-  </div>
-</section>
->>>>>>> e9990462e71952998b995b8eb12c792b07af4eb0
 
-<!-- ── STATS ── -->
-<div class="stats-bar" aria-label="Estatísticas">
-  <div class="stat-card">
-    <div class="stat-num">10<span>+</span></div>
-    <div class="stat-label">Módulos</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">9</div>
-    <div class="stat-label">Arquivos .py</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">3</div>
-    <div class="stat-label">IAs Comparadas</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">100<span>%</span></div>
-    <div class="stat-label">Front-end</div>
-  </div>
-</div>
-
-<<<<<<< HEAD
-            <div class="card">
-                <div class="card-header">Modularização de Código</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Lidar com um código longo e repetitivo, dificultando a manutenção e leitura.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Segmentação da lógica em diversas funções e módulos isolados.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="modularizacao/index.txt" class="file-link link-txt" target="_blank">📄 index.txt</a>
-                        <a href="modularizacao/Pergunta realizada as LLMs.pdf" class="file-link link-pdf" target="_blank">📄 Pergunta realizada as LLMs.pdf</a>
-                        <a href="modularizacao/Tabela comparativa.pdf" class="file-link link-pdf" target="_blank">📄 Tabela comparativa.pdf</a>
-                        <button class="file-link link-python" onclick="openCode('modularizacao/monitoramento_freio_srad1000.py')">💻 monitoramento_freio_srad1000.py</button>
-                    </div>
+    <div class="container">
+        
+        <div class="card">
+            <div class="card-header">10 Exercícios Básicos</div>
+            <div class="card-section"><strong>🎯 Objetivo:</strong> Aplicação de estruturas sequenciais e operadores matemáticos.</div>
+            <div class="card-section">
+                <strong>📦 Arquivos:</strong>
+                <div class="file-links-container">
+                    <a href="10-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 PDF Original (index.pdf)</a>
+                    <button class="file-link link-python" onclick="openCode('10-exercicios/codigo.py')">🐍 Ver Código (codigo.py)</button>
                 </div>
             </div>
-=======
-<!-- ── FILES ── -->
-<main id="conteudo">
->>>>>>> e9990462e71952998b995b8eb12c792b07af4eb0
-
-  <div class="section-header" style="margin-top:1rem;">
-    <h2>Trabalhos e Arquivos</h2>
-  </div>
-
-<<<<<<< HEAD
-            <div class="card">
-                <div class="card-header">Portal Alegrete (Refatorado)</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Atualizar o sistema antigo aplicando conceitos modernos.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Implementação de novas funcionalidades e documentação avançada.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="portal-alegrete-novo/index.txt" class="file-link link-txt" target="_blank">📄 index.txt</a>
-                        <a href="portal-alegrete-novo/relatorio da atividade.pdf" class="file-link link-pdf" target="_blank">📄 relatorio da atividade.pdf</a>
-                        <a href="portal-alegrete-novo/relatorio_novos_eventos.pdf" class="file-link link-pdf" target="_blank">📄 relatorio_novos_eventos.pdf</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Desafio Prático 01: Treliça Plana</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Analisar forças em uma treliça isostática via sistemas matriciais.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Testes comparativos de algoritmos criados por diferentes IAs.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="problema-1/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
-                        <a href="problema-1/analise_codigo_refeito-gpt.pdf" class="file-link link-pdf" target="_blank">📄 analise_codigo_refeito-gpt.pdf</a>
-                        <a href="problema-1/analise_deepseek.pdf" class="file-link link-pdf" target="_blank">📄 analise_deepseek.pdf</a>
-                        <a href="problema-1/analise_gemini.pdf" class="file-link link-pdf" target="_blank">📄 analise_gemini.pdf</a>
-                        <a href="problema-1/codigo deep seek.pdf" class="file-link link-pdf" target="_blank">📄 codigo deep seek.pdf</a>
-                        <a href="problema-1/codigo gemini.pdf" class="file-link link-pdf" target="_blank">📄 codigo gemini.pdf</a>
-                        <a href="problema-1/codigo gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo gpt.pdf</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Desafio Prático 02: Abastecimento de Água</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Calcular demanda, custo e autonomia de distribuição hídrica.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Algoritmo de controle com tabelas comparativas geradas por LLMs.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="problema-2/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
-                        <a href="problema-2/codigo chat gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo chat gpt.pdf</a>
-                        <a href="problema-2/codigo corrigido deepseek.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido deepseek.pdf</a>
-                        <a href="problema-2/codigo corrigido gemini.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido gemini.pdf</a>
-                        <a href="problema-2/codigo corrigido gpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo corrigido gpt.pdf</a>
-                        <a href="problema-2/comparação entre os 3 - comparação entre os 3.pdf" class="file-link link-pdf" target="_blank">📄 comparação entre os 3.pdf</a>
-                        <a href="problema-2/deepseek codigo.pdf" class="file-link link-pdf" target="_blank">📄 deepseek codigo.pdf</a>
-                        <a href="problema-2/desafio gpt.pdf" class="file-link link-pdf" target="_blank">📄 desafio gpt.pdf</a>
-                        <a href="problema-2/gemini.pdf" class="file-link link-pdf" target="_blank">📄 gemini.pdf</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" style="border-color: rgba(227, 179, 65, 0.4);">
-                <div class="card-header">Problema de Engenharia Aplicada</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Traduzir um problema complexo da Engenharia Mecânica para código.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Modelagem matemática no Simulador de Usina de Biomassa.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="problema-de-engenharia/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
-                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113710.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113710.pdf</a>
-                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113719.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113719.pdf</a>
-                        <a href="problema-de-engenharia/Captura de tela 2026-05-19 113726.pdf" class="file-link link-pdf" target="_blank">📄 Captura de tela 2026-05-19 113726.pdf</a>
-                        <button class="file-link link-python" onclick="openCode('problema-de-engenharia/simulador_visual_usina_biomassa_casca_arroz.jsx')">💻 Ver Simulador (.jsx)</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">Relato de Entrevistas</div>
-                <div class="card-section"><strong>🎯 O Problema:</strong> Coletar e compilar dados qualitativos de campo em formato padronizado.</div>
-                <div class="card-section"><strong>💡 A Solução:</strong> Transcrição e análise dos pontos em comum gerando relatório conclusivo.</div>
-                <div class="card-section" style="margin-bottom: 0;">
-                    <strong>📦 Arquivos:</strong>
-                    <div class="file-links-container">
-                        <a href="relato-entrevistas/index.pdf" class="file-link link-pdf" target="_blank">📄 index.pdf</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </main>
 
-    <div class="modal-overlay" id="codeModal">
+        <div class="card">
+            <div class="card-header">15 Exercícios (Condicionais)</div>
+            <div class="card-section"><strong>🎯 Objetivo:</strong> Estruturas condicionais (If/Else) e regras de negócio.</div>
+            <div class="card-section">
+                <strong>📦 Arquivos:</strong>
+                <div class="file-links-container">
+                    <a href="15-exercicios/index.pdf" class="file-link link-pdf" target="_blank">📄 PDF Original</a>
+                    <button class="file-link link-python" onclick="openCode('15-exercicios/codigo.py')">🐍 Ver Código (codigo.py)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Evolução Técnica</div>
+            <div class="card-section"><strong>🎯 Objetivo:</strong> Refatoração de scripts e redução de complexidade.</div>
+            <div class="card-section">
+                <strong>📦 Arquivos:</strong>
+                <div class="file-links-container">
+                    <a href="evolucao-tecnica/codigo-chatgpt.pdf" class="file-link link-pdf" target="_blank">📄 codigo-chatgpt.pdf</a>
+                    <a href="evolucao-tecnica/comparacao-entre-os-3.pdf" class="file-link link-pdf" target="_blank">📄 comparacao-entre-os-3.pdf</a>
+                    <a href="evolucao-tecnica/pergunta-realizada-as-llms.pdf" class="file-link link-pdf" target="_blank">📄 pergunta-realizada-as-llms.pdf</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Exercícios em Papel</div>
+            <div class="card-section"><strong>🎯 Objetivo:</strong> Testes de mesa e lógica sem auxílio de IDEs.</div>
+            <div class="card-section">
+                <strong>📦 Arquivos:</strong>
+                <div class="file-links-container">
+                    <a href="exercicios-em-papel/foto1.jpg" class="file-link link-pdf" target="_blank">📸 Foto Original do Papel</a>
+                    <button class="file-link link-python" onclick="openCode('exercicios-em-papel/codigo_transcrito.py')">🐍 Ver Código Transcrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Projeto: Portal Alegrete (Consolidado)</div>
+            <div class="card-section"><strong>🎯 O Problema:</strong> Criar e atualizar a arquitetura lógica e requisitos de um sistema web.</div>
+            <div class="card-section"><strong>💡 A Solução:</strong> Levantamento de requisitos, implementação de novas funcionalidades e documentação avançada.</div>
+            <div class="card-section" style="margin-bottom: 0;">
+                <strong>📦 Arquivos:</strong>
+                <div class="file-links-container">
+                    <a href="portal-alegrete/index-original.pdf" class="file-link link-pdf" target="_blank">📄 index-original.pdf</a>
+                    <a href="portal-alegrete/index-refatorado.pdf" class="file-link link-pdf" target="_blank">📄 index-refatorado.pdf</a>
+                    <a href="portal-alegrete/relatorio-da-atividade.pdf" class="file-link link-pdf" target="_blank">📄 relatorio-da-atividade.pdf</a>
+                    <a href="portal-alegrete/relatorio-novos-eventos.pdf" class="file-link link-pdf" target="_blank">📄 relatorio-novos-eventos.pdf</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="codeModal">
         <div class="modal-content">
-            <div class="modal-header">
-                <span class="modal-title" id="modalTitle">Arquivo</span>
-                <button class="close-btn" onclick="closeCode()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <pre><code class="language-python" id="codeBlock">// O código será carregado aqui...</code></pre>
-            </div>
+            <button class="close-btn" onclick="closeCode()">&times;</button>
+            <pre><code id="codeBlock" class="language-python">Carregando código...</code></pre>
         </div>
-=======
-  <div class="modules" id="modules-container">
-
-    <!-- 10-exercicios -->
-    <div class="module open" data-group="10-exercicios">
-      <div class="mod-header" role="button" aria-expanded="true" tabindex="0">
-        <div class="mod-icon ico-blue">📝</div>
-        <div class="mod-title">10-exercicios<small>Primeira lista de exercícios — fundamentos de algoritmos</small></div>
-        <span class="mod-count">2 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item">
-            <span class="badge b-pdf">PDF</span>
-            <span class="file-name">index.pdf</span>
-            <a class="file-link" href="./10-exercicios/index.pdf" target="_blank" rel="noopener" aria-label="Abrir index.pdf">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir
-            </a>
-          </li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">codigo.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./10-exercicios/codigo.py&name=codigo.py" data-file="./10-exercicios/codigo.py" data-label="codigo.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-        </ul>
-      </div>
->>>>>>> e9990462e71952998b995b8eb12c792b07af4eb0
     </div>
 
-    <!-- 15-exercicios -->
-    <div class="module" data-group="15-exercicios">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-blue">📝</div>
-        <div class="mod-title">15-exercicios<small>Lista ampliada — consolidação dos fundamentos de algoritmos</small></div>
-        <span class="mod-count">2 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item">
-            <span class="badge b-pdf">PDF</span>
-            <span class="file-name">index.pdf</span>
-            <a class="file-link" href="./15-exercicios/index.pdf" target="_blank" rel="noopener">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir
-            </a>
-          </li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">codigo.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./15-exercicios/codigo.py&name=codigo.py" data-file="./15-exercicios/codigo.py" data-label="codigo.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
-    <!-- evolucao-tecnica -->
-    <div class="module" data-group="evolucao-tecnica">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-green">📈</div>
-        <div class="mod-title">evolucao-tecnica<small>Progressão, refinamento e documentação da evolução técnica</small></div>
-        <span class="mod-count">3 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item">
-            <span class="badge b-pdf">PDF</span>
-            <span class="file-name">index.pdf</span>
-            <a class="file-link" href="./evolucao-tecnica/index.pdf" target="_blank" rel="noopener">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir
-            </a>
-          </li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">app.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./evolucao-tecnica/app.py&name=app.py" data-file="./evolucao-tecnica/app.py" data-label="app.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-          <li class="file-item">
-            <span class="badge b-mp4">MP4</span>
-            <span class="file-name">en.mp4</span>
-            <a class="file-link" href="./evolucao-tecnica/en.mp4" target="_blank" rel="noopener">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <script>
+        function openCode(filePath) {
+            const modal = document.getElementById('codeModal');
+            const codeBlock = document.getElementById('codeBlock');
+            
+            modal.style.display = 'flex';
+            codeBlock.textContent = 'Carregando ' + filePath + '...';
 
-    <!-- exercicios-em-papel -->
-    <div class="module" data-group="exercicios-em-papel">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-yellow">✏️</div>
-        <div class="mod-title">exercicios-em-papel<small>Rascunhos em papel, registros fotográficos e transcrições digitalizadas</small></div>
-        <span class="mod-count">9 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./exercicios-em-papel/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_python_melhorado.pdf</span><a class="file-link" href="./exercicios-em-papel/codigo_python_melhorado.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">codigo_transcrito.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./exercicios-em-papel/codigo_transcrito.py&name=codigo_transcrito.py" data-file="./exercicios-em-papel/codigo_transcrito.py" data-label="codigo_transcrito.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-1.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-1.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-2.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-2.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-3.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-3.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-4.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-4.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jpg">JPG</span><span class="file-name">imagem-5.jpg</span><a class="file-link" href="./exercicios-em-papel/imagem-5.jpg" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">Relatorio_Comparativo_Codigos.pdf</span><a class="file-link" href="./exercicios-em-papel/Relatorio_Comparativo_Codigos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
+            // Simula a busca do arquivo .py (Requer rodar em um servidor local como Live Server)
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo não encontrado. Certifique-se de que criou o arquivo .py na pasta.');
+                    return response.text();
+                })
+                .then(code => {
+                    codeBlock.textContent = code;
+                    Prism.highlightElement(codeBlock); // Refaz o realce de sintaxe
+                })
+                .catch(error => {
+                    codeBlock.textContent = "Erro: " + error.message;
+                });
+        }
 
-    <!-- modularizacao -->
-    <div class="module" data-group="modularizacao">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-purple">🔧</div>
-        <div class="mod-title">modularizacao<small>Organização modular do código e análise de abordagens com modelos de linguagem</small></div>
-        <span class="mod-count">4 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./modularizacao/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./modularizacao/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">monitoramento_freio_srad1000.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./modularizacao/monitoramento_freio_srad1000.py&name=monitoramento_freio_srad1000.py" data-file="./modularizacao/monitoramento_freio_srad1000.py" data-label="monitoramento_freio_srad1000.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">pergunta_as_LLMs.pdf</span><a class="file-link" href="./modularizacao/pergunta_as_LLMs.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
+        function closeCode() {
+            document.getElementById('codeModal').style.display = 'none';
+        }
 
-    <!-- portal-alegrete -->
-    <div class="module" data-group="portal-alegrete">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-cyan">🌐</div>
-        <div class="mod-title">portal-alegrete<small>Projeto de portal web desenvolvido como aplicação prática</small></div>
-        <span class="mod-count">1 arquivo</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- portal-alegrete-novo -->
-    <div class="module" data-group="portal-alegrete-novo">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-cyan">🌐</div>
-        <div class="mod-title">portal-alegrete-novo<small>Versão refatorada e documentada do portal web</small></div>
-        <span class="mod-count">3 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./portal-alegrete-novo/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_atividade.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_atividade.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">relatorio_novos_eventos.pdf</span><a class="file-link" href="./portal-alegrete-novo/relatorio_novos_eventos.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- problema-1 -->
-    <div class="module" data-group="problema-1">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-red">🤖</div>
-        <div class="mod-title">problema-1<small>Análise comparativa entre modelos de linguagem: GPT, DeepSeek e Gemini</small></div>
-        <span class="mod-count">9 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-1/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse_e_codigo_refeito-gpt.pdf</span><a class="file-link" href="./problema-1/analyse_e_codigo_refeito-gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-deepseek.pdf</span><a class="file-link" href="./problema-1/analyse-deepseek.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">analyse-gemini.pdf</span><a class="file-link" href="./problema-1/analyse-gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-1/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">codigo_deepseek_corrigido.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./problema-1/codigo_deepseek_corrigido.py&name=codigo_deepseek_corrigido.py" data-file="./problema-1/codigo_deepseek_corrigido.py" data-label="codigo_deepseek_corrigido.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gemini.pdf</span><a class="file-link" href="./problema-1/codigo_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-1/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">codigo_gpt_refeito.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./problema-1/codigo_gpt_refeito.py&name=codigo_gpt_refeito.py" data-file="./problema-1/codigo_gpt_refeito.py" data-label="codigo_gpt_refeito.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- problema-2 -->
-    <div class="module" data-group="problema-2">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-red">🤖</div>
-        <div class="mod-title">problema-2<small>Desafio avançado com correção e revisão assistida por modelos de linguagem</small></div>
-        <span class="mod-count">10 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-2/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item">
-            <span class="badge b-py">PY</span>
-            <span class="file-name">abastecimento_gemini.py</span>
-            <a class="btn-open py-link" href="viewer.html?file=./problema-2/abastecimento_gemini.py&name=abastecimento_gemini.py" data-file="./problema-2/abastecimento_gemini.py" data-label="abastecimento_gemini.py" target="_blank" rel="noopener">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Abrir Código
-            </a>
-          </li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo corrigido gpt.pdf</span><a class="file-link" href="./problema-2/codigo corrigido gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_deep.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_corrigido_gemini.pdf</span><a class="file-link" href="./problema-2/codigo_corrigido_gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_deep.pdf</span><a class="file-link" href="./problema-2/codigo_deep.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">codigo_gpt.pdf</span><a class="file-link" href="./problema-2/codigo_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">comparacao.pdf</span><a class="file-link" href="./problema-2/comparacao.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">desafio_gpt.pdf</span><a class="file-link" href="./problema-2/desafio_gpt.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">gemini.pdf</span><a class="file-link" href="./problema-2/gemini.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- problema-de-engenharia -->
-    <div class="module" data-group="problema-de-engenharia">
-      <div class="mod-header" role="button" aria-expanded="false" tabindex="0">
-        <div class="mod-icon ico-purple">⚙️</div>
-        <div class="mod-title">problema-de-engenharia<small>Simulador interativo aplicado a um problema real de Engenharia Mecânica</small></div>
-        <span class="mod-count">5 arquivos</span>
-        <svg class="mod-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
-      <div class="mod-body">
-        <ul class="file-list">
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">index.pdf</span><a class="file-link" href="./problema-de-engenharia/index.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_1.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_1.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_2.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_2.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-pdf">PDF</span><span class="file-name">imagem_3.pdf</span><a class="file-link" href="./problema-de-engenharia/imagem_3.pdf" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-          <li class="file-item"><span class="badge b-jsx">JSX</span><span class="file-name">simulador.jsx</span><a class="file-link" href="./problema-de-engenharia/simulador.jsx" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Abrir</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div><!-- /modules -->
-
-  <!-- sem resultados -->
-  <div id="sem-resultados" role="status" aria-live="polite">
-    <p>Nenhum arquivo encontrado para <strong id="termo-busca"></strong>.</p>
-  </div>
-
-  <!-- ── INFO CARDS ── -->
-  <div class="section-header" style="margin-top:2.5rem;">
-    <h2>Organização do Portfólio</h2>
-  </div>
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-card-title">📝 Exercícios</div>
-      <p>Listas principais de exercícios da disciplina, contendo o arquivo <em>codigo.py</em> com as soluções implementadas e o arquivo <em>index.pdf</em> com os enunciados correspondentes. O objetivo é demonstrar a aplicação prática dos conceitos estudados em aula.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">📈 Evolução Técnica</div>
-      <p>Apresentação do código-fonte, de um vídeo demonstrativo do funcionamento e de um relatório em PDF que evidencia a evolução técnica ao longo do desenvolvimento — com destaque para as dificuldades encontradas, as correções realizadas e os avanços obtidos.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">🔧 Modularização</div>
-      <p>Comparação entre diferentes abordagens de implementação, com foco na organização modular do código, no monitoramento do sistema de freio SRAD1000 (equipamento utilizado em projetos de competição de Engenharia) e no uso de modelos de linguagem (LLMs) como apoio à análise e revisão das soluções.</p>
-    </div>
-    <div class="info-card">
-      <div class="info-card-title">🤖 Análise com Inteligência Artificial</div>
-      <p>Análise comparativa entre os modelos de linguagem GPT, DeepSeek e Gemini, avaliando o código gerado, as correções sugeridas e a qualidade das soluções produzidas com apoio de cada ferramenta. A seção também inclui reflexões sobre o uso responsável da inteligência artificial no processo de aprendizagem.</p>
-    </div>
-  </div>
-
-  <!-- ── CONTACT ── -->
-  <div class="section-header" style="margin-top:2.5rem;">
-    <h2>Contato</h2>
-  </div>
-  <div class="contact-wrap">
-    <div class="contact-card">
-      <div class="full">
-        <p class="contact-title">Entre em contato</p>
-        <p class="contact-sub">Utilize o formulário abaixo para entrar em contato.</p>
-      </div>
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input id="nome" type="text" placeholder="Seu nome completo" />
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" placeholder="nome@exemplo.com" />
-      </div>
-      <div class="form-group full">
-        <label for="assunto">Assunto</label>
-        <input id="assunto" type="text" placeholder="Ex: Projeto, dúvida, feedback..." />
-      </div>
-      <div class="form-group full">
-        <label for="msg">Mensagem</label>
-        <textarea id="msg" placeholder="Escreva sua mensagem..."></textarea>
-      </div>
-      <div class="form-actions full">
-        <button class="btn-primary" type="button">🚀 Enviar mensagem</button>
-        <button class="btn-ghost"   type="reset"  onclick="document.getElementById('nome').value='';document.getElementById('email').value='';document.getElementById('assunto').value='';document.getElementById('msg').value=''">🧽 Limpar</button>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <p>© 2025 <a href="#">Lorenzo Ximendes</a> · Engenharia Mecânica · Algoritmos</p>
-  <div class="footer-stack">
-    <span class="tech-pill">Python</span>
-    <span class="tech-pill">Pyodide</span>
-    <span class="tech-pill">Highlight.js</span>
-    <span class="tech-pill">GitHub Pages</span>
-    <span class="tech-pill">Vanilla JS</span>
-  </div>
-</footer>
-
-<script>
-/* ═══════════════════════════════════════════════════════
-   Portfólio — index.html
-   Recursos: accordion modular, busca com filtro,
-             intercepção de links .py
-═══════════════════════════════════════════════════════ */
-(function () {
-  'use strict';
-
-  /* ── Accordion ── */
-  document.querySelectorAll('.mod-header').forEach(header => {
-    function toggle() {
-      const mod      = header.closest('.module');
-      const isOpen   = mod.classList.toggle('open');
-      header.setAttribute('aria-expanded', isOpen);
-    }
-    header.addEventListener('click', toggle);
-    header.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-    });
-  });
-
-  /* ── Busca com filtro ── */
-  const busca      = document.getElementById('busca');
-  const noResults  = document.getElementById('sem-resultados');
-  const termoEl    = document.getElementById('termo-busca');
-  const modules    = Array.from(document.querySelectorAll('.module'));
-
-  function norm(s) {
-    return (s || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
-  }
-
-  busca.addEventListener('input', () => {
-    const q = norm(busca.value.trim());
-    let totalVisible = 0;
-
-    modules.forEach(mod => {
-      if (!q) {
-        mod.style.display = '';
-        mod.querySelectorAll('.file-item').forEach(li => li.style.display = '');
-        return;
-      }
-
-      const groupName = norm(mod.dataset.group || '');
-      let visCount = 0;
-
-      mod.querySelectorAll('.file-item').forEach(li => {
-        const text = norm(li.textContent);
-        const show = text.includes(q) || groupName.includes(q);
-        li.style.display = show ? '' : 'none';
-        if (show) visCount++;
-      });
-
-      mod.style.display = visCount === 0 ? 'none' : '';
-      if (visCount > 0) {
-        mod.classList.add('open');
-        totalVisible += visCount;
-      }
-    });
-
-    noResults.style.display = (q && totalVisible === 0) ? 'block' : 'none';
-    termoEl.textContent = busca.value.trim();
-  });
-
-  /* ── Intercepção de links .py ── */
-  document.querySelectorAll('a.py-link').forEach(a => {
-    a.addEventListener('click', e => {
-      // já tem target _blank — só garante que não baixa
-      a.removeAttribute('download');
-    });
-  });
-
-})();
-</script>
+        // Fechar clicando fora do modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('codeModal');
+            if (event.target == modal) {
+                closeCode();
+            }
+        }
+    </script>
 </body>
 </html>
